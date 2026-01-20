@@ -117,16 +117,16 @@ body {
   align-items: center;
   justify-content: center;
   gap: 4rem;
-  width: 80%;
-  max-width: 50rem;
 }
 
 .project {
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
+  grid-template-columns: 2.25fr 1.5fr;
   gap: 8px;
-  background-color: var(--light-primary-color);
-  border-radius: 16px;
+  width: 90%;
+  max-width: 80rem;
+  height: 60vh;
+  overflow: hidden;
 }
 
 .project__text {
@@ -158,14 +158,14 @@ body {
 }
 
 .project__chip {
-  background-color: var(--light-accent-color);
+  background-color: var(--secondary-color);
   padding: 8px 16px;
   border-radius: 99px;
   font-size: 14px;
 }
 
 .project__image {
-  width: 100%;
+  max-width: 100%;
   object-fit: cover;
   background-color: var(--accent-color);
   order: -1;
