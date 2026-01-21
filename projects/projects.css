@@ -1,0 +1,25 @@
+.projects__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 7rem;
+}
+
+.header__title {
+  font-weight: 700;
+  font-size: 48px;
+  color: var(--primary-color);
+}
+
+.header__filters {
+  display: flex;
+  gap: 1rem;
+}
+
+.header__filter {
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  background: var(--secondary-color);
+}
