@@ -37,6 +37,18 @@ body {
   padding: 0;
 }
 
+/* ----------- Dark/Light Mode ----------- */
+@media (prefers-color-scheme: dark) {
+  &:has([name="toggle-color-scheme"]:checked) {
+    color-scheme: light;
+  }
+}
+@media (prefers-color-scheme: light) {
+  &:has([name="toggle-color-scheme"]:checked) {
+    color-scheme: dark;
+  }
+}
+
 /* ----------- Navbar ----------- */
 
 .navbar {
@@ -76,6 +88,50 @@ body {
 
 .navbar__link:hover {
   color: light-dark(var(--light-primary-500), var(--dark-primary-500));
+}
+
+.navbar__checkbox {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.navbar__label {
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 2rem;
+}
+
+.navbar__icon {
+  width: 24px;
+  height: 24px;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.navbar__label:hover .navbar__icon {
+  transform: scale(1.1);
+}
+
+@media (prefers-color-scheme: light) {
+  .navbar__icon {
+    content: url("../img/navbar/dark.svg");
+  }
+
+  .navbar__checkbox:checked ~ .navbar__label .navbar__icon {
+    content: url("../img/navbar/bright.svg");
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .navbar__icon {
+    content: url("../img/navbar/bright.svg");
+  }
+
+  .navbar__checkbox:checked ~ .navbar__label .navbar__icon {
+    content: url("../img/navbar/dark.svg");
+  }
 }
 
 /* ----------- Hero ----------- */
