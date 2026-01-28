@@ -1,12 +1,23 @@
 :root {
   --geist-font-family: "Geist", sans-serif;
-  --primary-color: #0047ba;
-  --secondary-color: #6aaae4;
-  --accent-color: #65baaf;
-  --background-color: #fffbfa;
-  --text-color: #232c33;
-  --light-primary-color: #e6edf8;
-  --light-accent-color: #98d1c9;
+
+  color-scheme: light dark;
+
+  --light-background-500: #fffbfa;
+  --light-text-500: #232c33;
+  --light-primary-500: #0047ba;
+  --light-primary-50: #e6edf8;
+  --light-secondary-500: #6aaae4;
+  --light-accent-500: #65baaf;
+  --light-accent-300: #98d1c9;
+
+  --dark-background-500: #232c33;
+  --dark-text-500: #fffbfa;
+  --dark-primary-500: #0047ba;
+  --dark-primary-50: #e6edf8;
+  --dark-secondary-500: #6aaae4;
+  --dark-accent-500: #65baaf;
+  --dark-accent-300: #98d1c9;
 }
 
 * {
@@ -17,8 +28,11 @@
 
 body {
   font-family: var(--geist-font-family);
-  background-color: var(--background-color);
-  color: var(--text-color);
+  background-color: light-dark(
+    var(--light-background-500),
+    var(--dark-background-500)
+  );
+  color: light-dark(var(--light-text-500), var(--dark-text-500));
   margin: 0;
   padding: 0;
 }
@@ -34,7 +48,10 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
-  background-color: var(--background-color);
+  background-color: light-dark(
+    var(--light-background-500),
+    var(--dark-background-500)
+  );
   z-index: 1000;
   transition: box-shadow 0.3s ease;
 }
@@ -46,18 +63,19 @@ body {
 .navbar__logo {
   height: 40px;
   width: auto;
+  fill: light-dark(var(--light-primary-500), var(--dark-secondary-500));
 }
 
 .navbar__link {
   margin-left: 2rem;
   text-decoration: none;
-  color: var(--text-color);
+  color: light-dark(var(--light-text-500), var(--dark-text-500));
   font-weight: 500;
   font-size: 18px;
 }
 
 .navbar__link:hover {
-  color: var(--primary-color);
+  color: light-dark(var(--light-primary-500), var(--dark-primary-500));
 }
 
 /* ----------- Hero ----------- */
@@ -87,11 +105,11 @@ body {
   margin-top: 3rem;
   cursor: pointer;
   padding: 1rem 2rem;
-  background: var(--secondary-color);
+  background: light-dark(var(--light-secondary-500), var(--dark-secondary-500));
   border-radius: 1rem;
   border: none;
   font-size: 34px;
-  color: var(--text-color);
+  color: light-dark(var(--light-text-500), var(--light-text-500));
 }
 
 /* ----------- Projects ----------- */
@@ -107,7 +125,7 @@ body {
 }
 
 .projects__title {
-  color: var(--primary-color);
+  color: light-dark(var(--light-primary-500), var(--dark-text-500));
   font-weight: 700;
   font-size: 48px;
 }
@@ -142,7 +160,7 @@ body {
 }
 
 .project__link-text:hover {
-  color: var(--primary-color);
+  color: light-dark(var(--light-primary-500), var(--dark-secondary-500));
 }
 
 .project__name {
@@ -169,10 +187,15 @@ body {
 }
 
 .project__chip {
-  background-color: var(--secondary-color);
+  background-color: light-dark(
+    var(--light-secondary-500),
+    var(--dark-secondary-500)
+  );
   padding: 8px 16px;
   border-radius: 99px;
   font-size: 14px;
+  font-weight: 600;
+  color: light-dark(var(--light-text-500), var(--light-text-500));
 }
 
 .project__image {
