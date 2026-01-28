@@ -255,20 +255,49 @@ body {
 }
 
 .project__image {
+  position: relative;
   max-width: 100%;
   object-fit: cover;
   order: -1;
   overflow: hidden;
+  display: block;
+  margin: 0;
+}
+
+.project__image__status {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 247, 0, 0.5);
+  color: black;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 8px;
+  z-index: 10;
+  margin: 0;
 }
 
 .project__image__image {
   width: 100%;
+  height: 100%;
   object-fit: cover;
   transition: transform 0.4s ease-in-out;
+  display: block;
+  position: relative;
+  z-index: 1;
 }
 
 .project__image-link {
   text-decoration: none;
+}
+
+.project__image-link:hover .project__image__status {
+  display: flex;
 }
 
 .project__image-link:hover .project__image__image {
