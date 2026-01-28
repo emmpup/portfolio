@@ -63,6 +63,7 @@ body {
 .navbar__logo {
   height: 40px;
   width: auto;
+  fill: light-dark(var(--light-primary-500), var(--dark-secondary-500));
 }
 
 .navbar__link {
