@@ -252,12 +252,14 @@ body {
 
 .project__image {
   position: relative;
-  max-width: 100%;
-  object-fit: cover;
   order: -1;
   overflow: hidden;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0;
+  width: 100%;
+  height: 100%;
   transition: transform 0.4s ease-in-out;
 }
 
@@ -284,13 +286,22 @@ body {
 }
 
 .project__image__image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
   transition: transform 0.4s ease-in-out;
   display: block;
-  position: relative;
   z-index: 1;
+}
+
+.project__image__image:first-of-type {
+  z-index: 2;
 }
 
 .project__image-link {
@@ -301,8 +312,4 @@ body {
   opacity: 1;
   background-color: rgba(242, 255, 0, 0.7);
   color: var(--light-text-500);
-}
-
-.project__image-link:hover .project__image__image {
-  transform: scale(1.05);
 }
