@@ -234,43 +234,87 @@ body {
 .project__description {
   margin-top: 16px;
   font-size: 16px;
+  font-weight: 400;
 }
 
 .project__chips {
   margin-top: 32px;
   display: flex;
-  gap: 8px;
+  gap: 16px;
 }
 
 .project__chip {
-  background-color: light-dark(
-    var(--light-secondary-500),
-    var(--dark-secondary-500)
-  );
-  padding: 8px 16px;
   border-radius: 99px;
-  font-size: 14px;
-  font-weight: 600;
-  color: light-dark(var(--light-text-500), var(--light-text-500));
+  font-size: 20px;
+  font-weight: 400;
+  color: light-dark(var(--light-text-500), var(--dark-text-500));
 }
 
 .project__image {
-  max-width: 100%;
-  object-fit: cover;
+  position: relative;
   order: -1;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.project__image__status {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: none;
+  color: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  z-index: 10;
+  margin: 0;
+  opacity: 0;
+  transition:
+    opacity 0.4s ease-in-out,
+    background-color 0.4s ease-in-out;
+  pointer-events: none;
 }
 
 .project__image__image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
+  height: 100%;
   object-fit: cover;
   transition: transform 0.4s ease-in-out;
+  display: block;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.project__image__image:first-of-type {
+  z-index: 2;
 }
 
 .project__image-link {
   text-decoration: none;
+  position: relative;
+  display: block;
+}
+
+.project__image-link:hover .project__image__status {
+  opacity: 1;
+  background-color: rgba(255, 251, 0, 0.7);
+  color: var(--light-text-500);
 }
 
 .project__image-link:hover .project__image__image {
-  transform: scale(1.05);
+  transform: translate(-50%, -50%) scale(1.05);
 }
