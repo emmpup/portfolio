@@ -88,3 +88,49 @@
   font-size: 16px;
   font-weight: 300;
 }
+
+/* ----------- Carousel ----------- */
+.project-detail__carousel {
+  margin-top: 8rem;
+  width: 40vw;
+  max-width: 80rem;
+  overflow-x: scroll;
+  display: flex;
+  gap: 2rem;
+  scroll-snap-type: x mandatory;
+}
+
+.project-detail__carousel__image {
+  scroll-snap-align: center;
+  width: 100%;
+  max-width: 80rem;
+  object-fit: cover;
+}
+
+/* ----------- Images ----------- */
+.project-detail__images {
+  margin-top: 8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  align-items: center;
+}
+
+.project-detail__images__container {
+  margin-top: 8rem;
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+  justify-content: center;
+}
+
+.project-detail__images__image {
+  width: 25vw;
+  max-width: 80rem;
+  height: auto;
+  object-fit: cover;
+}
+
+.project-detail__images__image--large {
+  height: 80vh;
+}
