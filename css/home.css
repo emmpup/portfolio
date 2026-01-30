@@ -1,0 +1,51 @@
+/* ----------- Hero ----------- */
+
+.hero {
+  /* margin-top: 30vh; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  /* gap: 1.5rem; */
+}
+
+.hero__name {
+  font-weight: 700;
+  font-size: 6rem;
+}
+
+.hero__subtitle {
+  font-weight: 600;
+  font-size: 2.5rem;
+  opacity: 0.8;
+}
+
+.hero__button {
+  margin-top: 3rem;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  background: light-dark(var(--light-secondary-500), var(--dark-secondary-500));
+  border-radius: 1rem;
+  border: none;
+  font-size: 34px;
+  color: light-dark(var(--light-text-500), var(--light-text-500));
+}
+
+/* ----------- Projects ----------- */
+
+.projects {
+  margin-top: 15vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  margin-bottom: 10vh;
+}
+
+.projects__title {
+  color: light-dark(var(--light-primary-500), var(--dark-text-500));
+  font-weight: 700;
+  font-size: 48px;
+}

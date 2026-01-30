@@ -21,5 +21,11 @@
 .header__filter {
   padding: 0.5rem 1rem;
   border-radius: 9999px;
-  background: var(--secondary-color);
+  background: light-dark(var(--light-secondary-500), var(--dark-secondary-500));
+  color: light-dark(var(--light-text-500), var(--light-text-500));
+}
+
+.active {
+  background: light-dark(var(--light-primary-500), var(--dark-primary-500));
+  color: light-dark(var(--dark-text-500), var(--dark-text-500));
 }
