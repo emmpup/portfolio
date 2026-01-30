@@ -30,3 +30,51 @@
   font-size: 48px;
   padding: 4rem 0;
 }
+
+/* ----------- Details ----------- */
+.project-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 5vw;
+}
+
+/* Intro */
+.project-detail__intro {
+  display: flex;
+  flex-direction: row;
+  gap: 7.75rem;
+}
+
+.project-detail__intro__image {
+  width: 60%;
+  max-width: 80rem;
+  object-fit: cover;
+}
+
+.project-detail__intro__title {
+  font-size: 34px;
+  font-weight: 500;
+}
+
+.project-detail__intro__role {
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  opacity: 0.8;
+}
+
+.project-detail__intro__description {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+}
+
+/* List */
+
+.project-detail__list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4rem;
+  margin-top: 4rem;
+}
