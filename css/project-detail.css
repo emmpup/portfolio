@@ -1,0 +1,136 @@
+/* ----------- Header ----------- */
+.projects__header {
+  width: 100%;
+  height: 70vh;
+  background: url(../img/posters/DerrenBrown.png) no-repeat;
+  background-position: center 70%;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.projects__rounded-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background: light-dark(
+    var(--light-background-500),
+    var(--dark-background-500)
+  );
+  height: 150%;
+  width: 150%;
+  border-radius: 100%;
+  top: 50%;
+  left: -25%;
+  right: 0;
+  position: relative;
+}
+
+.header__title {
+  font-weight: 700;
+  font-size: 48px;
+  padding: 4rem 0;
+}
+
+/* ----------- Details ----------- */
+.project-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 5vw;
+}
+
+/* Intro */
+.project-detail__intro {
+  display: flex;
+  flex-direction: row;
+  gap: 7rem;
+}
+
+.project-detail__intro__image {
+  width: 60%;
+  max-width: 80rem;
+  object-fit: cover;
+}
+
+.project-detail__intro__title {
+  font-size: 34px;
+  font-weight: 500;
+}
+
+.project-detail__intro__role {
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  opacity: 0.8;
+}
+
+.project-detail__intro__description {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+/* List */
+
+.project-detail__list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4rem;
+  margin-top: 4rem;
+}
+
+.project-detail__list__title {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.project-detail__list__description {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+/* ----------- Carousel ----------- */
+.project-detail__carousel {
+  margin-top: 8rem;
+  width: 40vw;
+  max-width: 80rem;
+  overflow-x: scroll;
+  display: flex;
+  gap: 2rem;
+  scroll-snap-type: x mandatory;
+}
+
+.project-detail__carousel__image {
+  scroll-snap-align: center;
+  width: 100%;
+  max-width: 80rem;
+  object-fit: cover;
+}
+
+/* ----------- Images ----------- */
+.project-detail__images {
+  margin-top: 8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  align-items: center;
+}
+
+.project-detail__images__container {
+  margin-top: 8rem;
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+  justify-content: center;
+}
+
+.project-detail__images__image {
+  width: 25vw;
+  max-width: 80rem;
+  height: auto;
+  object-fit: cover;
+}
+
+.project-detail__images__image--large {
+  height: 80vh;
+}
