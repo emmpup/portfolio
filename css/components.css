@@ -110,7 +110,7 @@
   grid-template-columns: 2.25fr 1.5fr;
   gap: 8px;
   width: 90%;
-  max-width: 80rem;
+  max-width: 65rem;
   height: 60vh;
   overflow: hidden;
   transition: all 0.4s ease-in-out;
