@@ -43,7 +43,7 @@
 .project-detail__intro {
   display: flex;
   flex-direction: row;
-  gap: 7.75rem;
+  gap: 7rem;
 }
 
 .project-detail__intro__image {
@@ -67,7 +67,6 @@
 .project-detail__intro__description {
   font-size: 16px;
   font-weight: 300;
-  line-height: 24px;
 }
 
 /* List */
@@ -77,4 +76,15 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 4rem;
   margin-top: 4rem;
+}
+
+.project-detail__list__title {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.project-detail__list__description {
+  font-size: 16px;
+  font-weight: 300;
 }
