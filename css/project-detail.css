@@ -44,15 +44,16 @@
 }
 
 .project-detail__intro__image-container {
+  max-width: 60vw;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .project-detail__intro__image {
-  width: 60%;
-  max-width: 80rem;
-  object-fit: cover;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 .project-detail__intro__title {
