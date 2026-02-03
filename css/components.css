@@ -159,6 +159,7 @@
   font-size: 20px;
   font-weight: 400;
   color: light-dark(var(--light-text-500), var(--dark-text-500));
+  text-decoration: none;
 }
 
 .project__image {

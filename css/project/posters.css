@@ -1,0 +1,15 @@
+.projects__header {
+  background: url(../../img/posters/DerrenBrown.png) no-repeat;
+  background-position: center 70%;
+  background-size: cover;
+}
+
+.project-detail__intro__image {
+  width: 60%;
+  max-width: 80rem;
+  object-fit: cover;
+}
+
+.project-detail__images__image--large {
+  height: 80vh;
+}
