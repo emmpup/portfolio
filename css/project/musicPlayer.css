@@ -1,0 +1,11 @@
+.project-detail__intro__image-container.dark-mode {
+  background: url(../../img/musicPlayer/backgroundDark.png) no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.project-detail__intro__image-container.light-mode {
+  background: url(../../img/musicPlayer/backgroundLight.png) no-repeat;
+  background-position: center;
+  background-size: cover;
+}

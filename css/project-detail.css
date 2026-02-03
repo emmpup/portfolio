@@ -2,9 +2,6 @@
 .projects__header {
   width: 100%;
   height: 70vh;
-  background: url(../img/posters/DerrenBrown.png) no-repeat;
-  background-position: center 70%;
-  background-size: cover;
   overflow: hidden;
 }
 
@@ -50,18 +47,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.project-detail__intro__image-container.dark-mode {
-  background: url(../img/musicPlayer/backgroundDark.png) no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-.project-detail__intro__image-container.light-mode {
-  background: url(../img/musicPlayer/backgroundLight.png) no-repeat;
-  background-position: center;
-  background-size: cover;
 }
 
 .project-detail__intro__image {
