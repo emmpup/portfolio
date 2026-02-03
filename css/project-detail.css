@@ -73,9 +73,18 @@
   font-weight: 300;
 }
 
+.project-detail__intro-subheading {
+  margin-top: 8rem;
+  margin-bottom: 3rem;
+  font-size: 40px;
+  font-weight: 600;
+  text-align: center;
+}
+
 /* List */
 
 .project-detail__list {
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 4rem;
