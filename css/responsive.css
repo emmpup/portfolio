@@ -49,7 +49,9 @@
   z-index: 999;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
 }
 
 .navbar__mobile-menu-content {
@@ -78,15 +80,21 @@
 }
 
 /* Hamburger animation when menu is open */
-.navbar__menu-checkbox:checked ~ .navbar__hamburger .navbar__hamburger-line:nth-child(1) {
+.navbar__menu-checkbox:checked
+  ~ .navbar__hamburger
+  .navbar__hamburger-line:nth-child(1) {
   transform: rotate(45deg) translate(6px, 6px);
 }
 
-.navbar__menu-checkbox:checked ~ .navbar__hamburger .navbar__hamburger-line:nth-child(2) {
+.navbar__menu-checkbox:checked
+  ~ .navbar__hamburger
+  .navbar__hamburger-line:nth-child(2) {
   opacity: 0;
 }
 
-.navbar__menu-checkbox:checked ~ .navbar__hamburger .navbar__hamburger-line:nth-child(3) {
+.navbar__menu-checkbox:checked
+  ~ .navbar__hamburger
+  .navbar__hamburger-line:nth-child(3) {
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
@@ -369,18 +377,6 @@
   /* Center text on desktop as well */
   .hero {
     text-align: center;
-  }
-
-  .projects {
-    text-align: center;
-  }
-
-  .project__text {
-    text-align: center;
-  }
-
-  .project__chips {
-    justify-content: center;
   }
 }
 
