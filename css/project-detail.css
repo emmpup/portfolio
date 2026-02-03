@@ -144,6 +144,20 @@
   object-fit: cover;
 }
 
-.project-detail__images__image--large {
-  height: 80vh;
+.project-detail__images-row {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.project-detail__images-row__container {
+  flex: 1 1 auto;
+}
+
+.project-detail__images-row__image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }

@@ -9,3 +9,7 @@
   max-width: 80rem;
   object-fit: cover;
 }
+
+.project-detail__images__image--large {
+  height: 80vh;
+}
