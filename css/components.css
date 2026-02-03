@@ -292,7 +292,7 @@
 }
 
 .footer__link:hover {
-  color: light-dark(var(--light-primary-500), var(--dark-primary-500));
+  color: light-dark(var(--light-text-700), var(--light-text-700));
 }
 
 .footer__text {
