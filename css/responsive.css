@@ -1,0 +1,519 @@
+/* ===========================================
+   RESPONSIVE STYLES
+   =========================================== */
+
+/* Breakpoints:
+   - Mobile: up to 768px
+   - Tablet: 768px - 1024px
+   - Desktop: 1024px+
+*/
+
+/* ===========================================
+   MOBILE HAMBURGER MENU STYLES (Base)
+   =========================================== */
+
+.navbar__menu-checkbox {
+  display: none;
+}
+
+.navbar__hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.navbar__hamburger-line {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: light-dark(var(--light-text-500), var(--dark-text-500));
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.navbar__mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: light-dark(
+    var(--light-background-500),
+    var(--dark-background-500)
+  );
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.navbar__mobile-menu-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 2rem;
+}
+
+.navbar__mobile-link {
+  font-size: 2rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: light-dark(var(--light-text-500), var(--dark-text-500));
+  transition: color 0.3s ease;
+}
+
+.navbar__mobile-link:active {
+  color: light-dark(var(--light-primary-500), var(--dark-primary-500));
+}
+
+.navbar__mobile-theme {
+  margin-top: 2rem;
+}
+
+/* Hamburger animation when menu is open */
+.navbar__menu-checkbox:checked ~ .navbar__hamburger .navbar__hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.navbar__menu-checkbox:checked ~ .navbar__hamburger .navbar__hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar__menu-checkbox:checked ~ .navbar__hamburger .navbar__hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Show mobile menu when checkbox is checked */
+.navbar__menu-checkbox:checked ~ .navbar__mobile-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ===========================================
+   MOBILE STYLES (up to 768px)
+   =========================================== */
+
+@media screen and (max-width: 768px) {
+  /* --- Navbar --- */
+  .navbar__desktop {
+    display: none;
+  }
+
+  .navbar__hamburger {
+    display: flex;
+  }
+
+  .navbar__mobile-menu {
+    display: block;
+  }
+
+  /* --- Hero --- */
+  .hero {
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .hero__name {
+    font-size: 3rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1.5rem;
+  }
+
+  .hero__button {
+    font-size: 1.5rem;
+    padding: 0.75rem 1.5rem;
+  }
+
+  /* --- Projects --- */
+  .projects {
+    text-align: center;
+  }
+
+  .projects__title {
+    font-size: 2rem;
+  }
+
+  .project {
+    grid-template-columns: 1fr;
+    height: auto;
+    gap: 1rem;
+  }
+
+  .project__image {
+    order: -1;
+    min-height: 250px;
+  }
+
+  .project__text {
+    order: 1;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .project__chips {
+    justify-content: center;
+  }
+
+  /* Active states instead of hover */
+  .project__link-text:active {
+    color: light-dark(var(--light-primary-500), var(--dark-secondary-500));
+  }
+
+  .project__image-link:active .project__image__status {
+    opacity: 1;
+    background-color: rgba(255, 251, 0, 0.7);
+    color: var(--light-text-500);
+  }
+
+  .project__image-link:active .project__image__image {
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+
+  .navbar__link:active {
+    color: light-dark(var(--light-primary-500), var(--dark-primary-500));
+  }
+
+  /* --- Footer --- */
+  .footer {
+    min-height: 400px;
+  }
+
+  /* Scale and transform the footer background for mobile */
+  .footer-bg {
+    transform: scaleY(0.7);
+    transform-origin: bottom;
+  }
+
+  .footer__content-container {
+    padding-top: 120px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+
+  .footer__text {
+    order: -1;
+    text-align: center;
+  }
+
+  .footer__text__tagline {
+    font-size: 1.5rem;
+  }
+
+  .footer__links {
+    padding-top: 0;
+    align-items: center;
+  }
+
+  .footer__links:first-of-type {
+    order: 1;
+  }
+
+  .footer__links:last-of-type {
+    order: 2;
+  }
+
+  /* Footer links side by side */
+  .footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 1.5rem;
+  }
+
+  .footer__text {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .footer__links:first-of-type {
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: start;
+  }
+
+  .footer__links:last-of-type {
+    grid-column: 2;
+    grid-row: 2;
+    justify-self: end;
+    align-items: flex-end;
+  }
+
+  .footer__copyright {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .footer__link:active {
+    color: light-dark(var(--light-primary-500), var(--dark-primary-500));
+  }
+}
+
+/* ===========================================
+   TABLET STYLES (768px - 1024px)
+   =========================================== */
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  /* --- Hero --- */
+  .hero {
+    text-align: center;
+  }
+
+  .hero__name {
+    font-size: 4.5rem;
+  }
+
+  .hero__subtitle {
+    font-size: 2rem;
+  }
+
+  /* --- Projects --- */
+  .projects {
+    text-align: center;
+  }
+
+  .projects__title {
+    font-size: 2.5rem;
+  }
+
+  .project {
+    grid-template-columns: 1fr;
+    height: auto;
+    gap: 1.5rem;
+  }
+
+  .project__image {
+    order: -1;
+    min-height: 350px;
+  }
+
+  .project__text {
+    order: 1;
+    text-align: center;
+  }
+
+  .project__chips {
+    justify-content: center;
+  }
+
+  /* --- Footer --- */
+  .footer {
+    min-height: 450px;
+  }
+
+  /* Scale footer background for tablet */
+  .footer-bg {
+    transform: scaleY(0.85);
+    transform-origin: bottom;
+  }
+
+  .footer__content-container {
+    padding-top: 180px;
+  }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 2rem;
+    padding: 0 2rem;
+  }
+
+  .footer__text {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    text-align: center;
+  }
+
+  .footer__text__tagline {
+    font-size: 1.75rem;
+  }
+
+  .footer__links {
+    padding-top: 0;
+  }
+
+  .footer__links:first-of-type {
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: start;
+  }
+
+  .footer__links:last-of-type {
+    grid-column: 2;
+    grid-row: 2;
+    justify-self: end;
+    align-items: flex-end;
+  }
+}
+
+/* ===========================================
+   DESKTOP STYLES (1024px+)
+   =========================================== */
+
+@media screen and (min-width: 1025px) {
+  /* Center text on desktop as well */
+  .hero {
+    text-align: center;
+  }
+
+  .projects {
+    text-align: center;
+  }
+
+  .project__text {
+    text-align: center;
+  }
+
+  .project__chips {
+    justify-content: center;
+  }
+}
+
+/* ===========================================
+   PROJECTS PAGE RESPONSIVE STYLES
+   =========================================== */
+
+@media screen and (max-width: 768px) {
+  /* Projects Page Header */
+  .projects__header {
+    margin-bottom: 3rem;
+  }
+
+  .header__title {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .header__filters {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 1rem;
+  }
+
+  .header__filter {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .header__filter:active {
+    background: light-dark(var(--light-primary-500), var(--dark-primary-500));
+    color: light-dark(var(--dark-text-500), var(--dark-text-500));
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .projects__header {
+    margin-bottom: 5rem;
+  }
+
+  .header__title {
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .header__filters {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* ===========================================
+   PROJECT DETAIL PAGE RESPONSIVE STYLES
+   =========================================== */
+
+@media screen and (max-width: 768px) {
+  /* Project Detail Header */
+  .projects__header {
+    height: 40vh;
+  }
+
+  .projects__rounded-title {
+    width: 200%;
+    left: -50%;
+  }
+
+  .projects__rounded-title .header__title {
+    font-size: 2rem;
+    padding: 2rem 0;
+    text-align: center;
+  }
+
+  /* Project Detail Intro */
+  .project-detail__intro {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .project-detail__intro__image-container {
+    max-width: 100%;
+  }
+
+  .project-detail__intro__content {
+    text-align: center;
+  }
+
+  .project-detail__intro__title {
+    font-size: 1.75rem;
+  }
+
+  .project-detail__intro__role {
+    font-size: 1.25rem;
+  }
+
+  .project-detail__intro__chips {
+    justify-content: center;
+  }
+
+  .project-detail {
+    margin: 0 1rem;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .projects__header {
+    height: 50vh;
+  }
+
+  .projects__rounded-title {
+    width: 175%;
+    left: -37.5%;
+  }
+
+  .projects__rounded-title .header__title {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .project-detail__intro {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .project-detail__intro__image-container {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .project-detail__intro__content {
+    text-align: center;
+  }
+
+  .project-detail__intro__chips {
+    justify-content: center;
+  }
+}
