@@ -8,6 +8,7 @@
   --light-primary-500: #0047ba;
   --light-primary-50: #e6edf8;
   --light-secondary-500: #6aaae4;
+  --light-secondary-300: #9bc6ed;
   --light-accent-500: #65baaf;
   --light-accent-300: #98d1c9;
 
@@ -16,6 +17,7 @@
   --dark-primary-500: #0047ba;
   --dark-primary-50: #e6edf8;
   --dark-secondary-500: #6aaae4;
+  --dark-secondary-300: #9bc6ed;
   --dark-accent-500: #65baaf;
   --dark-accent-300: #98d1c9;
 }

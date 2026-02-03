@@ -68,6 +68,31 @@
   opacity: 0.8;
 }
 
+.project-detail__intro__chips {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.project-detail__intro__chip {
+  border-radius: 99px;
+  font-size: 20px;
+  font-weight: 400;
+  background: light-dark(var(--light-secondary-500), var(--dark-secondary-500));
+  padding: 0.5rem 1rem;
+}
+
+.project-detail__intro__chip:hover {
+  background: light-dark(var(--light-secondary-300), var(--dark-secondary-300));
+}
+
+.project-detail__intro__link {
+  text-decoration: none;
+  color: light-dark(var(--light-text-500), var(--light-text-500));
+  font-size: 20px;
+  font-weight: 500;
+}
+
 .project-detail__intro__description {
   font-size: 16px;
   font-weight: 300;
