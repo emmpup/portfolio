@@ -20,6 +20,7 @@
   left: -25%;
   right: 0;
   position: relative;
+  z-index: 1;
 }
 
 .header__title {
