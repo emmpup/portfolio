@@ -451,16 +451,19 @@
 
   /* Project Detail Intro */
   .project-detail__intro {
+    display: flex;
     flex-direction: column;
     gap: 2rem;
   }
 
   .project-detail__intro__image-container {
     max-width: 100%;
+    order: -1;
   }
 
   .project-detail__intro__content {
     text-align: center;
+    order: 1;
   }
 
   .project-detail__intro__title {
@@ -477,6 +480,61 @@
 
   .project-detail {
     margin: 0 1rem;
+  }
+
+  /* Project Detail List - 2x2 Grid */
+  .project-detail__list {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 2rem;
+  }
+
+  .project-detail__list__role {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .project-detail__list__timeline {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .project-detail__list__team {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .project-detail__list__tools {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  /* Project Detail Images - Stack Vertically */
+  .project-detail__images-row {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .project-detail__images-row__container {
+    width: 100%;
+  }
+
+  .project-detail__images-row__image {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Wide images - make them larger on mobile with horizontal scroll */
+  .project-detail__images {
+    width: 100%;
+    overflow-x: auto;
+    gap: 2rem;
+  }
+
+  .project-detail__images__image--large {
+    min-width: 150%;
+    max-width: none;
+    height: auto;
   }
 }
 
