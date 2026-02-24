@@ -21,7 +21,12 @@
   opacity: 0.8;
 }
 
-.hero__button {
+.hero__button-container {
+  display: flex;
+  gap: 2rem;
+}
+
+.hero__button--primary {
   margin-top: 3rem;
   cursor: pointer;
   padding: 1rem 2rem;
@@ -29,6 +34,31 @@
   border-radius: 1rem;
   border: none;
   font-size: 34px;
+  color: light-dark(var(--light-text-500), var(--light-text-500));
+}
+
+.hero__button--secondary {
+  margin-top: 3rem;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  background: transparent;
+  text-decoration: none;
+  border-radius: 1rem;
+  border: 4px solid
+    light-dark(var(--light-secondary-500), var(--light-secondary-500));
+  font-size: 34px;
+  color: light-dark(var(--light-text-500), var(--dark-text-500));
+}
+
+.hero__button--primary:hover {
+  background: transparent;
+  border: 4px solid
+    light-dark(var(--light-secondary-500), var(--light-secondary-500));
+  color: light-dark(var(--light-text-500), var(--dark-text-500));
+}
+
+.hero__button--secondary:hover {
+  background: light-dark(var(--light-secondary-500), var(--dark-secondary-500));
   color: light-dark(var(--light-text-500), var(--light-text-500));
 }
 
