@@ -9,14 +9,6 @@
   height: 100vh;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(
-    160deg,
-    #5b9ec9 0%,
-    #3a7ca5 40%,
-    #2c6490 70%,
-    #1e4e73 100%
-  );
-  color: var(--light-text-500);
   /* gap: 1.5rem; */
 }
 
@@ -85,104 +77,13 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 45vh;
+  height: clamp(160px, 20vw, 420px);
   z-index: 1;
   pointer-events: none;
 }
 
-.hero__wave {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.hero__wave--1 path {
-  fill: rgba(58, 108, 143, 0.55);
-}
-.hero__wave--2 path {
-  fill: rgba(44, 90, 125, 0.65);
-}
-.hero__wave--3 path {
-  fill: rgba(36, 78, 112, 0.75);
-}
-.hero__wave--4 path {
-  fill: light-dark(rgba(220, 235, 248, 0.85), rgba(40, 58, 72, 0.85));
-}
-.hero__wave--5 path {
-  fill: light-dark(rgba(230, 240, 250, 0.93), rgba(38, 54, 68, 0.93));
-}
-.hero__wave--6 path {
-  fill: light-dark(#fffbfa, #232c33);
-}
-
-/* Wave 1 — slowest, most opaque */
-.wave-path--1 {
-  animation: morph-1 4.5s ease-in-out infinite alternate;
-}
-.wave-path--2 {
-  animation: morph-2 6s ease-in-out infinite alternate;
-  animation-delay: -1.5s;
-}
-.wave-path--3 {
-  animation: morph-3 5.2s ease-in-out infinite alternate;
-  animation-delay: -3s;
-}
-.wave-path--4 {
-  animation: morph-4 7s ease-in-out infinite alternate;
-  animation-delay: -0.8s;
-}
-.wave-path--5 {
-  animation: morph-5 4.8s ease-in-out infinite alternate;
-  animation-delay: -2.2s;
-}
-.wave-path--6 {
-  animation: morph-6 6.5s ease-in-out infinite alternate;
-  animation-delay: -4s;
-}
-
-@keyframes morph-1 {
-  to {
-    d: path(
-      "M0,100 C180,95  400,15  620,10  C800,5   980,100 1180,110 C1320,118 1400,102 1440,100 L1440,200 L0,200 Z"
-    );
-  }
-}
-@keyframes morph-2 {
-  to {
-    d: path(
-      "M0,110 C200,100 420,20  600,12  C780,5   920,90  1100,115 C1260,132 1390,112 1440,110 L1440,200 L0,200 Z"
-    );
-  }
-}
-@keyframes morph-3 {
-  to {
-    d: path(
-      "M0,120 C200,115 380,130 540,160 C660,183 820,20  1020,15 C1180,10  1340,100 1440,120 L1440,200 L0,200 Z"
-    );
-  }
-}
-@keyframes morph-4 {
-  to {
-    d: path(
-      "M0,132 C160,140 360,178 560,140 C720,108 900,20  1080,15 C1240,10  1380,120 1440,132 L1440,200 L0,200 Z"
-    );
-  }
-}
-@keyframes morph-5 {
-  to {
-    d: path(
-      "M0,148 C160,10  340,12  540,120 C700,185 860,185 1020,130 C1180,78  1340,145 1440,148 L1440,200 L0,200 Z"
-    );
-  }
-}
-@keyframes morph-6 {
-  to {
-    d: path(
-      "M0,163 C260,170 500,158 720,145 C940,132 1180,168 1440,163 L1440,200 L0,200 Z"
-    );
-  }
+.hero__waves-bottom {
+  margin-top: -17%;
 }
 
 /* ----------- Projects ----------- */
