@@ -3,3 +3,9 @@
   background-position: center 30%;
   background-size: cover;
 }
+
+.project-detail__intro__image-container {
+  background: url(../../img/safeSpace/introBackground.png) no-repeat;
+  background-position: center;
+  background-size: cover;
+}
