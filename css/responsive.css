@@ -382,18 +382,6 @@
   .hero {
     text-align: center;
   }
-
-  .projects {
-    text-align: center;
-  }
-
-  .project__text {
-    text-align: center;
-  }
-
-  .project__chips {
-    justify-content: center;
-  }
 }
 
 /* ===========================================
