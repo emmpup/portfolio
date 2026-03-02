@@ -4,6 +4,7 @@
   color-scheme: light dark;
 
   --light-background-500: #fffbfa;
+  --light-background-600: #e8e4e4;
   --light-text-500: #232c33;
   --light-text-700: #191f24;
   --light-primary-500: #0047ba;
@@ -13,7 +14,9 @@
   --light-accent-500: #65baaf;
   --light-accent-300: #98d1c9;
 
+  --dark-background-400: #4f565c;
   --dark-background-500: #232c33;
+  --dark-background-600: #20282e;
   --dark-text-500: #fffbfa;
   --dark-primary-500: #0047ba;
   --dark-primary-50: #e6edf8;
