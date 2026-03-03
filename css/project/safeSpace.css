@@ -191,6 +191,37 @@
   margin-bottom: 0.5rem;
 }
 
+.project__main__section__style-guide {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  background: light-dark(
+    var(--dark-background-400),
+    var(--dark-background-600)
+  );
+  border-radius: 16px;
+  padding: 2rem;
+}
+
+.project__main__section__sitemap,
+.project__main__section__userflow {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.project__main__section__sitemap__image,
+.project__main__section__userflow__image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-width: 60vw;
+}
+
 .project__main__section__wireframes {
   display: flex;
   flex-direction: column;
