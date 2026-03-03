@@ -265,3 +265,24 @@
   font-weight: 400;
   color: light-dark(var(--light-text-600), var(--dark-text-600));
 }
+
+.project__main__promotional-material__link {
+  text-align: end;
+  text-decoration: none;
+}
+
+.project__main__section__promotional-material {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.project__main__section__promotional-material__image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.project__main__section__promotional-material__image.double-width {
+  grid-column: span 2;
+}
