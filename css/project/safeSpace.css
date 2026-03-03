@@ -31,6 +31,8 @@
   flex-direction: column;
   justify-content: flex-start;
   gap: 1rem;
+  position: sticky;
+  top: 5rem;
 }
 
 .project__nav__link {
@@ -86,6 +88,47 @@
 .project__main__link:hover {
   color: light-dark(var(--light-primary-500), var(--dark-primary-500));
   cursor: pointer;
+}
+
+.project__main__section__screens-overview {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.project__main__section__screens-overview__screen {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  width: 40vw;
+}
+
+.project__main__section__screens-overview__screen.right-align {
+  align-self: flex-end;
+}
+
+.project__main__section__screens-overview__image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-width: 20vw;
+}
+
+.project__main__section__screens-overview__text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.project__main__section__screens-overview__header {
+  font-size: 34px;
+  font-weight: 500;
+}
+
+.project__main__section__screens-overview__description {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
 }
 
 .project__main__section__stats {
