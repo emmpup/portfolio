@@ -69,6 +69,7 @@
   text-align: center;
   font-size: 40px;
   font-weight: 600;
+  scroll-margin-top: 8rem;
 }
 
 .project__main__description {
