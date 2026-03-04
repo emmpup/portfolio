@@ -1,34 +1,39 @@
 // SafeSpace Project Wireframes Interactive Navigation
 
-(function() {
+(function () {
   // State management
   const state = {
-    screen: 'home',
-    fidelity: 'lofi',
-    fidelityOrder: ['lofi', 'midfi', 'hifi']
+    screen: "home",
+    fidelity: "lofi",
+    fidelityOrder: ["lofi", "midfi", "hifi"],
   };
 
   // DOM elements
-  const wireframesScreensContainer = document.getElementById('wireframes-screens');
-  const wireframesFidelityContainer = document.getElementById('wireframes-fidelity');
-  const imageElement = document.getElementById('wireframes-image');
-  const arrowPrev = document.getElementById('arrow-prev');
-  const arrowNext = document.getElementById('arrow-next');
+  const wireframesScreensContainer =
+    document.getElementById("wireframes-screens");
+  const wireframesFidelityContainer = document.getElementById(
+    "wireframes-fidelity",
+  );
+  const imageElement = document.getElementById("wireframes-image");
+  const arrowPrev = document.getElementById("arrow-prev");
+  const arrowNext = document.getElementById("arrow-next");
 
   /**
    * Get current theme (dark or light)
    * Checks both system preference and the toggle button state
    */
   function getCurrentTheme() {
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const systemPrefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)",
+    ).matches;
     const themeToggle = document.querySelector('[name="toggle-color-scheme"]');
     const isToggleChecked = themeToggle ? themeToggle.checked : false;
-    
+
     // If toggle is checked, use opposite of system preference
     // If toggle is not checked, use system preference
     const isDarkMode = isToggleChecked ? !systemPrefersDark : systemPrefersDark;
-    
-    return isDarkMode ? 'dark' : 'light';
+
+    return isDarkMode ? "dark" : "light";
   }
 
   /**
@@ -36,7 +41,7 @@
    */
   function getImagePath() {
     const theme = getCurrentTheme();
-    return `../img/safeSpace/${state.screen}-${state.fidelity}-${theme}.png`;
+    return `../img/safeSpace/wireframes/${state.screen}-${state.fidelity}-${theme}.png`;
   }
 
   /**
@@ -50,11 +55,11 @@
    * Update active state on screen chips
    */
   function updateActiveScreenChips() {
-    wireframesScreensContainer.querySelectorAll('button').forEach(button => {
+    wireframesScreensContainer.querySelectorAll("button").forEach((button) => {
       if (button.dataset.screen === state.screen) {
-        button.classList.add('active');
+        button.classList.add("active");
       } else {
-        button.classList.remove('active');
+        button.classList.remove("active");
       }
     });
   }
@@ -63,11 +68,11 @@
    * Update active state on fidelity chips
    */
   function updateActiveFidelityChips() {
-    wireframesFidelityContainer.querySelectorAll('button').forEach(button => {
+    wireframesFidelityContainer.querySelectorAll("button").forEach((button) => {
       if (button.dataset.fidelity === state.fidelity) {
-        button.classList.add('active');
+        button.classList.add("active");
       } else {
-        button.classList.remove('active');
+        button.classList.remove("active");
       }
     });
   }
@@ -85,7 +90,7 @@
    * Handle screen chip clicks
    */
   function handleScreenChipClick(event) {
-    const button = event.target.closest('button[data-screen]');
+    const button = event.target.closest("button[data-screen]");
     if (button) {
       state.screen = button.dataset.screen;
       updateUI();
@@ -96,7 +101,7 @@
    * Handle fidelity chip clicks
    */
   function handleFidelityChipClick(event) {
-    const button = event.target.closest('button[data-fidelity]');
+    const button = event.target.closest("button[data-fidelity]");
     if (button) {
       state.fidelity = button.dataset.fidelity;
       updateUI();
@@ -109,7 +114,8 @@
    */
   function handlePrevArrow() {
     const currentIndex = state.fidelityOrder.indexOf(state.fidelity);
-    const newIndex = currentIndex === 0 ? state.fidelityOrder.length - 1 : currentIndex - 1;
+    const newIndex =
+      currentIndex === 0 ? state.fidelityOrder.length - 1 : currentIndex - 1;
     state.fidelity = state.fidelityOrder[newIndex];
     updateUI();
   }
@@ -126,24 +132,27 @@
   }
 
   // Event listeners
-  wireframesScreensContainer.addEventListener('click', handleScreenChipClick);
-  wireframesFidelityContainer.addEventListener('click', handleFidelityChipClick);
-  arrowPrev.addEventListener('click', handlePrevArrow);
-  arrowNext.addEventListener('click', handleNextArrow);
+  wireframesScreensContainer.addEventListener("click", handleScreenChipClick);
+  wireframesFidelityContainer.addEventListener(
+    "click",
+    handleFidelityChipClick,
+  );
+  arrowPrev.addEventListener("click", handlePrevArrow);
+  arrowNext.addEventListener("click", handleNextArrow);
 
   // Listen for color scheme changes from system preferences
-  const themeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-  themeMediaQuery.addEventListener('change', updateImage);
+  const themeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+  themeMediaQuery.addEventListener("change", updateImage);
 
   // Listen for theme toggle button clicks
-  const themeToggleDesktop = document.getElementById('theme-toggle');
-  const themeToggleMobile = document.getElementById('theme-toggle-mobile');
-  
+  const themeToggleDesktop = document.getElementById("theme-toggle");
+  const themeToggleMobile = document.getElementById("theme-toggle-mobile");
+
   if (themeToggleDesktop) {
-    themeToggleDesktop.addEventListener('change', updateImage);
+    themeToggleDesktop.addEventListener("change", updateImage);
   }
   if (themeToggleMobile) {
-    themeToggleMobile.addEventListener('change', updateImage);
+    themeToggleMobile.addEventListener("change", updateImage);
   }
 
   // Initialize UI
