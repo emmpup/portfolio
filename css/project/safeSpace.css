@@ -296,6 +296,16 @@
   align-self: flex-end;
 }
 
+.project__main__section__code__images {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.project__main__section__code__icon {
+  max-width: 80px;
+}
+
 .project__main__section__code__text {
   display: flex;
   flex-direction: column;
