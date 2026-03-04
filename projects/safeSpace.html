@@ -555,68 +555,58 @@
               >
 
               <div class="project__main__section__wireframes">
-                <div class="project__main__section__wireframes__chips">
-                  <span class="project-mainsection__wireframes__chip"
-                    ><a
-                      class="project-detail__intro__link"
-                      href="https://comp3170-project-38zw.vercel.app/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >Home</a
-                    ></span
+                <div
+                  class="project__main__section__wireframes__chips"
+                  id="wireframes-screens"
+                >
+                  <button
+                    class="project-mainsection__wireframes__chip active"
+                    data-screen="home"
                   >
-                  <span class="project-mainsection__wireframes__chip"
-                    ><a
-                      class="project-detail__intro__link"
-                      href="https://comp3170-project-38zw.vercel.app/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >Recording</a
-                    ></span
+                    Home
+                  </button>
+                  <button
+                    class="project-mainsection__wireframes__chip"
+                    data-screen="recording"
                   >
-                  <span class="project-mainsection__wireframes__chip"
-                    ><a
-                      class="project-detail__intro__link"
-                      href="https://comp3170-project-38zw.vercel.app/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >Report</a
-                    ></span
+                    Recording
+                  </button>
+                  <button
+                    class="project-mainsection__wireframes__chip"
+                    data-screen="report"
                   >
+                    Report
+                  </button>
                 </div>
                 <div class="project__main__section__wireframes__screens">
-                  <div class="project__main__section__wireframes__states">
-                    <span class="project-mainsection__wireframes__chip"
-                      ><a
-                        class="project-detail__intro__link"
-                        href="https://comp3170-project-38zw.vercel.app/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >Low Fidelity</a
-                      ></span
+                  <div
+                    class="project__main__section__wireframes__states"
+                    id="wireframes-fidelity"
+                  >
+                    <button
+                      class="project-mainsection__wireframes__chip active"
+                      data-fidelity="lofi"
                     >
-                    <span class="project-mainsection__wireframes__chip"
-                      ><a
-                        class="project-detail__intro__link"
-                        href="https://comp3170-project-38zw.vercel.app/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >Mid Fidelity</a
-                      ></span
+                      Low Fidelity
+                    </button>
+                    <button
+                      class="project-mainsection__wireframes__chip"
+                      data-fidelity="midfi"
                     >
-                    <span class="project-mainsection__wireframes__chip"
-                      ><a
-                        class="project-detail__intro__link"
-                        href="https://comp3170-project-38zw.vercel.app/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >High Fidelity</a
-                      ></span
+                      Mid Fidelity
+                    </button>
+                    <button
+                      class="project-mainsection__wireframes__chip"
+                      data-fidelity="hifi"
                     >
+                      High Fidelity
+                    </button>
                   </div>
                   <div class="project__main__section__wireframes__slides">
-                    <a
+                    <button
                       class="project__main__section__wireframes__slides__arrow"
+                      id="arrow-prev"
+                      aria-label="Previous fidelity level"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -638,18 +628,21 @@
                           fill-opacity="0.8"
                         />
                       </svg>
-                    </a>
+                    </button>
                     <div
                       class="project__main__section__wireframes__slides__images"
                     >
                       <img
                         class="project__main__section__wireframes__image"
-                        src="https://placehold.co/1179x2556"
+                        id="wireframes-image"
+                        src="../img/safeSpace/home-lofi-light.png"
                         alt="SafeSpace Wireframes"
                       />
                     </div>
-                    <a
+                    <button
                       class="project__main__section__wireframes__slides__arrow"
+                      id="arrow-next"
+                      aria-label="Next fidelity level"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -671,7 +664,7 @@
                           fill-opacity="0.8"
                         />
                       </svg>
-                    </a>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -1023,5 +1016,6 @@
 
     <script src="../js/main.js"></script>
     <script src="../js/project.js"></script>
+    <script src="../js/safeSpace.js"></script>
   </body>
 </html>

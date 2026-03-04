@@ -240,12 +240,29 @@
   border-radius: 99px;
   font-size: 20px;
   font-weight: 400;
+  border: none;
   background: light-dark(var(--light-secondary-500), var(--dark-secondary-500));
   padding: 0.5rem 1rem;
 }
 
 .project-mainsection__wireframes__chip:hover {
   background: light-dark(var(--light-secondary-300), var(--dark-secondary-300));
+}
+
+.project-mainsection__wireframes__chip.active {
+  background: light-dark(var(--light-primary-500), var(--dark-primary-500));
+  color: light-dark(var(--dark-text-500), var(--dark-text-500));
+}
+
+.project__main__section__wireframes__slides__arrow {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
 }
 
 .project__main__section__wireframes__screens {
