@@ -1,0 +1,1020 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/project-detail.css" />
+    <link rel="stylesheet" href="../css/project/safeSpace.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+
+    <title>SafeSpace</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="../index.html">
+        <svg
+          class="navbar__logo"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 311.19 121.91"
+        >
+          <path
+            class="cls-1"
+            d="M309.12,27.37c-1.38-6.15-3.48-11.25-6.29-15.31-2.81-4.06-6.35-7.08-10.62-9.07-4.27-1.99-9.28-2.99-15.05-2.99-21.53,0-34.18,13.61-37.96,40.84-.45-6.92-1.48-12.94-3.07-18.06-1.59-5.12-3.78-9.37-6.55-12.74-2.78-3.37-6.17-5.89-10.17-7.55-4-1.66-8.64-2.49-13.92-2.49-20.97,0-33.52,13-37.65,39.01V3.14h-41.58v66.53c0,25.29-41.57,21.19-65.07,21.19-6.4,0-11.49-1.83-15.28-5.48s-6.09-8.87-6.89-15.65h78.91c.17-1.4.3-2.85.37-4.35s.11-2.99.11-4.46c0-9.12-1.43-17.42-4.27-24.91-2.85-7.48-6.85-13.89-12.01-19.24-5.16-5.35-11.36-9.48-18.61-12.4-7.25-2.92-15.28-4.38-24.09-4.38-5.91,0-11.47.66-16.7,1.99-5.23,1.33-10.04,3.24-14.44,5.74-4.41,2.5-8.35,5.54-11.85,9.12-3.5,3.58-6.46,7.63-8.89,12.14s-4.29,9.45-5.58,14.81c-1.29,5.37-1.94,11.07-1.94,17.12s.66,11.75,1.97,17.12c1.31,5.37,3.2,10.3,5.66,14.81,2.46,4.51,5.46,8.56,8.99,12.17,3.53,3.6,7.52,6.65,11.95,9.15s9.3,4.41,14.58,5.74c5.28,1.33,10.89,1.99,16.83,1.99h56.87c22.57,0,50.99-17.43,50.99-52.23v-9.69c0-16.32,5.15-24.49,15.47-24.49,4.96,0,8.64,1.97,11.04,5.92,2.4,3.95,3.59,10,3.59,18.14v59.2h41.58v-58.78c0-16.32,5.15-24.49,15.47-24.49,4.96,0,8.64,1.97,11.04,5.92,2.4,3.95,3.59,10,3.59,18.14v59.2h41.58V49.08c0-8.32-.69-15.56-2.07-21.71ZM45.8,35.02c3.41-3.22,8.03-4.82,13.87-4.82s10.23,1.57,13.58,4.69c3.36,3.13,5.61,7.93,6.76,14.39h-40.74c.94-6.29,3.12-11.04,6.53-14.26Z"
+          />
+        </svg>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="navbar__desktop">
+        <a href="../projects.html" class="navbar__link">Projects</a>
+        <a href="#" class="navbar__link">About Me</a>
+        <a href="mailto:emilymisola@gmail.com" class="navbar__link">Contact</a>
+
+        <input
+          type="checkbox"
+          id="theme-toggle"
+          name="toggle-color-scheme"
+          class="navbar__checkbox"
+        />
+        <label for="theme-toggle" class="navbar__label">
+          <img class="navbar__icon" src="../img/navbar/dark.svg" alt=""
+        /></label>
+      </div>
+
+      <!-- Mobile Hamburger Menu -->
+      <input type="checkbox" id="nav-toggle" class="navbar__menu-checkbox" />
+      <label for="nav-toggle" class="navbar__hamburger">
+        <span class="navbar__hamburger-line"></span>
+        <span class="navbar__hamburger-line"></span>
+        <span class="navbar__hamburger-line"></span>
+      </label>
+
+      <!-- Mobile Menu Overlay -->
+      <div class="navbar__mobile-menu">
+        <div class="navbar__mobile-menu-content">
+          <a href="../projects.html" class="navbar__mobile-link">Projects</a>
+          <a href="#" class="navbar__mobile-link">About Me</a>
+          <a href="#" class="navbar__mobile-link">Contact</a>
+
+          <div class="navbar__mobile-theme">
+            <input
+              type="checkbox"
+              id="theme-toggle-mobile"
+              name="toggle-color-scheme"
+              class="navbar__checkbox"
+            />
+            <label for="theme-toggle-mobile" class="navbar__label">
+              <img
+                class="navbar__icon"
+                src="../img/navbar/dark.svg"
+                alt="Toggle theme"
+            /></label>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <div class="projects__header">
+        <div class="projects__rounded-title">
+          <h1 class="header__title">SafeSpace</h1>
+        </div>
+      </div>
+
+      <div class="project-detail">
+        <div class="project-detail__intro">
+          <div class="project-detail__intro__image-container">
+            <img
+              class="project-detail__intro__image"
+              src="../img/safeSpace/introMockup.png"
+              alt="SafeSpace Mockup"
+            />
+          </div>
+          <div class="project-detail__intro__content">
+            <h2 class="project-detail__intro__title">SafeSpace</h2>
+            <h3 class="project-detail__intro__role">Full-Stack Developer</h3>
+            <p class="project-detail__intro__description">
+              SafeSpace is an app designed to help women and gender-diverse
+              people in trades foster safe, inclusive work environments by
+              leveraging AI to summarize anonymous worker reports and generate
+              practical solutions to improve the work site.
+            </p>
+            <div class="project-detail__intro__chips">
+              <span class="project-detail__intro__chip"
+                ><a
+                  class="project-detail__intro__link"
+                  href="https://www.figma.com/proto/nbuehJVeWMEkT7FgX9Z98e/UX-UI-MOCKUPS?node-id=1510-2777&t=KlOfNyny5otrC4Jw-1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Prototype</a
+                ></span
+              >
+              <span class="project-detail__intro__chip"
+                ><a
+                  class="project-detail__intro__link"
+                  href="https://github.com/Crite-Spranberries/SafeSpace"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >GitHub</a
+                ></span
+              >
+              <span class="project-detail__intro__chip"
+                ><a
+                  class="project-detail__intro__link"
+                  href="https://safe-space.figma.site/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Website</a
+                ></span
+              >
+              <span class="project-detail__intro__chip"
+                ><a
+                  class="project-detail__intro__link"
+                  href="https://www.instagram.com/safespace__app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Instagram</a
+                ></span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="project-detail__list">
+          <div class="project-detail__list__role">
+            <h3 class="project-detail__list__title">Role</h3>
+            <p class="project-detail__list__description">
+              Full-Stack Developer
+            </p>
+          </div>
+          <div class="project-detail__list__timeline">
+            <h3 class="project-detail__list__title">Timeline</h3>
+            <p class="project-detail__list__description">3 months</p>
+          </div>
+          <div class="project-detail__list__team">
+            <h3 class="project-detail__list__title">Team</h3>
+            <p class="project-detail__list__description">8 people</p>
+          </div>
+          <div class="project-detail__list__tools">
+            <h3 class="project-detail__list__title">Tools</h3>
+            <p class="project-detail__list__description">
+              Figma, React Native, Illustrator, Photoshop, Premiere Pro
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-content">
+        <div class="project__nav-container">
+          <nav class="project__nav">
+            <a href="#overview" class="project__nav__link">Overview</a>
+            <a href="#competitive-analysis" class="project__nav__link"
+              >Competitive Analysis</a
+            >
+            <a href="#user-research" class="project__nav__link"
+              >User Research</a
+            >
+            <a href="#personas" class="project__nav__link">Personas</a>
+            <a href="#style-guide" class="project__nav__link">Style Guide</a>
+            <a href="#sitemap" class="project__nav__link">Sitemap & Userflow</a>
+            <a href="#wireframes" class="project__nav__link">Wireframes</a>
+            <a href="#coding" class="project__nav__link">Coding</a>
+            <a href="#takeaways" class="project__nav__link">Takeaways</a>
+            <a href="#promotional-materials" class="project__nav__link"
+              >Promotional Materials</a
+            >
+          </nav>
+        </div>
+        <div class="project__main">
+          <div class="project__main__section">
+            <div class="project__main__section__text">
+              <h2 id="overview" class="project__main__header">Overview</h2>
+              <p class="project__main__description">
+                SafeSpace is a secure mobile platform built with React Native
+                and Expo Go to empower women and gender-diverse individuals in
+                the trades. The app enables users to document workplace
+                incidents through manual entries, voice recordings, or a
+                specialized WatsonX-powered chatbot named Safi, ensuring privacy
+                via passcode protected reports. Utilizing GPT-4o mini, SafeSpace
+                automatically translates recordings and transforms raw data into
+                anonymous summaries and actionable site solutions. By allowing
+                users to share reports to a global public feed, the app fosters
+                industry-wide transparency while providing site leads with the
+                practical tools needed to build safer, more inclusive work
+                environments.
+              </p>
+            </div>
+            <div class="project__main__section__screens-overview">
+              <div class="project__main__section__screens-overview__screen">
+                <img
+                  class="project__main__section__screens-overview__image"
+                  src="../img/safeSpace/overview1.png"
+                  alt="SafeSpace Overview Mockup"
+                />
+                <div class="project__main__section__screens-overview__text">
+                  <h3 class="project__main__section__screens-overview__header">
+                    Reports
+                  </h3>
+                  <p
+                    class="project__main__section__screens-overview__description"
+                  >
+                    Each pin on the map represents an individual, anonymized
+                    report tagged by GPT-4o mini to highlight specific workplace
+                    issues at a glance. Selecting a pin reveals a concise
+                    summary of the incident alongside passcode-protected,
+                    AI-generated solutions to improve site safety and equity.
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="project__main__section__screens-overview__screen right-align"
+              >
+                <img
+                  class="project__main__section__screens-overview__image"
+                  src="../img/safeSpace/overview2.png"
+                  alt="SafeSpace Overview Mockup 2"
+                />
+                <div class="project__main__section__screens-overview__text">
+                  <h3 class="project__main__section__screens-overview__header">
+                    Record
+                  </h3>
+                  <p
+                    class="project__main__section__screens-overview__description"
+                  >
+                    Users can instantly capture incidents via voice recording,
+                    which GPT-4o mini then auto-translates and converts into an
+                    accurate transcript. This ensures critical details are
+                    documented safely and accurately in the heat of the moment.
+                  </p>
+                </div>
+              </div>
+
+              <div class="project__main__section__screens-overview__screen">
+                <img
+                  class="project__main__section__screens-overview__image"
+                  src="../img/safeSpace/overview3.png"
+                  alt="SafeSpace Overview Mockup 3"
+                />
+                <div class="project__main__section__screens-overview__text">
+                  <h3 class="project__main__section__screens-overview__header">
+                    Safi
+                  </h3>
+                  <p
+                    class="project__main__section__screens-overview__description"
+                  >
+                    Safi is an interactive WatsonX-powered chatbot that guides
+                    users through the reporting process by asking clarifying
+                    questions to capture incident details accurately. It works
+                    alongside GPT-4o mini to transform these conversations into
+                    secure, passcode-protected summaries with actionable site
+                    solutions.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="project__main__section">
+            <div class="project__main__section__text">
+              <h2 id="competitive-analysis" class="project__main__header">
+                Competitive Analysis
+              </h2>
+              <p class="project__main__description">
+                An analysis of eight key competitors, including specialized
+                platforms like ACCESS, WomanACT, and WorkerSafety Pro, reveals
+                that while they excel at providing comprehensive educational
+                resources and safety training, they often suffer from dense,
+                overwhelming interfaces and limited real-time interaction. This
+                common lack of streamlined navigation and personalized feedback
+                highlights a critical market gap that an AI-driven solution can
+                fill by instantly converting anonymous reports into clear,
+                actionable site improvements. By prioritizing a simplified user
+                experience and replacing slow manual processes with immediate
+                summaries, the proposed app addresses the administrative delays
+                and user isolation prevalent in current industry offerings.
+              </p>
+              <a
+                class="project__main__link"
+                href="https://docs.google.com/spreadsheets/d/1_J47Muge1xCnm4Ujs0wuOoS6qQaTKTXOZp-9KDOm3TY/edit?gid=0#gid=0
+"
+                target="_blank"
+                >More Info →</a
+              >
+            </div>
+          </div>
+
+          <div class="project__main__section">
+            <div class="project__main__section__text">
+              <h2 id="user-research" class="project__main__header">
+                User Research
+              </h2>
+              <p class="project__main__description">
+                To better understand the systemic barriers facing women and
+                gender-diverse individuals in the trades, the team surveyed 8
+                people and had in depth interviews with 4 people. This research
+                identified a critical need for secure, anonymous communication
+                channels, directly informing the development of SafeSpace as a
+                tool to bridge the gap between worker isolation and actionable
+                site improvements.
+              </p>
+              <a
+                class="project__main__link"
+                href="https://docs.google.com/document/d/1mx6XHCh0cYgWlKc9DpC389yEnnmHYKS-SKioAcNQ-kg/edit?tab=t.0"
+                target="_blank"
+                >More Info →</a
+              >
+            </div>
+
+            <div class="project__main__section__stats">
+              <div class="project__main__section__stat">
+                <h3 class="project__main__section__stat__number">66.7%</h3>
+                <p class="project__main__section__stat__description">
+                  feel isolated due to their gender
+                </p>
+              </div>
+
+              <div class="project__main__section__stat">
+                <h3 class="project__main__section__stat__number">62.5%</h3>
+                <p class="project__main__section__stat__description">
+                  want to be able to report harassment and unsafe work
+                  conditions in an app
+                </p>
+              </div>
+
+              <div class="project__main__section__stat">
+                <h3 class="project__main__section__stat__number">
+                  The majority
+                </h3>
+                <p class="project__main__section__stat__description">
+                  value anonymity and want to protect themselves while also
+                  voicing concerns
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="project__main__section">
+            <div class="project__main__section__text">
+              <h2 id="personas" class="project__main__header">Personas</h2>
+              <p class="project__main__description">
+                The team developed two distinct personas, Noah and Aiyana, to
+                encapsulate the specific safety requirements and lived
+                experiences of gender-diverse individuals and women in the
+                trades. These profiles emphasize a shared, critical need for
+                high-security anonymity to combat industry frustrations such as
+                workplace aggression, social isolation, and the fear of
+                professional retaliation.
+              </p>
+              <a
+                class="project__main__link"
+                href="../img/safeSpace/SafeSpacePersonas.pdf"
+                target="_blank"
+                >More Info →</a
+              >
+
+              <div class="project__main__section__personas">
+                <div class="project__main__section__persona-section">
+                  <h3 class="project__main__section__persona__title">
+                    Primary Persona
+                  </h3>
+                  <div class="project__main__section__persona">
+                    <img
+                      class="project__main__section__persona__image"
+                      src="../img/safeSpace/persona1.png"
+                      alt="Noah Persona Image"
+                    />
+                    <p class="project__main__section__persona__description">
+                      Name: Noah <br />
+                      Age: 23 <br />
+                      Gender: Non-Binary (They/Them) <br />
+                      Location: Lower-mainland, BC <br />
+                      Occupation: Electrician <br />
+                      Martial Status: Single
+                    </p>
+
+                    <div>
+                      <h4 class="project__main__section__persona__heading">
+                        Goals and Motivations
+                      </h4>
+                      <ul>
+                        <li>
+                          Being able to freely express themselves in a judgment
+                          free work environment
+                        </li>
+                        <li>
+                          Values personal privacy and anonymity when reporting
+                          harassment and safety incidents
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div>
+                      <h4 class="project__main__section__persona__heading">
+                        Pain Points and Frustrations
+                      </h4>
+                      <ul>
+                        <li>Stress from workplace aggression</li>
+                        <li>Risk of harassment or discrimination</li>
+                        <li>Fear of being outed</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="project__main__section__persona-section">
+                  <h3 class="project__main__section__persona__title">
+                    Secondary Persona
+                  </h3>
+                  <div class="project__main__section__persona">
+                    <img
+                      class="project__main__section__persona__image"
+                      src="../img/safeSpace/persona2.png"
+                      alt="Aiyana Persona Image"
+                    />
+                    <p class="project__main__section__persona__description">
+                      Name: Aiyana Tarbell <br />
+                      Age: 34 <br />
+                      Gender: Female (She/Her) <br />
+                      Location: Lower-mainland, BC <br />
+                      Occupation: Longshore worker <br />
+                      Martial Status: Married, one child
+                    </p>
+
+                    <div>
+                      <h4 class="project__main__section__persona__heading">
+                        Goals and Motivations
+                      </h4>
+                      <ul>
+                        <li>
+                          Being able to freely express themselves in a judgment
+                          free work environment
+                        </li>
+                        <li>
+                          Values personal privacy and anonymity when reporting
+                          harassment and safety incidents
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div>
+                      <h4 class="project__main__section__persona__heading">
+                        Pain Points and Frustrations
+                      </h4>
+                      <ul>
+                        <li>Stress from workplace aggression</li>
+                        <li>Risk of harassment or discrimination</li>
+                        <li>Fear of being outed</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="project__main__section">
+            <div class="project__main__section__text">
+              <h2 id="style-guide" class="project__main__header">
+                Style Guide
+              </h2>
+              <p class="project__main__description">
+                The visual direction for SafeSpace employs a high-contrast
+                palette of violet, orange, and yellow to ensure maximum
+                readability in various job site lighting conditions. Utilizing
+                the clean, sans-serif Satoshi typeface, the interface maintains
+                a professional yet accessible tone that prioritizes clarity
+                across all text hierarchies. This aesthetic is anchored by a
+                symbolic logo featuring a handshake integrated into a hard hat,
+                reinforcing the app’s mission of fostering solidarity and safety
+                within the trades.
+              </p>
+
+              <div class="project__main__section__style-guide">
+                <img
+                  class="project__main__section__style-guide__image"
+                  src="../img/safeSpace/styleGuide.svg"
+                  alt="SafeSpace Style Guide"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="project__main__section">
+            <div class="project__main__section__text">
+              <h2 id="sitemap" class="project__main__header">
+                Sitemap & Userflow
+              </h2>
+
+              <div class="project__main__section__sitemap">
+                <h3 class="project__main__section__sitemap__header">Sitemap</h3>
+                <img
+                  class="project__main__section__sitemap__image"
+                  src="../img/safeSpace/siteMap.png"
+                  alt="SafeSpace Sitemap"
+                />
+              </div>
+
+              <div class="project__main__section__userflow">
+                <h3 class="project__main__section__userflow__header">
+                  Userflow
+                </h3>
+                <img
+                  class="project__main__section__userflow__image"
+                  src="../img/safeSpace/userFlow.png"
+                  alt="SafeSpace Userflow"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="project__main__section">
+            <div class="project__main__section__text">
+              <h2 id="wireframes" class="project__main__header">Wireframes</h2>
+              <p class="project__main__description">
+                This design progression showcases the evolution of three core
+                screens: Home, Recording, and Individual Report Details. From
+                initial wireframes to implemented, each iteration refines how
+                users interact with creating a "safety-first" aesthetic that
+                builds trust for women and gender-diverse professionals.
+              </p>
+              <a
+                class="project__main__link"
+                href="https://www.figma.com/design/kVaZQMhqoo7F09wT31fyDI/SafeSpace-Design-File?node-id=1112-396&p=f&t=ePpQpQAh7YCs8xfY-0"
+                target="_blank"
+                >All Screens →</a
+              >
+
+              <div class="project__main__section__wireframes">
+                <div
+                  class="project__main__section__wireframes__chips"
+                  id="wireframes-screens"
+                >
+                  <button
+                    class="project-mainsection__wireframes__chip active"
+                    data-screen="home"
+                  >
+                    Home
+                  </button>
+                  <button
+                    class="project-mainsection__wireframes__chip"
+                    data-screen="recording"
+                  >
+                    Recording
+                  </button>
+                  <button
+                    class="project-mainsection__wireframes__chip"
+                    data-screen="report"
+                  >
+                    Report
+                  </button>
+                </div>
+                <div class="project__main__section__wireframes__screens">
+                  <div
+                    class="project__main__section__wireframes__states"
+                    id="wireframes-fidelity"
+                  >
+                    <button
+                      class="project-mainsection__wireframes__chip active"
+                      data-fidelity="lofi"
+                    >
+                      Low Fidelity
+                    </button>
+                    <button
+                      class="project-mainsection__wireframes__chip"
+                      data-fidelity="midfi"
+                    >
+                      Mid Fidelity
+                    </button>
+                    <button
+                      class="project-mainsection__wireframes__chip"
+                      data-fidelity="hifi"
+                    >
+                      High Fidelity
+                    </button>
+                  </div>
+                  <div class="project__main__section__wireframes__slides">
+                    <button
+                      class="project__main__section__wireframes__slides__arrow"
+                      id="arrow-prev"
+                      aria-label="Previous fidelity level"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="74"
+                        height="74"
+                        viewBox="0 0 74 74"
+                        fill="none"
+                      >
+                        <circle
+                          cx="37"
+                          cy="37"
+                          r="37"
+                          transform="rotate(-90 37 37)"
+                          fill="#65BAAF"
+                        />
+                        <path
+                          d="M57 40C58.6569 40 60 38.6569 60 37C60 35.3431 58.6569 34 57 34L57 37L57 40ZM13.8787 34.8787C12.7071 36.0503 12.7071 37.9498 13.8787 39.1213L32.9706 58.2132C34.1421 59.3848 36.0416 59.3848 37.2132 58.2132C38.3848 57.0416 38.3848 55.1421 37.2132 53.9706L20.2426 37L37.2132 20.0294C38.3848 18.8579 38.3848 16.9584 37.2132 15.7868C36.0416 14.6152 34.1421 14.6152 32.9706 15.7868L13.8787 34.8787ZM57 37L57 34L16 34L16 37L16 40L57 40L57 37Z"
+                          fill="#232C33"
+                          fill-opacity="0.8"
+                        />
+                      </svg>
+                    </button>
+                    <div
+                      class="project__main__section__wireframes__slides__images"
+                    >
+                      <img
+                        class="project__main__section__wireframes__image"
+                        id="wireframes-image"
+                        src="../img/safeSpace/wireframes/home-lofi-light.png"
+                        alt="SafeSpace Wireframes"
+                      />
+                    </div>
+                    <button
+                      class="project__main__section__wireframes__slides__arrow"
+                      id="arrow-next"
+                      aria-label="Next fidelity level"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="74"
+                        height="74"
+                        viewBox="0 0 74 74"
+                        fill="none"
+                      >
+                        <circle
+                          cx="37"
+                          cy="37"
+                          r="37"
+                          transform="rotate(90 37 37)"
+                          fill="#65BAAF"
+                        />
+                        <path
+                          d="M17 34C15.3431 34 14 35.3431 14 37C14 38.6569 15.3431 40 17 40L17 37L17 34ZM60.1213 39.1213C61.2929 37.9498 61.2929 36.0503 60.1213 34.8787L41.0294 15.7868C39.8579 14.6152 37.9584 14.6152 36.7868 15.7868C35.6152 16.9584 35.6152 18.8579 36.7868 20.0294L53.7574 37L36.7868 53.9706C35.6152 55.1421 35.6152 57.0416 36.7868 58.2132C37.9584 59.3848 39.8579 59.3848 41.0294 58.2132L60.1213 39.1213ZM17 37L17 40L58 40L58 37L58 34L17 34L17 37Z"
+                          fill="#232C33"
+                          fill-opacity="0.8"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="project__main__section">
+            <div class="project__main__section__text">
+              <h2 id="coding" class="project__main__header">Coding</h2>
+              <p class="project__main__description">
+                Throughout the development of SafeSpace, there were many
+                challenges, including choosing React Native and Expo Go, the
+                implementation of a customized navbar, and the integration of
+                Safi. Using React Native and Expo Go allowed for efficient
+                cross-platform development with a single codebase, ensuring the
+                app is accessible on various devices. The navbar was customized
+                to include a prominent, recording button for quick access across
+                the app, while Safi utilizes WatsonX to guide users through the
+                reporting process.
+              </p>
+              <a
+                class="project__main__link"
+                href="https://github.com/Crite-Spranberries/SafeSpace"
+                target="_blank"
+                >GitHub →</a
+              >
+            </div>
+            <div class="project__main__section__code">
+              <div class="project__main__section__code__description">
+                <div class="project__main__section__code__images">
+                  <img
+                    class="project__main__section__code__icon"
+                    src="../img/safeSpace/reactNativeIcon.svg"
+                    alt="React Native Icon"
+                  />
+                  <img
+                    class="project__main__section__code__icon"
+                    src="../img/safeSpace/expoIcon.svg"
+                    alt="Expo Go Icon"
+                  />
+                </div>
+                <div class="project__main__section__code__text">
+                  <h3 class="project__main__section__code__title">
+                    Why React Native and Expo Go?
+                  </h3>
+
+                  <div class="project__main__section__code__pros">
+                    <h4 class="project__main__section__code__pros-title">
+                      Pros
+                    </h4>
+                    <ul>
+                      <li>
+                        Access mobile-specific feature easily
+                        <ul>
+                          <li>Ex. Recording</li>
+                        </ul>
+                      </li>
+                      <li>Lots of resources to help with learning</li>
+                      <li>Expo lets testing be done on mobile devices</li>
+                    </ul>
+                  </div>
+
+                  <div class="project__main__section__code__cons">
+                    <h4 class="project__main__section__code__cons-title">
+                      Cons
+                    </h4>
+                    <ul>
+                      <li>
+                        Not taught, so the team will need to learn
+                        <ul>
+                          <li>However, the team has experience with React</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="project__main__section__code__description right-align"
+              >
+                <div class="project__main__section__code__images">
+                  <img
+                    class="project__main__section__code__navbar-image"
+                    src="../img/safeSpace/navbar.png"
+                    alt="Navbar"
+                  />
+                  <img
+                    class="project__main__section__code__navbar-image"
+                    src="../img/safeSpace/navbarCode.jpg"
+                    alt="Navbar Code"
+                  />
+                </div>
+                <div class="project__main__section__code__text">
+                  <h3 class="project__main__section__code__title">Navbar</h3>
+
+                  <div class="project__main__section__code__cons">
+                    <h4 class="project__main__section__code__cons-title">
+                      Challenges:
+                    </h4>
+                    <ul>
+                      <li>Middle recording button</li>
+                      <li>No easy way to do it</li>
+                      <li>Can only add icon, not circular background</li>
+                    </ul>
+                  </div>
+
+                  <div class="project__main__section__code__pros">
+                    <h4 class="project__main__section__code__pros-title">
+                      Solutions:
+                    </h4>
+                    <ul>
+                      <li>Required creating a custom tabBarButton instead</li>
+                      <li>
+                        Required fiddling with positioning to get it in the
+                        center
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project__main__section__code__description">
+                <div class="project__main__section__code__images">
+                  <img
+                    class="project__main__section__code__screen-image"
+                    src="../img/safeSpace/overview3.png"
+                    alt="Safi Screen"
+                  />
+                </div>
+                <div class="project__main__section__code__text">
+                  <h3 class="project__main__section__code__title">Safi</h3>
+
+                  <div class="project__main__section__code__cons">
+                    <h4 class="project__main__section__code__cons-title">
+                      Challenges:
+                    </h4>
+                    <ul>
+                      <li>Using IBM’s WatsonX for the first time</li>
+                      <li>AI asking irrelevant questions</li>
+                      <li>AI ignoring specific instructions</li>
+                    </ul>
+                  </div>
+
+                  <div class="project__main__section__code__pros">
+                    <h4 class="project__main__section__code__pros-title">
+                      Solutions:
+                    </h4>
+                    <ul>
+                      <li>Had help from instructor</li>
+                      <li>Changed prompt to exclude specific questions</li>
+                      <li>
+                        Simplified prompt to only include less information
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="project__main__section">
+            <div class="project__main__section__text">
+              <h2 id="takeaways" class="project__main__header">Takeaways</h2>
+              <p class="project__main__description">
+                Working on this project was a massive growth experience, and
+                winning 1st place in our school’s presentation competition was
+                the perfect validation of that effort.
+              </p>
+            </div>
+            <div class="project__main__section__takeaways">
+              <div class="project__main__section__takeaway">
+                <h3 class="project__main__section__takeaway__title">
+                  Communication & Confidence
+                </h3>
+                <p class="project__main__section__takeaway__description">
+                  I significantly improved my confidence in sharing ideas and
+                  contributing to technical conversations. I learned to take
+                  more initiative, expressing my opinion on which features I
+                  wanted to own or focus on.
+                </p>
+              </div>
+
+              <div class="project__main__section__takeaway">
+                <h3 class="project__main__section__takeaway__title">
+                  Team Collaboration
+                </h3>
+                <p class="project__main__section__takeaway__description">
+                  Working closely with other developers taught me how to
+                  coordinate tasks effectively to meet tight deadlines. I
+                  realized how much faster we could move when our workflows were
+                  aligned.
+                </p>
+              </div>
+
+              <div class="project__main__section__takeaway">
+                <h3 class="project__main__section__takeaway__title">
+                  Preparation & Visualization
+                </h3>
+                <p class="project__main__section__takeaway__description">
+                  I discovered that practicing and visualizing the presentation
+                  beforehand makes a huge difference. It turned a high-pressure
+                  situation into something much more manageable and natural when
+                  it was time to go on stage.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="project__main__section">
+            <div class="project__main__section__text">
+              <h2 id="promotional-materials" class="project__main__header">
+                Promotional Materials
+              </h2>
+              <div class="project__main__promotional-material__link">
+                <a
+                  class="project__main__link"
+                  href="https://www.instagram.com/safespace__app/"
+                  target="_blank"
+                  >Instagram →</a
+                >
+              </div>
+
+              <div class="project__main__section__promotional-material">
+                <img
+                  class="project__main__section__promotional-material__image"
+                  src="../img/safeSpace/insta-stats.png"
+                  alt="SafeSpace Promotional Material"
+                />
+                <img
+                  class="project__main__section__promotional-material__image"
+                  src="../img/safeSpace/insta-post.PNG"
+                  alt="SafeSpace Promotional Material"
+                />
+                <img
+                  class="project__main__section__promotional-material__image"
+                  src="../img/safeSpace/insta-reels.PNG"
+                  alt="SafeSpace Promotional Material"
+                />
+                <img
+                  class="project__main__section__promotional-material__image"
+                  src="../img/safeSpace/insta-reel.PNG"
+                  alt="SafeSpace Promotional Material"
+                />
+
+                <img
+                  class="project__main__section__promotional-material__image double-width"
+                  src="../img/safeSpace/brochure.png"
+                  alt="SafeSpace Promotional Material"
+                />
+                <img
+                  class="project__main__section__promotional-material__image double-width"
+                  src="../img/safeSpace/businessCard.png"
+                  alt="SafeSpace Promotional Material"
+                />
+                <img
+                  class="project__main__section__promotional-material__image double-width"
+                  src="https://placehold.co/600x400"
+                  alt="SafeSpace Promotional Material"
+                />
+                <img
+                  class="project__main__section__promotional-material__image double-width"
+                  src="../img/safeSpace/stickersLaptop.png"
+                  alt="SafeSpace Promotional Material"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <svg
+        class="footer-bg"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 320"
+        preserveAspectRatio="none"
+      >
+        <path
+          fill="#6aaae4"
+          d="M0,320 L0,100 Q720,0 1440,100 L1440,320 Z"
+          opacity="0.3"
+        />
+        <path
+          fill="#6aaae4"
+          d="M0,320 L0,140 Q720,40 1440,140 L1440,320 Z"
+          opacity="0.5"
+        />
+        <path
+          fill="#6aaae4"
+          d="M0,320 L0,180 Q720,80 1440,180 L1440,320 Z"
+          opacity="1"
+        />
+      </svg>
+      <div class="footer__content-container">
+        <div class="footer-content">
+          <div class="footer__links">
+            <a href="mailto:emilymisola@gmail.com" class="footer__link"
+              ><img
+                class="footer__link__icon"
+                src="../img/footer/Email.svg"
+                alt="Email Icon"
+              />Email</a
+            >
+            <a
+              href="https://www.linkedin.com/in/emilymisola"
+              class="footer__link"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><img
+                class="footer__link__icon"
+                src="../img/footer/LinkedIn.svg"
+                alt="LinkedIn Icon"
+              />LinkedIn</a
+            >
+            <a
+              href="https://github.com/emmpup"
+              class="footer__link"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><img
+                class="footer__link__icon"
+                src="../img/footer/Github.svg"
+                alt="Github Icon"
+              />Github</a
+            >
+          </div>
+          <div class="footer__text">
+            <h3 class="footer__text__tagline">
+              Applying a developer’s logic and a designer’s empathy to solve
+              complex problems
+            </h3>
+            <p class="footer__copyright">
+              © 2026 Emily Misola. All rights reserved.
+            </p>
+          </div>
+          <div class="footer__links">
+            <a href="../projects.html" class="footer__link">Projects</a>
+            <a href="../about.html" class="footer__link">About Me</a>
+            <a href="mailto:emilymisola@gmail.com" class="footer__link"
+              >Contact</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/SplitText.min.js"></script>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/project.js"></script>
+    <script src="../js/safeSpace.js"></script>
+  </body>
+</html>

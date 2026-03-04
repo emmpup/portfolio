@@ -4,23 +4,33 @@
   color-scheme: light dark;
 
   --light-background-500: #fffbfa;
+  --light-background-600: #e8e4e4;
+  --light-background-700: #b5b2b2;
   --light-text-500: #232c33;
   --light-text-700: #191f24;
   --light-primary-500: #0047ba;
   --light-primary-50: #e6edf8;
   --light-secondary-500: #6aaae4;
   --light-secondary-300: #9bc6ed;
+  --light-accent-700-30: #48847c4d;
   --light-accent-500: #65baaf;
   --light-accent-300: #98d1c9;
+  --light-red-500: #c93535;
+  --light-red-700-30: #af2b2b4d;
 
+  --dark-background-400: #4f565c;
   --dark-background-500: #232c33;
+  --dark-background-600: #20282e;
   --dark-text-500: #fffbfa;
   --dark-primary-500: #0047ba;
   --dark-primary-50: #e6edf8;
   --dark-secondary-500: #6aaae4;
   --dark-secondary-300: #9bc6ed;
+  --dark-accent-700-30: #48847c4d;
   --dark-accent-500: #65baaf;
   --dark-accent-300: #98d1c9;
+  --dark-red-500: #c93535;
+  --dark-red-700-30: #6f29294d;
 }
 
 * {
