@@ -129,14 +129,31 @@
 }
 
 /* ----------- Carousel ----------- */
-.project-detail__carousel {
+.project-detail__carousel-container {
   margin-top: 8rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  justify-content: center;
+  width: 100%;
+  max-width: 90rem;
+}
+
+.project-detail__carousel {
   width: 40vw;
   max-width: 80rem;
   overflow-x: scroll;
   display: flex;
   gap: 2rem;
   scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  /* Hide scrollbar */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.project-detail__carousel::-webkit-scrollbar {
+  display: none;
 }
 
 .project-detail__carousel__image {
@@ -144,6 +161,58 @@
   width: 100%;
   max-width: 80rem;
   object-fit: cover;
+  flex-shrink: 0;
+}
+
+.project-detail__carousel__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.625rem;
+  height: 4.625rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.project-detail__carousel__button:hover {
+  opacity: 0.8;
+}
+
+.project-detail__carousel__button svg {
+  width: 100%;
+  height: 100%;
+}
+
+.project-detail__carousel-dots {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.project-detail__carousel__dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  border: none;
+  background: light-dark(rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2));
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.project-detail__carousel__dot:hover {
+  background: light-dark(rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.5));
+}
+
+.project-detail__carousel__dot.active {
+  background: light-dark(var(--light-text-500), var(--dark-text-500));
+  width: 1.5rem;
+  border-radius: 99px;
 }
 
 /* ----------- Images ----------- */
