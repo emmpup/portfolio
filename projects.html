@@ -246,8 +246,9 @@
     </main>
 
     <footer class="footer">
+      <!-- Desktop SVG (1025px+) - Original curves -->
       <svg
-        class="footer-bg"
+        class="footer-bg footer-bg-desktop"
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1440 320"
@@ -266,6 +267,31 @@
         <path
           fill="#6aaae4"
           d="M0,320 L0,180 Q720,80 1440,180 L1440,320 Z"
+          opacity="1"
+        />
+      </svg>
+
+      <!-- Mobile/Tablet SVG (up to 1024px) - Flatter curves -->
+      <svg
+        class="footer-bg footer-bg-mobile"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 320"
+        preserveAspectRatio="none"
+      >
+        <path
+          fill="#6aaae4"
+          d="M0,320 L0,150 Q720,120 1440,150 L1440,320 Z"
+          opacity="0.3"
+        />
+        <path
+          fill="#6aaae4"
+          d="M0,320 L0,160 Q720,140 1440,160 L1440,320 Z"
+          opacity="0.5"
+        />
+        <path
+          fill="#6aaae4"
+          d="M0,320 L0,180 Q720,160 1440,180 L1440,320 Z"
           opacity="1"
         />
       </svg>
@@ -307,9 +333,6 @@
               Applying a developer’s logic and a designer’s empathy to solve
               complex problems
             </h3>
-            <p class="footer__copyright">
-              © 2026 Emily Misola. All rights reserved.
-            </p>
           </div>
           <div class="footer__links">
             <a href="/projects.html" class="footer__link">Projects</a>
@@ -318,6 +341,9 @@
               >Contact</a
             >
           </div>
+          <p class="footer__copyright">
+            © 2026 Emily Misola. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
