@@ -5,9 +5,10 @@
 }
 
 .project-detail__intro__image {
-  width: 60%;
+  width: 100%;
   max-width: 80rem;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
 }
 
 .project-detail__images__image--large {
