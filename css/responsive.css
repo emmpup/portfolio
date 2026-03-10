@@ -663,6 +663,219 @@
   }
 }
 
+/* ===========================================
+   SAFESPACE CASE STUDY RESPONSIVE STYLES
+   =========================================== */
+
+/* Mobile Styles (up to 768px) */
+@media screen and (max-width: 768px) {
+  /* Hide navigation on mobile */
+  .project__nav-container {
+    display: none;
+  }
+
+  /* Full width for main content */
+  .project-content {
+    grid-template-columns: 1fr;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .project__main {
+    padding: 1rem;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  /* Intro chips - 2x2 grid on mobile */
+  .project-detail__intro__chips {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 20rem;
+  }
+
+  /* Overview section - column layout */
+  .project__main__section__screens-overview__screen {
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .project__main__section__screens-overview__screen.right-align {
+    align-self: auto;
+  }
+
+  .project__main__section__screens-overview__image {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  /* User Research stats - column layout */
+  .project__main__section__stats {
+    grid-template-columns: 1fr;
+  }
+
+  /* Personas - column layout */
+  .project__main__section__persona {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  /* Sitemap & Userflow sizing on mobile */
+  .project__main__section__sitemap__image,
+  .project__main__section__userflow__image {
+    max-width: 95vw;
+  }
+
+  /* Coding section - column layout */
+  .project__main__section__code__description {
+    flex-direction: column;
+  }
+
+  .project__main__section__code__description.right-align {
+    align-self: auto;
+  }
+
+  .project__main__section__code__images {
+    width: 100%;
+  }
+
+  /* Promotional materials - single column */
+  .project__main__section__promotional-material {
+    grid-template-columns: 1fr;
+  }
+
+  .project__main__section__promotional-material__image.double-width {
+    grid-column: span 1;
+  }
+
+  /* Styleguide responsive on mobile */
+  .project__main__section__style-guide__image {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  /* Wireframes responsive on mobile */
+  .project__main__section__wireframes__states {
+    gap: 0.5rem;
+  }
+
+  .project__main__section__wireframes__image {
+    max-width: 90vw;
+    max-height: 60vh;
+  }
+
+  /* Hide arrow buttons on mobile */
+  .project__main__section__wireframes__slides__arrow {
+    display: none;
+  }
+}
+
+/* Tablet Styles (769px - 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  /* Hide navigation on tablet */
+  .project__nav-container {
+    display: none;
+  }
+
+  /* Full width for main content */
+  .project-content {
+    grid-template-columns: 1fr;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .project__main {
+    padding: 1.5rem;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  /* Intro chips - single row on tablet */
+  .project-detail__intro__chips {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
+
+  /* Reduce image sizes on tablet */
+  .project-detail__intro__image-container {
+    max-width: 70%;
+  }
+
+  .project__main__section__screens-overview__image {
+    max-width: 6vw;
+  }
+
+  .project__main__section__code__screen-image {
+    max-width: 15rem;
+  }
+
+  /* Personas - 2x2 grid on tablet */
+  .project__main__section__persona {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  /* Sitemap & Userflow wider on tablet */
+  .project__main__section__sitemap__image,
+  .project__main__section__userflow__image {
+    max-width: 85vw;
+  }
+
+  /* Wireframes responsive on tablet */
+  .project__main__section__wireframes__states {
+    gap: 0.5rem;
+  }
+
+  .project__main__section__wireframes__image {
+    max-width: 85vw;
+    max-height: 70vh;
+  }
+
+  /* Hide arrow buttons on tablet */
+  .project__main__section__wireframes__slides__arrow {
+    display: none;
+  }
+}
+
+/* ===========================================
+   SAFESPACE DESKTOP STYLES (1025px+)
+   =========================================== */
+
+@media screen and (min-width: 1025px) {
+  /* Show nav and maintain layout */
+  .project-content {
+    grid-template-columns: 20rem 1fr;
+  }
+
+  .project__nav-container {
+    display: block;
+  }
+
+  /* Restore right-align on overview and coding */
+  .project__main__section__screens-overview__screen.right-align {
+    align-self: flex-end;
+  }
+
+  .project__main__section__code__description.right-align {
+    align-self: flex-end;
+  }
+
+  /* Wireframes sizing on desktop */
+  .project__main__section__wireframes__image {
+    max-height: 80vh;
+  }
+
+  .project__main__section__style-guide__image {
+    max-width: 80%;
+  }
+}
+
 /* Poster specific responsive styles */
 @media screen and (max-width: 768px) {
   .project-detail__images__image--large {

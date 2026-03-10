@@ -15,6 +15,7 @@
   grid-template-columns: 20rem 1fr;
   width: 100%;
   height: 100%;
+  box-sizing: border-box;
 }
 
 .project__nav-container {
@@ -115,7 +116,7 @@
   width: 100%;
   height: auto;
   object-fit: cover;
-  max-width: 20vw;
+  max-width: 12vw;
 }
 
 .project__main__section__screens-overview__text {
@@ -208,6 +209,13 @@
   padding: 2rem;
 }
 
+.project__main__section__style-guide__image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  max-width: 100%;
+}
+
 .project__main__section__sitemap,
 .project__main__section__userflow {
   display: flex;
@@ -222,7 +230,7 @@
   width: 100%;
   height: auto;
   object-fit: cover;
-  max-width: 60vw;
+  max-width: 90vw;
 }
 
 .project__main__section__wireframes {
@@ -273,7 +281,9 @@
   flex-direction: row;
   gap: 1rem;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  max-width: 100%;
+  flex-wrap: nowrap;
 }
 
 .project__main__section__wireframes__states {
@@ -295,12 +305,13 @@
   height: auto;
   object-fit: cover;
   max-height: 90vh;
+  max-width: 100%;
 }
 
 .project__main__section__code {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3rem;
   justify-content: flex-start;
   align-items: flex-start;
   width: 100%;

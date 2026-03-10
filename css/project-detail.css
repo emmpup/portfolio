@@ -71,8 +71,10 @@
 
 .project-detail__intro__chips {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
   margin-top: 1.5rem;
+  max-width: 100%;
 }
 
 .project-detail__intro__chip {
