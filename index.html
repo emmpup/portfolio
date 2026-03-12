@@ -20,6 +20,7 @@
     <title>Emily's Portfolio</title>
   </head>
   <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <nav class="navbar">
       <a href="index.html">
         <svg
@@ -37,7 +38,7 @@
       <!-- Desktop Navigation -->
       <div class="navbar__desktop">
         <a href="projects.html" class="navbar__link">Projects</a>
-        <a href="#" class="navbar__link">About Me</a>
+        <a href="about.html" class="navbar__link">About Me</a>
         <a href="mailto:emilymisola@gmail.com" class="navbar__link">Contact</a>
 
         <input
@@ -45,6 +46,8 @@
           id="theme-toggle"
           name="toggle-color-scheme"
           class="navbar__checkbox"
+          aria-pressed="false"
+          aria-label="Toggle light and dark theme"
         />
         <label for="theme-toggle" class="navbar__label">
           <img class="navbar__icon" src="/img/navbar/dark.svg" alt=""
@@ -52,19 +55,19 @@
       </div>
 
       <!-- Mobile Hamburger Menu -->
-      <input type="checkbox" id="nav-toggle" class="navbar__menu-checkbox" />
-      <label for="nav-toggle" class="navbar__hamburger">
+      <input type="checkbox" id="nav-toggle" class="navbar__menu-checkbox" aria-expanded="false" aria-controls="navbar-mobile-menu" />
+      <label for="nav-toggle" class="navbar__hamburger" aria-label="Toggle navigation menu">
         <span class="navbar__hamburger-line"></span>
         <span class="navbar__hamburger-line"></span>
         <span class="navbar__hamburger-line"></span>
       </label>
 
       <!-- Mobile Menu Overlay -->
-      <div class="navbar__mobile-menu">
+      <div class="navbar__mobile-menu" id="navbar-mobile-menu">
         <div class="navbar__mobile-menu-content">
           <a href="projects.html" class="navbar__mobile-link">Projects</a>
-          <a href="#" class="navbar__mobile-link">About Me</a>
-          <a href="#" class="navbar__mobile-link">Contact</a>
+          <a href="about.html" class="navbar__mobile-link">About Me</a>
+          <a href="mailto:emilymisola@gmail.com" class="navbar__mobile-link">Contact</a>
 
           <div class="navbar__mobile-theme">
             <input
@@ -72,6 +75,8 @@
               id="theme-toggle-mobile"
               name="toggle-color-scheme"
               class="navbar__checkbox"
+              aria-pressed="false"
+              aria-label="Toggle light and dark theme"
             />
             <label for="theme-toggle-mobile" class="navbar__label">
               <img
@@ -83,21 +88,15 @@
         </div>
       </div>
     </nav>
-    <main class="main-content">
+    <main class="main-content" id="main-content">
       <div class="hero">
         <h1 class="hero__name split">Emily Misola</h1>
         <h2 class="hero__subtitle split">
           Front-End Developer and UX/UI Designer
         </h2>
         <div class="hero__button-container">
-          <a href="mailto:emilymisola@gmail.com"
-            ><button class="hero__button--primary">Contact Me</button></a
-          >
-          <a href="projects.html"
-            ><button class="hero__button--secondary">
-              See All Projects
-            </button></a
-          >
+          <a href="mailto:emilymisola@gmail.com" class="hero__button--primary">Contact Me</a>
+          <a href="projects.html" class="hero__button--secondary">See All Projects</a>
         </div>
 
         <div class="hero__waves" aria-hidden="true">
@@ -136,7 +135,7 @@
                 <span class="project__chip">Figma</span>
               </div>
             </div>
-            <a class="project__image-link" href="projects/safeSpace.html">
+            <a class="project__image-link" href="projects/safeSpace.html" tabindex="-1">
               <figure class="project__image">
                 <img
                   class="project__image__image"
@@ -167,7 +166,7 @@
                 <span class="project__chip">YouTube API</span>
               </div>
             </div>
-            <a class="project__image-link" href="projects/musicPlayer.html">
+            <a class="project__image-link" href="projects/musicPlayer.html" tabindex="-1">
               <figure class="project__image">
                 <img
                   class="project__image__image"
@@ -197,7 +196,7 @@
                 <span class="project__chip">Illustrator</span>
               </div>
             </div>
-            <a class="project__image-link" href="projects/posters.html">
+            <a class="project__image-link" href="projects/posters.html" tabindex="-1">
               <figure class="project__image">
                 <img
                   class="project__image__image"

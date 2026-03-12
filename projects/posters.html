@@ -17,6 +17,7 @@
     <title>Advertisement Posters</title>
   </head>
   <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <nav class="navbar">
       <a href="../index.html">
         <svg
@@ -34,7 +35,7 @@
       <!-- Desktop Navigation -->
       <div class="navbar__desktop">
         <a href="../projects.html" class="navbar__link">Projects</a>
-        <a href="#" class="navbar__link">About Me</a>
+        <a href="../about.html" class="navbar__link">About Me</a>
         <a href="mailto:emilymisola@gmail.com" class="navbar__link">Contact</a>
 
         <input
@@ -42,6 +43,8 @@
           id="theme-toggle"
           name="toggle-color-scheme"
           class="navbar__checkbox"
+          aria-pressed="false"
+          aria-label="Toggle light and dark theme"
         />
         <label for="theme-toggle" class="navbar__label">
           <img class="navbar__icon" src="../img/navbar/dark.svg" alt=""
@@ -49,19 +52,19 @@
       </div>
 
       <!-- Mobile Hamburger Menu -->
-      <input type="checkbox" id="nav-toggle" class="navbar__menu-checkbox" />
-      <label for="nav-toggle" class="navbar__hamburger">
+      <input type="checkbox" id="nav-toggle" class="navbar__menu-checkbox" aria-expanded="false" aria-controls="navbar-mobile-menu" />
+      <label for="nav-toggle" class="navbar__hamburger" aria-label="Toggle navigation menu">
         <span class="navbar__hamburger-line"></span>
         <span class="navbar__hamburger-line"></span>
         <span class="navbar__hamburger-line"></span>
       </label>
 
       <!-- Mobile Menu Overlay -->
-      <div class="navbar__mobile-menu">
+      <div class="navbar__mobile-menu" id="navbar-mobile-menu">
         <div class="navbar__mobile-menu-content">
           <a href="../projects.html" class="navbar__mobile-link">Projects</a>
-          <a href="#" class="navbar__mobile-link">About Me</a>
-          <a href="#" class="navbar__mobile-link">Contact</a>
+          <a href="../about.html" class="navbar__mobile-link">About Me</a>
+          <a href="mailto:emilymisola@gmail.com" class="navbar__mobile-link">Contact</a>
 
           <div class="navbar__mobile-theme">
             <input
@@ -69,6 +72,8 @@
               id="theme-toggle-mobile"
               name="toggle-color-scheme"
               class="navbar__checkbox"
+              aria-pressed="false"
+              aria-label="Toggle light and dark theme"
             />
             <label for="theme-toggle-mobile" class="navbar__label">
               <img
@@ -81,7 +86,7 @@
       </div>
     </nav>
 
-    <main>
+    <main id="main-content">
       <div class="projects__header">
         <div class="projects__rounded-title">
           <h1 class="header__title">Poster Design</h1>
@@ -92,7 +97,7 @@
           <img
             class="project-detail__intro__image"
             src="../img/posters/MagicPosters.webp"
-            alt="All Posters"
+            alt="Series of three promotional magic event posters for Shin Lim, Derren Brown, and David Copperfield"
           />
           <div class="project-detail__intro__content">
             <h2 class="project-detail__intro__title">Advertisement Posters</h2>
