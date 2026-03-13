@@ -13,7 +13,10 @@ const navToggle = document.getElementById("nav-toggle");
 const navMenu = document.getElementById("navbar-mobile-menu");
 if (navToggle) {
   navToggle.addEventListener("change", (e) => {
-    navToggle.setAttribute("aria-expanded", e.target.checked ? "true" : "false");
+    navToggle.setAttribute(
+      "aria-expanded",
+      e.target.checked ? "true" : "false",
+    );
   });
 }
 
@@ -23,8 +26,10 @@ const themeToggleMobile = document.getElementById("theme-toggle-mobile");
 
 function updateThemeAttributes(isDark) {
   const pressed = isDark ? "true" : "false";
-  if (themeToggleDesktop) themeToggleDesktop.setAttribute("aria-pressed", pressed);
-  if (themeToggleMobile) themeToggleMobile.setAttribute("aria-pressed", pressed);
+  if (themeToggleDesktop)
+    themeToggleDesktop.setAttribute("aria-pressed", pressed);
+  if (themeToggleMobile)
+    themeToggleMobile.setAttribute("aria-pressed", pressed);
 }
 
 // Apply theme to DOM
@@ -46,13 +51,13 @@ function applyTheme(isDark) {
 function syncThemeToggles(source) {
   const checked = source.checked;
   const isDark = checked;
-  
+
   if (source === themeToggleDesktop && themeToggleMobile) {
     themeToggleMobile.checked = checked;
   } else if (source === themeToggleMobile && themeToggleDesktop) {
     themeToggleDesktop.checked = checked;
   }
-  
+
   applyTheme(isDark);
   // Save preference to localStorage
   localStorage.setItem("theme-preference", isDark ? "dark" : "light");
@@ -73,15 +78,19 @@ if (themeToggleMobile) {
 window.addEventListener("load", () => {
   const storedPreference = localStorage.getItem("theme-preference");
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const isDarkMode = storedPreference === "dark" || (storedPreference === null && prefersDark);
-  
+  const isDarkMode =
+    storedPreference === "dark" || (storedPreference === null && prefersDark);
+
   if (themeToggleDesktop) themeToggleDesktop.checked = isDarkMode;
   if (themeToggleMobile) themeToggleMobile.checked = isDarkMode;
   applyTheme(isDarkMode);
-  
+
   // Initialize nav toggle ARIA state
   if (navToggle) {
-    navToggle.setAttribute("aria-expanded", navToggle.checked ? "true" : "false");
+    navToggle.setAttribute(
+      "aria-expanded",
+      navToggle.checked ? "true" : "false",
+    );
   }
 });
 
@@ -89,8 +98,9 @@ window.addEventListener("load", () => {
 document.addEventListener("DOMContentLoaded", () => {
   const storedPreference = localStorage.getItem("theme-preference");
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const isDarkMode = storedPreference === "dark" || (storedPreference === null && prefersDark);
-  
+  const isDarkMode =
+    storedPreference === "dark" || (storedPreference === null && prefersDark);
+
   if (themeToggleDesktop) themeToggleDesktop.checked = isDarkMode;
   if (themeToggleMobile) themeToggleMobile.checked = isDarkMode;
   applyTheme(isDarkMode);

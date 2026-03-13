@@ -76,10 +76,8 @@ button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-  outline: 3px solid light-dark(
-    var(--light-primary-500),
-    var(--dark-secondary-500)
-  );
+  outline: 3px solid
+    light-dark(var(--light-primary-500), var(--dark-secondary-500));
   outline-offset: 2px;
 }
 
@@ -93,10 +91,8 @@ a {
 .project__link-text:focus-visible,
 .navbar__link:focus-visible,
 .footer__link:focus-visible {
-  outline: 3px solid light-dark(
-    var(--light-primary-500),
-    var(--dark-secondary-500)
-  );
+  outline: 3px solid
+    light-dark(var(--light-primary-500), var(--dark-secondary-500));
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -104,20 +100,16 @@ a {
 /* Focus styles for theme toggle checkbox */
 .navbar__checkbox:focus-visible + .navbar__label,
 .navbar__label:focus-visible {
-  outline: 3px solid light-dark(
-    var(--light-primary-500),
-    var(--dark-secondary-500)
-  );
+  outline: 3px solid
+    light-dark(var(--light-primary-500), var(--dark-secondary-500));
   outline-offset: 2px;
   border-radius: 4px;
 }
 
 /* Focus styles for hamburger button */
 .navbar__menu-checkbox:focus-visible + .navbar__hamburger {
-  outline: 3px solid light-dark(
-    var(--light-primary-500),
-    var(--dark-secondary-500)
-  );
+  outline: 3px solid
+    light-dark(var(--light-primary-500), var(--dark-secondary-500));
   outline-offset: 2px;
   border-radius: 4px;
 }
