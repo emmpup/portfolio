@@ -19,15 +19,17 @@
 
   /**
    * Update carousel position based on current index
-   * Scrolls to the active image
+   * Scrolls to the active image (only when user interacts, not on init)
    */
-  function updateCarouselPosition() {
+  function updateCarouselPosition(shouldScroll = true) {
     const activeImage = carouselImages[state.currentIndex];
-    activeImage.scrollIntoView({
-      behavior: "smooth",
-      block: "nearest",
-      inline: "center",
-    });
+    if (shouldScroll) {
+      activeImage.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "center",
+      });
+    }
   }
 
   /**
@@ -46,8 +48,8 @@
   /**
    * Update all visual states
    */
-  function updateUI() {
-    updateCarouselPosition();
+  function updateUI(shouldScroll = true) {
+    updateCarouselPosition(shouldScroll);
     updateActiveDots();
   }
 
@@ -93,6 +95,6 @@
     dotsContainer.addEventListener("click", handleDotClick);
   }
 
-  // Initialize UI
-  updateUI();
+  // Initialize UI (don't scroll on page load)
+  updateUI(false);
 })();
