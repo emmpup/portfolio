@@ -3,6 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      #smooth-wrapper {
+        overflow: hidden;
+      }
+    </style>
 
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
@@ -100,255 +105,267 @@
         </div>
       </div>
     </nav>
-    <main class="main-content" id="main-content">
-      <div class="hero">
-        <h1 class="hero__name split">Emily Misola</h1>
-        <h2 class="hero__subtitle split">
-          Front-End Developer and UX/UI Designer
-        </h2>
-        <div class="hero__button-container">
-          <a href="mailto:emilymisola@gmail.com" class="hero__button--primary"
-            >Contact Me</a
-          >
-          <a href="projects.html" class="hero__button--secondary"
-            >See All Projects</a
-          >
-        </div>
+    <div id="smooth-wrapper">
+      <main class="main-content" id="main-content">
+        <div id="smooth-content">
+          <div class="hero">
+            <h1 class="hero__name split">Emily Misola</h1>
+            <h2 class="hero__subtitle split">
+              Front-End Developer and UX/UI Designer
+            </h2>
+            <div class="hero__button-container">
+              <a
+                href="mailto:emilymisola@gmail.com"
+                class="hero__button--primary"
+                >Contact Me</a
+              >
+              <a href="projects.html" class="hero__button--secondary"
+                >See All Projects</a
+              >
+            </div>
 
-        <div class="hero__waves" aria-hidden="true">
-          <dotlottie-wc
-            src="/img/home/waves.lottie"
-            autoplay
-            loop
-            style="width: 100%; height: 100%; transform: scaleY(-1)"
-          ></dotlottie-wc>
-        </div>
-      </div>
-      <div class="hero__waves-bottom" aria-hidden="true">
-        <dotlottie-wc
-          src="/img/home/waves.lottie"
-          autoplay
-          loop
-          speed="0.5"
-          style="transform: scaleX(-1)"
-        ></dotlottie-wc>
-      </div>
-      <div class="projects">
-        <h2 class="projects__title">Featured Projects</h2>
-        <div class="projects__list">
-          <div class="project">
-            <div class="project__text">
-              <a class="project__link-text" href="projects/safeSpace.html">
-                <h3 class="project__name">SafeSpace</h3>
-                <h4 class="project__role">Full-Stack Developer</h4>
-              </a>
-              <p class="project__description">
-                A mobile app that lets trades workers record incidents, create
-                reports manually, through recordings, or using an AI chat bot...
-              </p>
-              <div class="project__chips">
-                <span class="project__chip">React Native</span>
-                <span class="project__chip">Figma</span>
+            <div class="hero__waves" aria-hidden="true">
+              <dotlottie-wc
+                src="/img/home/waves.lottie"
+                autoplay
+                loop
+                style="width: 100%; height: 100%; transform: scaleY(-1)"
+              ></dotlottie-wc>
+            </div>
+          </div>
+          <div class="hero__waves-bottom" aria-hidden="true">
+            <dotlottie-wc
+              src="/img/home/waves.lottie"
+              autoplay
+              loop
+              speed="0.5"
+              style="transform: scaleX(-1)"
+            ></dotlottie-wc>
+          </div>
+          <div class="projects">
+            <h2 class="projects__title fade-element">Featured Projects</h2>
+            <div class="projects__list">
+              <div class="project">
+                <div class="project__text fade">
+                  <a class="project__link-text" href="projects/safeSpace.html">
+                    <h3 class="project__name">SafeSpace</h3>
+                    <h4 class="project__role">Full-Stack Developer</h4>
+                  </a>
+                  <p class="project__description">
+                    A mobile app that lets trades workers record incidents,
+                    create reports manually, through recordings, or using an AI
+                    chat bot...
+                  </p>
+                  <div class="project__chips">
+                    <span class="project__chip">React Native</span>
+                    <span class="project__chip">Figma</span>
+                  </div>
+                </div>
+                <a
+                  class="project__image-link"
+                  href="projects/safeSpace.html"
+                  tabindex="-1"
+                >
+                  <figure class="project__image">
+                    <img
+                      class="project__image__image"
+                      src="img/projects/SafeSpace-mockup.webp"
+                      alt="SafeSpace Mockup"
+                    />
+                    <img
+                      class="project__image__image"
+                      src="img/projects/SafeSpace-background.webp"
+                      alt="SafeSpace Background"
+                    />
+                  </figure>
+                </a>
+              </div>
+              <div class="project">
+                <div class="project__text fade">
+                  <a
+                    class="project__link-text"
+                    href="projects/musicPlayer.html"
+                  >
+                    <h3 class="project__name">Music Player</h3>
+                    <h4 class="project__role">Front-End Developer</h4>
+                  </a>
+                  <p class="project__description">
+                    A music player website that people can add or delete music,
+                    edit the name of the playlist, and use light or dark mode...
+                  </p>
+                  <div class="project__chips">
+                    <span class="project__chip">React</span>
+                    <span class="project__chip">Figma</span>
+                    <span class="project__chip">YouTube API</span>
+                  </div>
+                </div>
+                <a
+                  class="project__image-link"
+                  href="projects/musicPlayer.html"
+                  tabindex="-1"
+                >
+                  <figure class="project__image">
+                    <img
+                      class="project__image__image"
+                      src="img/projects/musicPlayer-mockup.webp"
+                      alt="Music Player Mockup"
+                    />
+                    <img
+                      class="project__image__image"
+                      src="img/projects/musicPlayer-background.webp"
+                      alt="Music Player Background"
+                    />
+                  </figure>
+                </a>
+              </div>
+              <div class="project">
+                <div class="project__text fade">
+                  <a class="project__link-text" href="projects/posters.html">
+                    <h3 class="project__name">Poster Design</h3>
+                    <h4 class="project__role">The Great Theatre</h4>
+                  </a>
+                  <p class="project__description">
+                    This series of promotional posters showcases a magic event
+                    featuring three world-renowned performers...
+                  </p>
+                  <div class="project__chips">
+                    <span class="project__chip">Photoshop</span>
+                    <span class="project__chip">Illustrator</span>
+                  </div>
+                </div>
+                <a
+                  class="project__image-link"
+                  href="projects/posters.html"
+                  tabindex="-1"
+                >
+                  <figure class="project__image">
+                    <img
+                      class="project__image__image"
+                      src="img/projects/magicPosters.webp"
+                      alt="Project Image"
+                    />
+                  </figure>
+                </a>
               </div>
             </div>
-            <a
-              class="project__image-link"
-              href="projects/safeSpace.html"
-              tabindex="-1"
-            >
-              <figure class="project__image">
-                <img
-                  class="project__image__image"
-                  src="img/projects/SafeSpace-mockup.webp"
-                  alt="SafeSpace Mockup"
-                />
-                <img
-                  class="project__image__image"
-                  src="img/projects/SafeSpace-background.webp"
-                  alt="SafeSpace Background"
-                />
-              </figure>
-            </a>
           </div>
-          <div class="project">
-            <div class="project__text">
-              <a class="project__link-text" href="projects/musicPlayer.html">
-                <h3 class="project__name">Music Player</h3>
-                <h4 class="project__role">Front-End Developer</h4>
-              </a>
-              <p class="project__description">
-                A music player website that people can add or delete music, edit
-                the name of the playlist, and use light or dark mode...
-              </p>
-              <div class="project__chips">
-                <span class="project__chip">React</span>
-                <span class="project__chip">Figma</span>
-                <span class="project__chip">YouTube API</span>
+          <div class="about">
+            <!-- about me?? -->
+          </div>
+
+          <footer class="footer">
+            <!-- Desktop SVG (1025px+) - Original curves -->
+            <svg
+              class="footer-bg footer-bg-desktop"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 1440 320"
+              preserveAspectRatio="none"
+            >
+              <path
+                fill="#6aaae4"
+                d="M0,320 L0,100 Q720,0 1440,100 L1440,320 Z"
+                opacity="0.3"
+              />
+              <path
+                fill="#6aaae4"
+                d="M0,320 L0,140 Q720,40 1440,140 L1440,320 Z"
+                opacity="0.5"
+              />
+              <path
+                fill="#6aaae4"
+                d="M0,320 L0,180 Q720,80 1440,180 L1440,320 Z"
+                opacity="1"
+              />
+            </svg>
+
+            <!-- Mobile/Tablet SVG (up to 1024px) - Flatter curves -->
+            <svg
+              class="footer-bg footer-bg-mobile"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 1440 320"
+              preserveAspectRatio="none"
+            >
+              <path
+                fill="#6aaae4"
+                d="M0,320 L0,150 Q720,120 1440,150 L1440,320 Z"
+                opacity="0.3"
+              />
+              <path
+                fill="#6aaae4"
+                d="M0,320 L0,160 Q720,140 1440,160 L1440,320 Z"
+                opacity="0.5"
+              />
+              <path
+                fill="#6aaae4"
+                d="M0,320 L0,180 Q720,160 1440,180 L1440,320 Z"
+                opacity="1"
+              />
+            </svg>
+            <div class="footer__content-container">
+              <div class="footer-content">
+                <div class="footer__links">
+                  <a href="mailto:emilymisola@gmail.com" class="footer__link"
+                    ><img
+                      class="footer__link__icon"
+                      src="img/footer/Email.svg"
+                      alt="Email Icon"
+                    />Email</a
+                  >
+                  <a
+                    href="https://www.linkedin.com/in/emily-misola"
+                    class="footer__link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    ><img
+                      class="footer__link__icon"
+                      src="img/footer/LinkedIn.svg"
+                      alt="LinkedIn Icon"
+                    />LinkedIn</a
+                  >
+                  <a
+                    href="https://github.com/emmpup"
+                    class="footer__link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    ><img
+                      class="footer__link__icon"
+                      src="img/footer/Github.svg"
+                      alt="Github Icon"
+                    />Github</a
+                  >
+                </div>
+                <div class="footer__text">
+                  <h3 class="footer__text__tagline">
+                    Applying a developer’s logic and a designer’s empathy to
+                    solve complex problems
+                  </h3>
+                </div>
+                <div class="footer__links">
+                  <a href="/projects.html" class="footer__link">Projects</a>
+                  <a href="/about.html" class="footer__link">About Me</a>
+                  <a href="mailto:emilymisola@gmail.com" class="footer__link"
+                    >Contact</a
+                  >
+                </div>
+                <p class="footer__copyright">
+                  © 2026 Emily Misola. All rights reserved.
+                </p>
               </div>
             </div>
-            <a
-              class="project__image-link"
-              href="projects/musicPlayer.html"
-              tabindex="-1"
-            >
-              <figure class="project__image">
-                <img
-                  class="project__image__image"
-                  src="img/projects/musicPlayer-mockup.webp"
-                  alt="Music Player Mockup"
-                />
-                <img
-                  class="project__image__image"
-                  src="img/projects/musicPlayer-background.webp"
-                  alt="Music Player Background"
-                />
-              </figure>
-            </a>
-          </div>
-          <div class="project">
-            <div class="project__text">
-              <a class="project__link-text" href="projects/posters.html">
-                <h3 class="project__name">Poster Design</h3>
-                <h4 class="project__role">The Great Theatre</h4>
-              </a>
-              <p class="project__description">
-                This series of promotional posters showcases a magic event
-                featuring three world-renowned performers...
-              </p>
-              <div class="project__chips">
-                <span class="project__chip">Photoshop</span>
-                <span class="project__chip">Illustrator</span>
-              </div>
-            </div>
-            <a
-              class="project__image-link"
-              href="projects/posters.html"
-              tabindex="-1"
-            >
-              <figure class="project__image">
-                <img
-                  class="project__image__image"
-                  src="img/projects/magicPosters.webp"
-                  alt="Project Image"
-                />
-              </figure>
-            </a>
-          </div>
+          </footer>
         </div>
-      </div>
-      <div class="about">
-        <!-- about me?? -->
-      </div>
-    </main>
-
-    <footer class="footer">
-      <!-- Desktop SVG (1025px+) - Original curves -->
-      <svg
-        class="footer-bg footer-bg-desktop"
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1440 320"
-        preserveAspectRatio="none"
-      >
-        <path
-          fill="#6aaae4"
-          d="M0,320 L0,100 Q720,0 1440,100 L1440,320 Z"
-          opacity="0.3"
-        />
-        <path
-          fill="#6aaae4"
-          d="M0,320 L0,140 Q720,40 1440,140 L1440,320 Z"
-          opacity="0.5"
-        />
-        <path
-          fill="#6aaae4"
-          d="M0,320 L0,180 Q720,80 1440,180 L1440,320 Z"
-          opacity="1"
-        />
-      </svg>
-
-      <!-- Mobile/Tablet SVG (up to 1024px) - Flatter curves -->
-      <svg
-        class="footer-bg footer-bg-mobile"
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1440 320"
-        preserveAspectRatio="none"
-      >
-        <path
-          fill="#6aaae4"
-          d="M0,320 L0,150 Q720,120 1440,150 L1440,320 Z"
-          opacity="0.3"
-        />
-        <path
-          fill="#6aaae4"
-          d="M0,320 L0,160 Q720,140 1440,160 L1440,320 Z"
-          opacity="0.5"
-        />
-        <path
-          fill="#6aaae4"
-          d="M0,320 L0,180 Q720,160 1440,180 L1440,320 Z"
-          opacity="1"
-        />
-      </svg>
-      <div class="footer__content-container">
-        <div class="footer-content">
-          <div class="footer__links">
-            <a href="mailto:emilymisola@gmail.com" class="footer__link"
-              ><img
-                class="footer__link__icon"
-                src="img/footer/Email.svg"
-                alt="Email Icon"
-              />Email</a
-            >
-            <a
-              href="https://www.linkedin.com/in/emily-misola"
-              class="footer__link"
-              target="_blank"
-              rel="noopener noreferrer"
-              ><img
-                class="footer__link__icon"
-                src="img/footer/LinkedIn.svg"
-                alt="LinkedIn Icon"
-              />LinkedIn</a
-            >
-            <a
-              href="https://github.com/emmpup"
-              class="footer__link"
-              target="_blank"
-              rel="noopener noreferrer"
-              ><img
-                class="footer__link__icon"
-                src="img/footer/Github.svg"
-                alt="Github Icon"
-              />Github</a
-            >
-          </div>
-          <div class="footer__text">
-            <h3 class="footer__text__tagline">
-              Applying a developer’s logic and a designer’s empathy to solve
-              complex problems
-            </h3>
-          </div>
-          <div class="footer__links">
-            <a href="/projects.html" class="footer__link">Projects</a>
-            <a href="/about.html" class="footer__link">About Me</a>
-            <a href="mailto:emilymisola@gmail.com" class="footer__link"
-              >Contact</a
-            >
-          </div>
-          <p class="footer__copyright">
-            © 2026 Emily Misola. All rights reserved.
-          </p>
-        </div>
-      </div>
-    </footer>
+      </main>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollSmoother.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/SplitText.min.js"></script>
 
     <script src="js/main.js"></script>
+    <script src="js/home.js"></script>
   </body>
 </html>
