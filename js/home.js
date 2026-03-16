@@ -37,6 +37,7 @@ gsap.utils.toArray(".fade").forEach((container) => {
     scrollTrigger: {
       trigger: container,
       start: "top 80%",
+      markers: true,
       toggleActions: "play none none reset",
     },
     opacity: 0,
@@ -47,10 +48,43 @@ gsap.utils.toArray(".fade").forEach((container) => {
   });
 });
 
-gsap.utils.toArray(".fade-element").forEach((elem) => {
+gsap.utils.toArray(".fade-element, .project__poster").forEach((elem) => {
   gsap.from(elem, {
     scrollTrigger: {
       trigger: elem,
+      start: "top 80%",
+      toggleActions: "play none none reset",
+    },
+    opacity: 0,
+    y: 50,
+    duration: 1,
+    ease: "expo.out",
+  });
+});
+
+// Animate mockup and background images with fade
+// gsap.utils
+//   .toArray(".project__mockup, .project__background")
+//   .forEach((image) => {
+//     gsap.from(image, {
+//       scrollTrigger: {
+//         trigger: image,
+//         start: "top 80%",
+//         markers: true,
+//         toggleActions: "play none none reset",
+//       },
+//       opacity: 0,
+//       y: 50,
+//       duration: 1,
+//       ease: "expo.out",
+//     });
+//   });
+
+// Animate poster image (single image) to fade up
+gsap.utils.toArray(".project__poster").forEach((poster) => {
+  gsap.from(poster, {
+    scrollTrigger: {
+      trigger: poster,
       start: "top 80%",
       toggleActions: "play none none reset",
     },
