@@ -258,6 +258,7 @@
   border: none;
   background: light-dark(var(--light-secondary-500), var(--dark-secondary-500));
   padding: 0.5rem 1rem;
+  color: light-dark(var(--light-text-500), var(--light-text-500));
 }
 
 .project-mainsection__wireframes__chip:hover {
