@@ -38,7 +38,7 @@
   bottom: 30px;
   left: 30px;
   will-change: transform;
-  /* perspective: 800px; */
+  perspective: 600px;
 }
 
 .card {

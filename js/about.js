@@ -13,9 +13,15 @@ const HOVER_DURATION = 0.25;
 const FLIP_LIFT_DISTANCE = 80;
 const FLIP_DURATION = 0.5;
 
+const TILT_MAX_ROTATION = 15;
+const TILT_DURATION = 0.6;
+
 const cardBaselines = new Map();
 let flippedCard = null;
 let isAnimatingFlip = false;
+
+let activeTiltMove = null;
+let activeTiltLeave = null;
 
 const deckCloseBtn = document.createElement("button");
 deckCloseBtn.className = "deck-close-btn";
@@ -59,6 +65,49 @@ function snapshotBaselines() {
   });
 }
 
+function addTiltListeners(card) {
+  const inner = card.querySelector(".card");
+
+  const tiltX = gsap.quickTo(inner, "rotationX", {
+    duration: TILT_DURATION,
+    ease: "power3",
+  });
+  const tiltY = gsap.quickTo(inner, "rotationY", {
+    duration: TILT_DURATION,
+    ease: "power3",
+  });
+
+  activeTiltMove = (e) => {
+    const rect = card.getBoundingClientRect();
+    const px = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+    const py = ((e.clientY - rect.top) / rect.height) * 2 - 1;
+    tiltX(-py * TILT_MAX_ROTATION);
+    tiltY(180 + px * TILT_MAX_ROTATION);
+  };
+
+  activeTiltLeave = () => {
+    tiltX(0);
+    tiltY(180);
+  };
+
+  card.addEventListener("pointermove", activeTiltMove);
+  card.addEventListener("pointerleave", activeTiltLeave);
+}
+
+function removeTiltListeners(card) {
+  if (activeTiltMove) card.removeEventListener("pointermove", activeTiltMove);
+  if (activeTiltLeave)
+    card.removeEventListener("pointerleave", activeTiltLeave);
+  activeTiltMove = null;
+  activeTiltLeave = null;
+
+  const inner = card.querySelector(".card");
+  if (inner)
+    gsap.to(inner, {
+      rotationX: 0,
+    });
+}
+
 function openCard(card) {
   if (isAnimatingFlip) return;
   isAnimatingFlip = true;
@@ -78,6 +127,7 @@ function openCard(card) {
         flippedCard = card;
         const closeBtn = card.querySelector(".card-close-btn");
         if (closeBtn) closeBtn.classList.add("card-close-btn--visible");
+        addTiltListeners(card);
       },
     })
     .to(card, {
@@ -106,6 +156,8 @@ function closeFlippedCard(onComplete) {
 
   const closeBtn = card.querySelector(".card-close-btn");
   if (closeBtn) closeBtn.classList.remove("card-close-btn--visible");
+
+  removeTiltListeners(card);
 
   gsap
     .timeline({
@@ -286,6 +338,7 @@ function resetCards() {
   hideDeckCloseBtn();
 
   if (flippedCard) {
+    removeTiltListeners(flippedCard);
     const innerCard = flippedCard.querySelector(".card");
     if (innerCard) gsap.set(innerCard, { rotateY: 0 });
     const closeBtn = flippedCard.querySelector(".card-close-btn");
