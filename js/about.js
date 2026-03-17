@@ -282,7 +282,6 @@ function resetCards() {
   removeHoverListeners();
   removeCardClickListeners();
   hideDeckCloseBtn();
-  undimAllCards();
 
   if (flippedCard) {
     const innerCard = flippedCard.querySelector(".card");
