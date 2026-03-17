@@ -37,45 +37,156 @@
   bottom: 30px;
   left: 30px;
   will-change: transform;
+  /* 3D context for the flip */
+  perspective: 800px;
 }
+
+/* ─── Flip structure ─────────────────────────────────────────────────────── */
 
 .card {
   width: 250px;
   height: 370px;
-  background: white;
-  padding: 20px;
   border-radius: 16px;
+  /* inner preserves 3D so the two faces flip correctly */
+  transform-style: preserve-3d;
+  position: relative;
+  cursor: pointer;
+}
+
+/* The two faces share the same space */
+.card__back,
+.card__front {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Back face — visible by default */
+.card__back {
+  background: var(--light-primary-400);
   box-shadow: -4px 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
-.card__back {
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  background: var(--light-primary-400);
-}
-
+/* Front face — starts rotated away, flips into view */
 .card__front {
+  background: white;
+  box-shadow: -4px 4px 4px 0 rgba(0, 0, 0, 0.25);
+  transform: rotateY(180deg);
+  padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 16px;
+  overflow: hidden;
 }
 
 .card__front__image {
   width: 100%;
   border-radius: 10px;
+  object-fit: cover;
 }
 
 .card__front__text-container {
-  color: light-dark(var(--light-text-500), var(--light-text-500));
+  color: var(--light-text-500);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .card__front__title {
-  font-size: 28px;
-  font-weight: 400;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
 }
 
 .card__front__text {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ─── Dimmed state for non-active cards ─────────────────────────────────── */
+
+.card--dimmed .card__back,
+.card--dimmed .card__front {
+  transition:
+    filter 0.4s ease,
+    opacity 0.4s ease;
+  filter: grayscale(40%);
+  opacity: 0.5;
+}
+
+/* ─── Close / collapse button (sits outside the deck) ───────────────────── */
+
+.deck-close-btn {
+  position: absolute;
+  /* floats to the right of the spread area, vertically centred */
+  right: 24px;
+  bottom: 60px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--light-primary-400);
+  background: white;
+  color: var(--light-primary-400);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.3s ease,
+    background 0.2s ease,
+    color 0.2s ease;
+  z-index: 10;
+}
+
+.deck-close-btn:hover {
+  background: var(--light-primary-400);
+  color: white;
+}
+
+.deck-close-btn--visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ─── Card-flip close button (appears on flipped card) ──────────────────── */
+
+.card-close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.08);
+  color: var(--light-text-500);
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.2s ease,
+    background 0.2s ease;
+  z-index: 5;
+}
+
+.card-close-btn:hover {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.card-close-btn--visible {
+  opacity: 1;
+  pointer-events: all;
 }

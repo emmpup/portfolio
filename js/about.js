@@ -8,38 +8,47 @@ let isSpread = false;
 const DECK_POSITION = 0;
 
 const HOVER_LIFT_DISTANCE = 20;
-const NEIGHBOUR_FAN_OFFSET = 12;
+const NEIGHBOUR_FAN_OFFSET = 16;
 const HOVER_DURATION = 0.25;
+const FLIP_LIFT_DISTANCE = 80;
+const FLIP_DURATION = 0.5;
+
+const cardBaselines = new Map();
+let flippedCard = null;
+let isAnimatingFlip = false;
+
+const deckCloseBtn = document.createElement("button");
+deckCloseBtn.className = "deck-close-btn";
+deckCloseBtn.setAttribute("aria-label", "Collapse cards");
+deckCloseBtn.innerHTML = "✕";
+document.querySelector(".card-spread-container").appendChild(deckCloseBtn);
+
+deckCloseBtn.addEventListener("click", () => {
+  if (!isSpread) return;
+  if (flippedCard) {
+    closeFlippedCard(() => resetCards());
+  } else {
+    resetCards();
+  }
+});
+
+function showDeckCloseBtn() {
+  deckCloseBtn.classList.add("deck-close-btn--visible");
+}
+
+function hideDeckCloseBtn() {
+  deckCloseBtn.classList.remove("deck-close-btn--visible");
+}
 
 function getSpreadPosition(i) {
   return i / (totalCards - 1);
 }
 
-// Returns the current visual rotation of an element (degrees) from its matrix
 function getComputedRotation(el) {
   const matrix = new DOMMatrix(getComputedStyle(el).transform);
   return Math.atan2(matrix.b, matrix.a) * (180 / Math.PI);
 }
 
-// Baseline x/y for each card after spreading — hover offsets are always
-// applied on top of these absolute values, never accumulated with +=
-const cardBaselines = new Map(); // card element → { x, y, rotation }
-
-cards.forEach((card) => {
-  gsap.set(card, {
-    motionPath: {
-      path: ".curve-path",
-      align: ".curve-path",
-      alignOrigin: [0.5, 0.5],
-      autoRotate: false,
-      start: DECK_POSITION,
-      end: DECK_POSITION,
-    },
-    rotation: 0,
-  });
-});
-
-// Snapshot each card's x/y/rotation after the spread animation settles
 function snapshotBaselines() {
   cards.forEach((card) => {
     cardBaselines.set(card, {
@@ -50,9 +59,108 @@ function snapshotBaselines() {
   });
 }
 
-// ─── Hover handlers ──────────────────────────────────────────────────────────
+function openCard(card) {
+  if (isAnimatingFlip) return;
+  isAnimatingFlip = true;
+
+  removeHoverListeners();
+
+  const base = cardBaselines.get(card);
+  const rad = (base.rotation - 90) * (Math.PI / 180);
+  const dx = Math.cos(rad) * FLIP_LIFT_DISTANCE;
+  const dy = Math.sin(rad) * FLIP_LIFT_DISTANCE;
+
+  gsap
+    .timeline({
+      onComplete: () => {
+        isAnimatingFlip = false;
+        flippedCard = card;
+        const closeBtn = card.querySelector(".card-close-btn");
+        if (closeBtn) closeBtn.classList.add("card-close-btn--visible");
+      },
+    })
+    .to(card, {
+      x: base.x + dx,
+      y: base.y + dy,
+      duration: FLIP_DURATION,
+      ease: "power2.out",
+    })
+    .to(
+      card.querySelector(".card"),
+      {
+        rotateY: 180,
+        duration: FLIP_DURATION,
+        ease: "power2.inOut",
+      },
+      "<0.1",
+    );
+}
+
+function closeFlippedCard(onComplete) {
+  if (!flippedCard || isAnimatingFlip) return;
+  isAnimatingFlip = true;
+
+  const card = flippedCard;
+  const base = cardBaselines.get(card);
+
+  const closeBtn = card.querySelector(".card-close-btn");
+  if (closeBtn) closeBtn.classList.remove("card-close-btn--visible");
+
+  gsap
+    .timeline({
+      onComplete: () => {
+        flippedCard = null;
+        isAnimatingFlip = false;
+        if (onComplete) onComplete();
+        else addHoverListeners();
+      },
+    })
+    .to(card.querySelector(".card"), {
+      rotateY: 0,
+      duration: FLIP_DURATION,
+      ease: "power2.inOut",
+    })
+    .to(
+      card,
+      {
+        x: base.x,
+        y: base.y,
+        duration: FLIP_DURATION,
+        ease: "power2.in",
+      },
+      "<0.1",
+    );
+}
+
+function onCardClick(e) {
+  if (!isSpread || isAnimatingFlip) return;
+
+  const clicked = e.currentTarget;
+
+  if (clicked === flippedCard) {
+    closeFlippedCard();
+    return;
+  }
+
+  if (flippedCard) {
+    closeFlippedCard(() => openCard(clicked));
+    return;
+  }
+
+  openCard(clicked);
+}
+
+function addCardClickListeners() {
+  cards.forEach((card) => card.addEventListener("click", onCardClick));
+}
+
+function removeCardClickListeners() {
+  cards.forEach((card) => card.removeEventListener("click", onCardClick));
+}
 
 function onCardEnter(e) {
+  if (flippedCard) return;
+
   const hovered = e.currentTarget;
   const hoveredIndex = [...cards].indexOf(hovered);
 
@@ -60,14 +168,12 @@ function onCardEnter(e) {
     const base = cardBaselines.get(card);
     if (!base) return;
 
-    const offset = i - hoveredIndex; // -n … 0 … +n
+    const offset = i - hoveredIndex;
 
     if (offset === 0) {
-      // Lift the hovered card perpendicular to its face ("up" relative to card)
       const rad = (base.rotation - 90) * (Math.PI / 180);
       const dx = Math.cos(rad) * HOVER_LIFT_DISTANCE;
       const dy = Math.sin(rad) * HOVER_LIFT_DISTANCE;
-
       gsap.to(card, {
         x: base.x + dx,
         y: base.y + dy,
@@ -81,17 +187,14 @@ function onCardEnter(e) {
           : NEIGHBOUR_FAN_OFFSET * 0.4;
       fanCard(card, base, i, hoveredIndex, amount);
     }
-    // Cards further than ±2 stay put (they're already at their baseline)
   });
 }
 
 function fanCard(card, base, cardIndex, hoveredIndex, amount) {
-  // Fan along the curve tangent, away from the hovered card
   const direction = cardIndex < hoveredIndex ? -1 : 1;
-  const curveRad = (base.rotation - 90 + 90) * (Math.PI / 180); // tangent direction
+  const curveRad = base.rotation * (Math.PI / 180);
   const dx = Math.cos(curveRad) * amount * direction;
   const dy = Math.sin(curveRad) * amount * direction;
-
   gsap.to(card, {
     x: base.x + dx,
     y: base.y + dy,
@@ -101,7 +204,7 @@ function fanCard(card, base, cardIndex, hoveredIndex, amount) {
 }
 
 function onCardLeave() {
-  // Return every card to its exact baseline — no drift possible
+  if (flippedCard) return;
   cards.forEach((card) => {
     const base = cardBaselines.get(card);
     if (!base) return;
@@ -128,7 +231,19 @@ function removeHoverListeners() {
   });
 }
 
-// ─── Spread / reset ──────────────────────────────────────────────────────────
+cards.forEach((card) => {
+  gsap.set(card, {
+    motionPath: {
+      path: ".curve-path",
+      align: ".curve-path",
+      alignOrigin: [0.5, 0.5],
+      autoRotate: false,
+      start: DECK_POSITION,
+      end: DECK_POSITION,
+    },
+    rotation: 0,
+  });
+});
 
 function spreadCards() {
   for (let i = cards.length - 1; i >= 0; i--) {
@@ -138,11 +253,7 @@ function spreadCards() {
 
     gsap
       .timeline({ delay: staggerIndex * 0.08 })
-      .to(cardDeck, {
-        rotation: -14,
-        duration: 0.4,
-        ease: "power2.inOut",
-      })
+      .to(cardDeck, { rotation: -14, duration: 0.4, ease: "power2.inOut" })
       .to(card, {
         motionPath: {
           path: ".curve-path",
@@ -158,40 +269,46 @@ function spreadCards() {
   }
   isSpread = true;
 
-  // Enable hover only after all cards have finished spreading
   const longestDelay = (cards.length - 1) * 0.08 + 1.2 + 0.4;
   gsap.delayedCall(longestDelay, () => {
     snapshotBaselines();
     addHoverListeners();
+    addCardClickListeners();
+    showDeckCloseBtn();
   });
 }
 
 function resetCards() {
-  // 1. Immediately stop hover listeners and kill any in-flight hover tweens
   removeHoverListeners();
+  removeCardClickListeners();
+  hideDeckCloseBtn();
+  undimAllCards();
+
+  if (flippedCard) {
+    const innerCard = flippedCard.querySelector(".card");
+    if (innerCard) gsap.set(innerCard, { rotateY: 0 });
+    const closeBtn = flippedCard.querySelector(".card-close-btn");
+    if (closeBtn) closeBtn.classList.remove("card-close-btn--visible");
+    flippedCard = null;
+  }
+
   cards.forEach((card) => gsap.killTweensOf(card, "x,y"));
 
-  // 2. Smoothly return each card's hover offset back to its baseline x/y,
-  //    then kick off the motionPath return from that clean position.
   cards.forEach((card, i) => {
     const base = cardBaselines.get(card);
     const staggerIndex = cards.length - 1 - i;
     const startPos = getSpreadPosition(i);
-
-    // If hover was never used, x/y are already 0
     const bx = base ? base.x : 0;
     const by = base ? base.y : 0;
 
     gsap
       .timeline({ delay: staggerIndex * 0.08 })
-      // First: ease back to the card's clean spread position (no hover offset)
       .to(card, {
         x: bx,
         y: by,
         duration: HOVER_DURATION,
         ease: "power2.inOut",
       })
-      // Then: travel back along the curve to the deck
       .to(card, {
         motionPath: {
           path: ".curve-path",
@@ -204,11 +321,7 @@ function resetCards() {
         duration: 1.2,
         ease: "power2.inOut",
       })
-      .to(cardDeck, {
-        rotation: 0,
-        duration: 0.4,
-        ease: "power2.inOut",
-      });
+      .to(cardDeck, { rotation: 0, duration: 0.4, ease: "power2.inOut" });
   });
 
   cardBaselines.clear();
@@ -216,13 +329,12 @@ function resetCards() {
 }
 
 cardDeck.addEventListener("click", () => {
-  if (isSpread) {
-    resetCards();
-  } else {
-    spreadCards();
-  }
+  if (!isSpread) spreadCards();
 });
 
 document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && isSpread) resetCards();
+  if (e.key === "Escape") {
+    if (flippedCard) closeFlippedCard();
+    else if (isSpread) resetCards();
+  }
 });
