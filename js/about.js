@@ -64,6 +64,7 @@ function openCard(card) {
   isAnimatingFlip = true;
 
   removeHoverListeners();
+  gsap.set(card, { zIndex: 10 });
 
   const base = cardBaselines.get(card);
   const rad = (base.rotation - 90) * (Math.PI / 180);
@@ -109,6 +110,7 @@ function closeFlippedCard(onComplete) {
   gsap
     .timeline({
       onComplete: () => {
+        gsap.set(card, { zIndex: "auto" });
         flippedCard = null;
         isAnimatingFlip = false;
         if (onComplete) onComplete();
