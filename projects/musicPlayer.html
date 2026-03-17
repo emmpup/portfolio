@@ -13,6 +13,7 @@
     <title>Music Player</title>
   </head>
   <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <nav class="navbar">
       <a href="../index.html">
         <svg
@@ -30,7 +31,7 @@
       <!-- Desktop Navigation -->
       <div class="navbar__desktop">
         <a href="../projects.html" class="navbar__link">Projects</a>
-        <a href="#" class="navbar__link">About Me</a>
+        <a href="../about.html" class="navbar__link">About Me</a>
         <a href="mailto:emilymisola@gmail.com" class="navbar__link">Contact</a>
 
         <input
@@ -38,6 +39,8 @@
           id="theme-toggle"
           name="toggle-color-scheme"
           class="navbar__checkbox"
+          aria-pressed="false"
+          aria-label="Toggle light and dark theme"
         />
         <label for="theme-toggle" class="navbar__label">
           <img class="navbar__icon" src="../img/navbar/dark.svg" alt=""
@@ -45,19 +48,31 @@
       </div>
 
       <!-- Mobile Hamburger Menu -->
-      <input type="checkbox" id="nav-toggle" class="navbar__menu-checkbox" />
-      <label for="nav-toggle" class="navbar__hamburger">
+      <input
+        type="checkbox"
+        id="nav-toggle"
+        class="navbar__menu-checkbox"
+        aria-expanded="false"
+        aria-controls="navbar-mobile-menu"
+      />
+      <label
+        for="nav-toggle"
+        class="navbar__hamburger"
+        aria-label="Toggle navigation menu"
+      >
         <span class="navbar__hamburger-line"></span>
         <span class="navbar__hamburger-line"></span>
         <span class="navbar__hamburger-line"></span>
       </label>
 
       <!-- Mobile Menu Overlay -->
-      <div class="navbar__mobile-menu">
+      <div class="navbar__mobile-menu" id="navbar-mobile-menu">
         <div class="navbar__mobile-menu-content">
           <a href="../projects.html" class="navbar__mobile-link">Projects</a>
-          <a href="#" class="navbar__mobile-link">About Me</a>
-          <a href="#" class="navbar__mobile-link">Contact</a>
+          <a href="../about.html" class="navbar__mobile-link">About Me</a>
+          <a href="mailto:emilymisola@gmail.com" class="navbar__mobile-link"
+            >Contact</a
+          >
 
           <div class="navbar__mobile-theme">
             <input
@@ -65,6 +80,8 @@
               id="theme-toggle-mobile"
               name="toggle-color-scheme"
               class="navbar__checkbox"
+              aria-pressed="false"
+              aria-label="Toggle light and dark theme"
             />
             <label for="theme-toggle-mobile" class="navbar__label">
               <img
@@ -77,7 +94,7 @@
       </div>
     </nav>
 
-    <main>
+    <main id="main-content">
       <div class="projects__header">
         <div class="projects__rounded-title">
           <h1 class="header__title">Music Player</h1>
@@ -236,8 +253,9 @@
     </main>
 
     <footer class="footer">
+      <!-- Desktop SVG (1025px+) - Original curves -->
       <svg
-        class="footer-bg"
+        class="footer-bg footer-bg-desktop"
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1440 320"
@@ -256,6 +274,31 @@
         <path
           fill="#6aaae4"
           d="M0,320 L0,180 Q720,80 1440,180 L1440,320 Z"
+          opacity="1"
+        />
+      </svg>
+
+      <!-- Mobile/Tablet SVG (up to 1024px) - Flatter curves -->
+      <svg
+        class="footer-bg footer-bg-mobile"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 320"
+        preserveAspectRatio="none"
+      >
+        <path
+          fill="#6aaae4"
+          d="M0,320 L0,150 Q720,120 1440,150 L1440,320 Z"
+          opacity="0.3"
+        />
+        <path
+          fill="#6aaae4"
+          d="M0,320 L0,160 Q720,140 1440,160 L1440,320 Z"
+          opacity="0.5"
+        />
+        <path
+          fill="#6aaae4"
+          d="M0,320 L0,180 Q720,160 1440,180 L1440,320 Z"
           opacity="1"
         />
       </svg>
@@ -297,9 +340,6 @@
               Applying a developer’s logic and a designer’s empathy to solve
               complex problems
             </h3>
-            <p class="footer__copyright">
-              © 2026 Emily Misola. All rights reserved.
-            </p>
           </div>
           <div class="footer__links">
             <a href="../projects.html" class="footer__link">Projects</a>
@@ -308,6 +348,9 @@
               >Contact</a
             >
           </div>
+          <p class="footer__copyright">
+            © 2026 Emily Misola. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
