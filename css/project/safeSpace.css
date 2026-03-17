@@ -418,6 +418,18 @@
   font-weight: 600;
 }
 
+.project__main__section__showcase-imgs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.project__main__section__showcase-imgs__image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
 .project__main__section__takeaway {
   display: flex;
   flex-direction: column;
