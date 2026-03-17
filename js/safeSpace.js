@@ -29,9 +29,8 @@
     const themeToggle = document.querySelector('[name="toggle-color-scheme"]');
     const isToggleChecked = themeToggle ? themeToggle.checked : false;
 
-    // If toggle is checked, use opposite of system preference
-    // If toggle is not checked, use system preference
-    const isDarkMode = isToggleChecked ? !systemPrefersDark : systemPrefersDark;
+    // If toggle exists, use its checked state. Otherwise, use system preference
+    const isDarkMode = themeToggle ? isToggleChecked : systemPrefersDark;
 
     return isDarkMode ? "dark" : "light";
   }

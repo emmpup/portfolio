@@ -313,6 +313,22 @@
   max-width: 100%;
 }
 
+#wireframes-lofi-gallery,
+#wireframes-hifi-gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#wireframes-lofi-gallery .pswp-gallery__item,
+#wireframes-hifi-gallery .pswp-gallery__item {
+  display: block;
+}
+
+.project__main__section__wireframes__slides__images .pswp-gallery__item {
+  display: contents;
+}
+
 .project__main__section__code {
   display: flex;
   flex-direction: column;
