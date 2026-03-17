@@ -112,6 +112,10 @@
   align-self: flex-end;
 }
 
+.project__main__section__screens-overview__screen > a {
+  display: contents;
+}
+
 .project__main__section__screens-overview__image {
   width: 100%;
   height: auto;
@@ -467,4 +471,8 @@
 
 .project__main__section__promotional-material__image.double-width {
   grid-column: span 2;
+}
+
+.pswp-gallery__item {
+  display: contents;
 }
