@@ -37,23 +37,18 @@
   bottom: 30px;
   left: 30px;
   will-change: transform;
-  /* 3D context for the flip */
   perspective: 800px;
 }
-
-/* ─── Flip structure ─────────────────────────────────────────────────────── */
 
 .card {
   width: 250px;
   height: 370px;
   border-radius: 16px;
-  /* inner preserves 3D so the two faces flip correctly */
   transform-style: preserve-3d;
   position: relative;
   cursor: pointer;
 }
 
-/* The two faces share the same space */
 .card__back,
 .card__front {
   position: absolute;
@@ -63,13 +58,12 @@
   -webkit-backface-visibility: hidden;
 }
 
-/* Back face — visible by default */
 .card__back {
   background: var(--light-primary-400);
+  border: 14px solid white;
   box-shadow: -4px 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
-/* Front face — starts rotated away, flips into view */
 .card__front {
   background: white;
   box-shadow: -4px 4px 4px 0 rgba(0, 0, 0, 0.25);
@@ -107,22 +101,8 @@
   margin: 0;
 }
 
-/* ─── Dimmed state for non-active cards ─────────────────────────────────── */
-
-.card--dimmed .card__back,
-.card--dimmed .card__front {
-  transition:
-    filter 0.4s ease,
-    opacity 0.4s ease;
-  filter: grayscale(40%);
-  opacity: 0.5;
-}
-
-/* ─── Close / collapse button (sits outside the deck) ───────────────────── */
-
 .deck-close-btn {
   position: absolute;
-  /* floats to the right of the spread area, vertically centred */
   right: 24px;
   bottom: 60px;
   width: 40px;
@@ -156,8 +136,6 @@
   opacity: 1;
   pointer-events: all;
 }
-
-/* ─── Card-flip close button (appears on flipped card) ──────────────────── */
 
 .card-close-btn {
   position: absolute;
