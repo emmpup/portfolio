@@ -423,15 +423,31 @@
       import PhotoSwipeLightbox from "https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.min.js";
 
       document.querySelectorAll(".pswp-gallery").forEach((galleryEl) => {
-        const lightbox = new PhotoSwipeLightbox({
+        // Check if this gallery contains the layout image
+        const isLayoutGallery = galleryEl.querySelector(
+          'a[href*="layout.png"]',
+        );
+
+        const config = {
           gallery: galleryEl,
           children: "a.pswp-gallery__item",
           pswpModule: () =>
             import("https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.esm.min.js"),
-          initialZoomLevel: "fit",
-          secondaryZoomLevel: 1.5,
-          maxZoomLevel: 3,
-        });
+        };
+
+        if (isLayoutGallery) {
+          // Much lower zoom for the layout image - show more of it at once
+          config.initialZoomLevel = 0.3;
+          config.secondaryZoomLevel = 0.5;
+          config.maxZoomLevel = 1;
+        } else {
+          // Normal zoom for other images
+          config.initialZoomLevel = "fit";
+          config.secondaryZoomLevel = 1.5;
+          config.maxZoomLevel = 3;
+        }
+
+        const lightbox = new PhotoSwipeLightbox(config);
         lightbox.init();
       });
     </script>
