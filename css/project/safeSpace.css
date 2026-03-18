@@ -509,8 +509,15 @@
 .project__main__section__prototype {
   display: flex;
   flex-direction: row;
-  gap: 1rem;
+  gap: 2rem;
   justify-content: center;
+  align-items: flex-start;
+}
+
+.project__main__section__prototype__figma {
+  width: 375px;
+  height: 667px;
+  min-width: 375px;
 }
 
 .project__main__section__prototype__text {
