@@ -858,21 +858,6 @@
   .project__main__section__wireframes__slides__arrow {
     display: none;
   }
-
-  /* Prototype responsive - switch to column on tablet */
-  .project__main__section__prototype {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .project__main__section__prototype__figma {
-    width: 375px;
-    height: 667px;
-  }
-
-  .project__main__section__prototype__text {
-    max-width: 100%;
-  }
 }
 
 /* ===========================================
