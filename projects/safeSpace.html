@@ -10,6 +10,11 @@
     <link rel="stylesheet" href="../css/components.css" />
     <link rel="stylesheet" href="../css/responsive.css" />
 
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.css"
+    />
+
     <title>SafeSpace</title>
   </head>
   <body>
@@ -199,10 +204,12 @@
             <a href="#sitemap" class="project__nav__link">Sitemap & Userflow</a>
             <a href="#wireframes" class="project__nav__link">Wireframes</a>
             <a href="#coding" class="project__nav__link">Coding</a>
-            <a href="#takeaways" class="project__nav__link">Takeaways</a>
+            <a href="#product" class="project__nav__link">Final Product</a>
+            <a href="#showcase" class="project__nav__link">BCIT Showcase</a>
             <a href="#promotional-materials" class="project__nav__link"
               >Promotional Materials</a
             >
+            <a href="#takeaways" class="project__nav__link">Takeaways</a>
           </nav>
         </div>
         <div class="project__main">
@@ -224,13 +231,24 @@
                 environments.
               </p>
             </div>
-            <div class="project__main__section__screens-overview">
+            <div
+              class="project__main__section__screens-overview pswp-gallery"
+              id="overview-gallery"
+            >
               <div class="project__main__section__screens-overview__screen">
-                <img
-                  class="project__main__section__screens-overview__image"
-                  src="../img/safeSpace/overview1.png"
-                  alt="SafeSpace Overview Mockup"
-                />
+                <a
+                  class="pswp-gallery__item"
+                  href="../img/safeSpace/overview1.png"
+                  data-pswp-width="1756"
+                  data-pswp-height="3163"
+                  target="_blank"
+                >
+                  <img
+                    class="project__main__section__screens-overview__image"
+                    src="../img/safeSpace/overview1.png"
+                    alt="SafeSpace Overview Mockup"
+                  />
+                </a>
                 <div class="project__main__section__screens-overview__text">
                   <h3 class="project__main__section__screens-overview__header">
                     Reports
@@ -250,11 +268,19 @@
               <div
                 class="project__main__section__screens-overview__screen right-align"
               >
-                <img
-                  class="project__main__section__screens-overview__image"
-                  src="../img/safeSpace/overview2.png"
-                  alt="SafeSpace Overview Mockup 2"
-                />
+                <a
+                  class="pswp-gallery__item"
+                  href="../img/safeSpace/overview2.png"
+                  data-pswp-width="1757"
+                  data-pswp-height="3119"
+                  target="_blank"
+                >
+                  <img
+                    class="project__main__section__screens-overview__image"
+                    src="../img/safeSpace/overview2.png"
+                    alt="SafeSpace Overview Mockup 2"
+                  />
+                </a>
                 <div class="project__main__section__screens-overview__text">
                   <h3 class="project__main__section__screens-overview__header">
                     Record
@@ -271,11 +297,19 @@
               </div>
 
               <div class="project__main__section__screens-overview__screen">
-                <img
-                  class="project__main__section__screens-overview__image"
-                  src="../img/safeSpace/overview3.png"
-                  alt="SafeSpace Overview Mockup 3"
-                />
+                <a
+                  class="pswp-gallery__item"
+                  href="../img/safeSpace/overview3.png"
+                  data-pswp-width="1722"
+                  data-pswp-height="3071"
+                  target="_blank"
+                >
+                  <img
+                    class="project__main__section__screens-overview__image"
+                    src="../img/safeSpace/overview3.png"
+                    alt="SafeSpace Overview Mockup 3"
+                  />
+                </a>
                 <div class="project__main__section__screens-overview__text">
                   <h3 class="project__main__section__screens-overview__header">
                     Safi
@@ -526,24 +560,46 @@
                 Sitemap & Userflow
               </h2>
 
-              <div class="project__main__section__sitemap">
+              <div
+                class="project__main__section__sitemap pswp-gallery"
+                id="sitemap-userflow-gallery"
+              >
                 <h3 class="project__main__section__sitemap__header">Sitemap</h3>
-                <img
-                  class="project__main__section__sitemap__image"
-                  src="../img/safeSpace/siteMap.png"
-                  alt="SafeSpace Sitemap"
-                />
+                <a
+                  class="pswp-gallery__item"
+                  href="../img/safeSpace/siteMap.png"
+                  data-pswp-width="1757"
+                  data-pswp-height="578"
+                  target="_blank"
+                >
+                  <img
+                    class="project__main__section__sitemap__image"
+                    src="../img/safeSpace/siteMap.png"
+                    alt="SafeSpace Sitemap"
+                  />
+                </a>
               </div>
 
-              <div class="project__main__section__userflow">
+              <div
+                class="project__main__section__userflow pswp-gallery"
+                id="sitemap-userflow-gallery"
+              >
                 <h3 class="project__main__section__userflow__header">
                   Userflow
                 </h3>
-                <img
-                  class="project__main__section__userflow__image"
-                  src="../img/safeSpace/userFlow.png"
-                  alt="SafeSpace Userflow"
-                />
+                <a
+                  class="pswp-gallery__item"
+                  href="../img/safeSpace/userFlow.png"
+                  data-pswp-width="1894"
+                  data-pswp-height="766"
+                  target="_blank"
+                >
+                  <img
+                    class="project__main__section__userflow__image"
+                    src="../img/safeSpace/userFlow.png"
+                    alt="SafeSpace Userflow"
+                  />
+                </a>
               </div>
             </div>
           </div>
@@ -558,12 +614,22 @@
                 users interact with creating a "safety-first" aesthetic that
                 builds trust for women and gender-diverse professionals.
               </p>
-              <a
-                class="project__main__link"
-                href="https://www.figma.com/design/kVaZQMhqoo7F09wT31fyDI/SafeSpace-Design-File?node-id=1112-396&p=f&t=ePpQpQAh7YCs8xfY-0"
-                target="_blank"
-                >All Screens →</a
-              >
+
+              <div class="pswp-gallery" id="wireframes-lofi-gallery">
+                <a
+                  class="pswp-gallery__item"
+                  href="../img/safeSpace/SafeSpace-Wireframes-Lofi.png"
+                  data-pswp-width="5000"
+                  data-pswp-height="3333"
+                  target="_blank"
+                >
+                  <img
+                    class="project__main__section__wireframes__image"
+                    src="../img/safeSpace/SafeSpace-Wireframes-Lofi.png"
+                    alt="SafeSpace Low Fidelity Wireframes"
+                  />
+                </a>
+              </div>
 
               <div class="project__main__section__wireframes">
                 <div
@@ -678,6 +744,22 @@
                     </button>
                   </div>
                 </div>
+              </div>
+
+              <div class="pswp-gallery" id="wireframes-hifi-gallery">
+                <a
+                  class="pswp-gallery__item"
+                  href="../img/safeSpace/SafeSpace-Wireframes-Hifi.png"
+                  data-pswp-width="5000"
+                  data-pswp-height="3333"
+                  target="_blank"
+                >
+                  <img
+                    class="project__main__section__wireframes__image"
+                    src="../img/safeSpace/SafeSpace-Wireframes-Hifi.png"
+                    alt="SafeSpace High Fidelity Wireframes"
+                  />
+                </a>
               </div>
             </div>
           </div>
@@ -798,13 +880,24 @@
                 </div>
               </div>
 
-              <div class="project__main__section__code__description">
+              <div
+                class="project__main__section__code__description pswp-gallery"
+                id="coding-gallery"
+              >
                 <div class="project__main__section__code__images">
-                  <img
-                    class="project__main__section__code__screen-image"
-                    src="../img/safeSpace/overview3.png"
-                    alt="Safi Screen"
-                  />
+                  <a
+                    class="pswp-gallery__item"
+                    href="../img/safeSpace/overview3.png"
+                    data-pswp-width="1722"
+                    data-pswp-height="3071"
+                    target="_blank"
+                  >
+                    <img
+                      class="project__main__section__code__screen-image"
+                      src="../img/safeSpace/overview3.png"
+                      alt="Safi Screen"
+                    />
+                  </a>
                 </div>
                 <div class="project__main__section__code__text">
                   <h3 class="project__main__section__code__title">Safi</h3>
@@ -825,7 +918,7 @@
                       Solutions:
                     </h4>
                     <ul>
-                      <li>Had help from instructor</li>
+                      <li>Found answers through research and consulting</li>
                       <li>Changed prompt to exclude specific questions</li>
                       <li>
                         Simplified prompt to only include less information
@@ -833,6 +926,240 @@
                     </ul>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="project__main__section">
+            <div class="project__main__section__text">
+              <h2 id="product" class="project__main__header">Final Product</h2>
+              <p class="project__main__description">
+                SafeSpace consists of a mobile platform for secure field
+                reporting and a web-based dashboard designed for site leads and
+                stakeholders. Together, they bridge the gap between anonymous
+                worker feedback and high-level site improvements by transforming
+                raw incident data into actionable, regional insights.
+              </p>
+              <div class="project__main__section__prototype">
+                <iframe
+                  style="border: 1px solid rgba(0, 0, 0, 0.1)"
+                  src="https://embed.figma.com/proto/nbuehJVeWMEkT7FgX9Z98e/UX-UI-MOCKUPS?node-id=1897-7435&scaling=scale-down&content-scaling=fixed&page-id=1510%3A2777&starting-point-node-id=1897%3A7435&show-proto-sidebar=1&embed-host=share&hide-ui=true"
+                  allowfullscreen
+                  class="project__main__section__prototype__figma"
+                ></iframe>
+                <div class="project__main__section__prototype__text">
+                  <h3 class="project__main__section__prototype__title">
+                    Figma Prototype
+                  </h3>
+                  <p class="project__main__section__prototype__description">
+                    To document an incident, use the Create Report button for
+                    manual entries and Safi (the WatsonX-powered chatbot), or
+                    tap the purple recording button on the navbar to start a
+                    voice recording. Once submitted, the app uses GPT-4o mini to
+                    anonymize the data and generate practical solutions, which
+                    is secured with a passcode and can be shared to the global
+                    public feed.
+                  </p>
+                </div>
+              </div>
+              <video
+                class="project__main__section__video"
+                autoplay
+                loop
+                src="../img/safeSpace/websup.mp4"
+              >
+                <source src="../img/safeSpace/websup.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+
+          <div class="project__main__section">
+            <div class="project__main__section__text">
+              <h2 id="showcase" class="project__main__header">BCIT Showcase</h2>
+              <p class="project__main__section__presentation-description">
+                On December 5th, 2025, our team presented SafeSpace at the BCIT
+                D3/FSWD x ConnectHERHub Student Design and Technology Showcase,
+                a collaborative event for Digital Design and Development (D3)
+                and Full Stack Web Development (FSWD) students. This event was
+                dedicated to AI-driven solutions for underrepresented groups in
+                the skilled trades. Competing against nine other talented teams,
+                we secured 1st place with over 300 audience votes.
+              </p>
+            </div>
+            <div
+              class="project__main__section__showcase-imgs pswp-gallery"
+              id="showcase-gallery"
+            >
+              <a
+                class="pswp-gallery__item"
+                href="../img/safeSpace/showcase-table.jpg"
+                data-pswp-width="3500"
+                data-pswp-height="2333"
+                target="_blank"
+              >
+                <img
+                  class="project__main__section__showcase-imgs__image"
+                  src="../img/safeSpace/showcase-table.jpg"
+                  alt="SafeSpace table at BCIT Showcase"
+                />
+              </a>
+              <a
+                class="pswp-gallery__item"
+                href="../img/safeSpace/showcase-presentation.jpg"
+                data-pswp-width="3500"
+                data-pswp-height="2333"
+                target="_blank"
+              >
+                <img
+                  class="project__main__section__showcase-imgs__image"
+                  src="../img/safeSpace/showcase-presentation.jpg"
+                  alt="SafeSpace Presentation at BCIT Showcase"
+                />
+              </a>
+              <a
+                class="pswp-gallery__item"
+                href="../img/safeSpace/showcase-win.jpg"
+                data-pswp-width="3500"
+                data-pswp-height="2333"
+                target="_blank"
+              >
+                <img
+                  class="project__main__section__showcase-imgs__image"
+                  src="../img/safeSpace/showcase-win.jpg"
+                  alt="SafeSpace Winning 1st Place at BCIT Showcase"
+                />
+              </a>
+              <a
+                class="pswp-gallery__item"
+                href="../img/safeSpace/showcase-all.jpg"
+                data-pswp-width="3500"
+                data-pswp-height="2333"
+                target="_blank"
+              >
+                <img
+                  class="project__main__section__showcase-imgs__image"
+                  src="../img/safeSpace/showcase-all.jpg"
+                  alt="All Teams at BCIT Showcase"
+                />
+              </a>
+            </div>
+          </div>
+
+          <div class="project__main__section">
+            <div class="project__main__section__text">
+              <h2 id="promotional-materials" class="project__main__header">
+                Promotional Materials
+              </h2>
+              <div class="project__main__promotional-material__link">
+                <a
+                  class="project__main__link"
+                  href="https://www.instagram.com/safespace__app/"
+                  target="_blank"
+                  >Instagram →</a
+                >
+              </div>
+
+              <div
+                class="project__main__section__promotional-material pswp-gallery"
+                id="promotional-gallery"
+              >
+                <a
+                  class="pswp-gallery__item"
+                  href="../img/safeSpace/insta-stats.png"
+                  data-pswp-width="1179"
+                  data-pswp-height="2556"
+                  target="_blank"
+                >
+                  <img
+                    class="project__main__section__promotional-material__image"
+                    src="../img/safeSpace/insta-stats.png"
+                    alt="SafeSpace Promotional Material"
+                  />
+                </a>
+                <a
+                  class="pswp-gallery__item"
+                  href="../img/safeSpace/insta-post.PNG"
+                  data-pswp-width="1179"
+                  data-pswp-height="2556"
+                  target="_blank"
+                >
+                  <img
+                    class="project__main__section__promotional-material__image"
+                    src="../img/safeSpace/insta-post.PNG"
+                    alt="SafeSpace Promotional Material"
+                  />
+                </a>
+                <a
+                  class="pswp-gallery__item"
+                  href="../img/safeSpace/insta-reels.PNG"
+                  data-pswp-width="1179"
+                  data-pswp-height="2556"
+                  target="_blank"
+                >
+                  <img
+                    class="project__main__section__promotional-material__image"
+                    src="../img/safeSpace/insta-reels.PNG"
+                    alt="SafeSpace Promotional Material"
+                  />
+                </a>
+                <a
+                  class="pswp-gallery__item"
+                  href="../img/safeSpace/insta-reel.PNG"
+                  data-pswp-width="1179"
+                  data-pswp-height="2556"
+                  target="_blank"
+                >
+                  <img
+                    class="project__main__section__promotional-material__image"
+                    src="../img/safeSpace/insta-reel.PNG"
+                    alt="SafeSpace Promotional Material"
+                  />
+                </a>
+
+                <a
+                  class="pswp-gallery__item"
+                  href="../img/safeSpace/brochure.png"
+                  data-pswp-width="4000"
+                  data-pswp-height="3000"
+                  target="_blank"
+                >
+                  <img
+                    class="project__main__section__promotional-material__image double-width"
+                    src="../img/safeSpace/brochure.png"
+                    alt="SafeSpace Promotional Material"
+                  />
+                </a>
+                <a
+                  class="pswp-gallery__item"
+                  href="../img/safeSpace/businessCard.png"
+                  data-pswp-width="2800"
+                  data-pswp-height="1966"
+                  target="_blank"
+                >
+                  <img
+                    class="project__main__section__promotional-material__image double-width"
+                    src="../img/safeSpace/businessCard.png"
+                    alt="SafeSpace Promotional Material"
+                  />
+                </a>
+                <img
+                  class="project__main__section__promotional-material__image double-width"
+                  src="../img/safeSpace/shirts-mockup.png"
+                  alt="SafeSpace Promotional Material"
+                />
+                <a
+                  class="pswp-gallery__item"
+                  href="../img/safeSpace/stickersLaptop.png"
+                  data-pswp-width="5000"
+                  data-pswp-height="3333"
+                  target="_blank"
+                >
+                  <img
+                    class="project__main__section__promotional-material__image double-width"
+                    src="../img/safeSpace/stickersLaptop.png"
+                    alt="SafeSpace Promotional Material"
+                  />
+                </a>
               </div>
             </div>
           </div>
@@ -881,66 +1208,6 @@
                   situation into something much more manageable and natural when
                   it was time to go on stage.
                 </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="project__main__section">
-            <div class="project__main__section__text">
-              <h2 id="promotional-materials" class="project__main__header">
-                Promotional Materials
-              </h2>
-              <div class="project__main__promotional-material__link">
-                <a
-                  class="project__main__link"
-                  href="https://www.instagram.com/safespace__app/"
-                  target="_blank"
-                  >Instagram →</a
-                >
-              </div>
-
-              <div class="project__main__section__promotional-material">
-                <img
-                  class="project__main__section__promotional-material__image"
-                  src="../img/safeSpace/insta-stats.png"
-                  alt="SafeSpace Promotional Material"
-                />
-                <img
-                  class="project__main__section__promotional-material__image"
-                  src="../img/safeSpace/insta-post.PNG"
-                  alt="SafeSpace Promotional Material"
-                />
-                <img
-                  class="project__main__section__promotional-material__image"
-                  src="../img/safeSpace/insta-reels.PNG"
-                  alt="SafeSpace Promotional Material"
-                />
-                <img
-                  class="project__main__section__promotional-material__image"
-                  src="../img/safeSpace/insta-reel.PNG"
-                  alt="SafeSpace Promotional Material"
-                />
-
-                <img
-                  class="project__main__section__promotional-material__image double-width"
-                  src="../img/safeSpace/brochure.png"
-                  alt="SafeSpace Promotional Material"
-                />
-                <img
-                  class="project__main__section__promotional-material__image double-width"
-                  src="../img/safeSpace/businessCard.png"
-                  alt="SafeSpace Promotional Material"
-                />
-                <img
-                  class="project__main__section__promotional-material__image double-width"
-                  src="https://placehold.co/600x400"
-                  alt="SafeSpace Promotional Material"
-                />
-                <img
-                  class="project__main__section__promotional-material__image double-width"
-                  src="../img/safeSpace/stickersLaptop.png"
-                  alt="SafeSpace Promotional Material"
-                />
               </div>
             </div>
           </div>
@@ -1059,5 +1326,22 @@
     <script src="../js/main.js"></script>
     <script src="../js/project.js"></script>
     <script src="../js/safeSpace.js"></script>
+
+    <script type="module">
+      import PhotoSwipeLightbox from "https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.min.js";
+
+      document.querySelectorAll(".pswp-gallery").forEach((galleryEl) => {
+        const lightbox = new PhotoSwipeLightbox({
+          gallery: galleryEl,
+          children: "a.pswp-gallery__item",
+          pswpModule: () =>
+            import("https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.esm.min.js"),
+          initialZoomLevel: "fit",
+          secondaryZoomLevel: 1.5,
+          maxZoomLevel: 3,
+        });
+        lightbox.init();
+      });
+    </script>
   </body>
 </html>

@@ -771,6 +771,23 @@
   .project__main__section__wireframes__slides__arrow {
     display: none;
   }
+
+  /* Prototype responsive - column layout on mobile */
+  .project__main__section__prototype {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project__main__section__prototype__figma {
+    width: 100%;
+    max-width: 375px;
+    height: 667px;
+    border-radius: 30px;
+  }
+
+  .project__main__section__prototype__text {
+    max-width: 100%;
+  }
 }
 
 /* Tablet Styles (769px - 1024px) */
@@ -873,6 +890,20 @@
 
   .project__main__section__style-guide__image {
     max-width: 80%;
+  }
+
+  /* Prototype - keep row layout on desktop */
+  .project__main__section__prototype {
+    flex-direction: row;
+  }
+
+  .project__main__section__prototype__figma {
+    width: 375px;
+    height: 667px;
+  }
+
+  .project__main__section__prototype__text {
+    max-width: 20rem;
   }
 }
 
