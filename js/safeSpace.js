@@ -174,11 +174,14 @@
   }
 })();
 
-document.querySelectorAll("nav button").forEach((btn, index) => {
-  btn.addEventListener("click", () => {
+// Scroll to section when clicking left navigation links
+document.querySelectorAll(".project__nav__link").forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const target = link.getAttribute("href");
     gsap.to(window, {
       duration: 1,
-      scrollTo: { y: "#section" + (index + 1), offsetY: 120 },
+      scrollTo: { y: target, offsetY: 120 },
     });
   });
 });
