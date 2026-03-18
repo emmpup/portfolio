@@ -26,6 +26,10 @@
   object-fit: contain;
 }
 
+.pswp-gallery__item {
+  display: contents;
+}
+
 @media (max-width: 768px) {
   .project-detail__images__twoCol {
     grid-template-columns: 1fr;

@@ -14,6 +14,11 @@
     <link rel="stylesheet" href="../css/components.css" />
     <link rel="stylesheet" href="../css/responsive.css" />
 
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.css"
+    />
+
     <title>Rubik's Cube Tutorial</title>
   </head>
   <body>
@@ -172,47 +177,132 @@
         </div>
 
         <div class="project-detail__images">
-          <div class="project-detail__images__twoCol">
-            <img
-              src="../img/cube/screen-home.png"
-              alt="Home Screen"
-              class="project-detail__image"
-            />
-            <img
-              src="../img/cube/screen-knowCube.png"
-              alt="Learn about the cube"
-              class="project-detail__image"
-            />
-            <img
-              src="../img/cube/screen-Algs.png"
-              alt="Learn about algorithms"
-              class="project-detail__image"
-            />
-            <img
-              src="../img/cube/screen-whiteAlg.png"
-              alt="White layer algorithm"
-              class="project-detail__image"
-            />
-            <img
-              src="../img/cube/screen-yellowAll.png"
-              alt="Yellow layer overview"
-              class="project-detail__image"
-            />
-            <img
-              src="../img/cube/screen-yellowAlg.png"
-              alt="Yellow layer algorithm"
-              class="project-detail__image"
-            />
-            <img
-              src="../img/cube/screen-lastAll.png"
-              alt="Last layer overview"
-              class="project-detail__image"
-            />
-            <img
-              src="../img/cube/screen-lastAlg.png"
-              alt="Last layer algorithm"
-              class="project-detail__image"
-            />
+          <div
+            class="project-detail__images__fullWidth pswp-gallery"
+            id="cube-gallery"
+          >
+            <a
+              class="pswp-gallery__item"
+              href="../img/cube/layout.png"
+              data-pswp-width="16777"
+              data-pswp-height="9096"
+              target="_blank"
+            >
+              <img
+                src="../img/cube/layout.png"
+                alt="Cube Layout"
+                class="project-detail__image"
+              />
+            </a>
+          </div>
+          <div
+            class="project-detail__images__twoCol pswp-gallery"
+            id="cube-gallery"
+          >
+            <a
+              class="pswp-gallery__item"
+              href="../img/cube/screen-home.png"
+              data-pswp-width="1901"
+              data-pswp-height="1062"
+              target="_blank"
+            >
+              <img
+                src="../img/cube/screen-home.png"
+                alt="Home Screen"
+                class="project-detail__image"
+              />
+            </a>
+            <a
+              class="pswp-gallery__item"
+              href="../img/cube/screen-knowCube.png"
+              data-pswp-width="1919"
+              data-pswp-height="1073"
+              target="_blank"
+            >
+              <img
+                src="../img/cube/screen-knowCube.png"
+                alt="Learn about the cube"
+                class="project-detail__image"
+              />
+            </a>
+            <a
+              class="pswp-gallery__item"
+              href="../img/cube/screen-Algs.png"
+              data-pswp-width="1919"
+              data-pswp-height="1077"
+              target="_blank"
+            >
+              <img
+                src="../img/cube/screen-Algs.png"
+                alt="Learn about algorithms"
+                class="project-detail__image"
+              />
+            </a>
+            <a
+              class="pswp-gallery__item"
+              href="../img/cube/screen-whiteAlg.png"
+              data-pswp-width="1919"
+              data-pswp-height="1079"
+              target="_blank"
+            >
+              <img
+                src="../img/cube/screen-whiteAlg.png"
+                alt="White layer algorithm"
+                class="project-detail__image"
+              />
+            </a>
+            <a
+              class="pswp-gallery__item"
+              href="../img/cube/screen-yellowAll.png"
+              data-pswp-width="1916"
+              data-pswp-height="1076"
+              target="_blank"
+            >
+              <img
+                src="../img/cube/screen-yellowAll.png"
+                alt="Yellow layer overview"
+                class="project-detail__image"
+              />
+            </a>
+            <a
+              class="pswp-gallery__item"
+              href="../img/cube/screen-yellowAlg.png"
+              data-pswp-width="1907"
+              data-pswp-height="1078"
+              target="_blank"
+            >
+              <img
+                src="../img/cube/screen-yellowAlg.png"
+                alt="Yellow layer algorithm"
+                class="project-detail__image"
+              />
+            </a>
+            <a
+              class="pswp-gallery__item"
+              href="../img/cube/screen-lastAll.png"
+              data-pswp-width="1919"
+              data-pswp-height="1079"
+              target="_blank"
+            >
+              <img
+                src="../img/cube/screen-lastAll.png"
+                alt="Last layer overview"
+                class="project-detail__image"
+              />
+            </a>
+            <a
+              class="pswp-gallery__item"
+              href="../img/cube/screen-lastAlg.png"
+              data-pswp-width="1884"
+              data-pswp-height="1057"
+              target="_blank"
+            >
+              <img
+                src="../img/cube/screen-lastAlg.png"
+                alt="Last layer algorithm"
+                class="project-detail__image"
+              />
+            </a>
           </div>
         </div>
       </div>
@@ -328,5 +418,22 @@
 
     <script src="../js/main.js"></script>
     <script src="../js/project.js"></script>
+
+    <script type="module">
+      import PhotoSwipeLightbox from "https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.min.js";
+
+      document.querySelectorAll(".pswp-gallery").forEach((galleryEl) => {
+        const lightbox = new PhotoSwipeLightbox({
+          gallery: galleryEl,
+          children: "a.pswp-gallery__item",
+          pswpModule: () =>
+            import("https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.esm.min.js"),
+          initialZoomLevel: "fit",
+          secondaryZoomLevel: 1.5,
+          maxZoomLevel: 3,
+        });
+        lightbox.init();
+      });
+    </script>
   </body>
 </html>
