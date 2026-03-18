@@ -20,16 +20,27 @@
 
   /**
    * Get current theme (dark or light)
-   * Checks both system preference and the toggle button state
+   * Checks DOM theme class first (most reliable), then toggle state, then system preference
    */
   function getCurrentTheme() {
-    const systemPrefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)",
-    ).matches;
+    const root = document.documentElement;
+
+    // Check if DOM already has theme class applied by main.js
+    if (root.classList.contains("dark-mode")) {
+      return "dark";
+    }
+    if (root.classList.contains("light-mode")) {
+      return "light";
+    }
+
+    // Fallback to toggle state
     const themeToggle = document.querySelector('[name="toggle-color-scheme"]');
     const isToggleChecked = themeToggle ? themeToggle.checked : false;
 
-    // If toggle exists, use its checked state. Otherwise, use system preference
+    // Final fallback to system preference
+    const systemPrefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)",
+    ).matches;
     const isDarkMode = themeToggle ? isToggleChecked : systemPrefersDark;
 
     return isDarkMode ? "dark" : "light";
@@ -154,6 +165,23 @@
     themeToggleMobile.addEventListener("change", updateImage);
   }
 
-  // Initialize UI
-  updateUI();
+  // Defer initialization to ensure theme classes are applied by main.js
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", updateUI);
+  } else {
+    // DOM is already loaded, use requestAnimationFrame to ensure theme is set
+    requestAnimationFrame(updateUI);
+  }
 })();
+
+// Scroll to section when clicking left navigation links
+document.querySelectorAll(".project__nav__link").forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const target = link.getAttribute("href");
+    gsap.to(window, {
+      duration: 1,
+      scrollTo: { y: target, offsetY: 120 },
+    });
+  });
+});
