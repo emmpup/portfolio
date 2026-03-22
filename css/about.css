@@ -59,11 +59,18 @@
   -webkit-backface-visibility: hidden;
 }
 
-.card__back {
+/* .card__back {
   background: var(--light-primary-400);
   box-shadow:
     inset 0 0 0 14px white,
     -4px 4px 4px 0 rgba(0, 0, 0, 0.25);
+} */
+
+.card__back__image {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  object-fit: cover;
 }
 
 .card__front {
