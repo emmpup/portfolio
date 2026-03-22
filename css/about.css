@@ -88,7 +88,8 @@
 .card__front__image {
   width: 100%;
   border-radius: 10px;
-  object-fit: cover;
+  object-fit: contain;
+  max-height: 8rem;
 }
 
 .card__front__text-container {
