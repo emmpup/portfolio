@@ -109,6 +109,7 @@
   border-radius: 10px;
   object-fit: contain;
   max-height: 8rem;
+  height: 100%;
 }
 
 .card__front__text-container {
@@ -197,12 +198,21 @@
     height: 237px;
   }
 
+  .card__front {
+    padding: 16px;
+  }
+
   .card__front__title {
     font-size: 18px;
   }
 
   .card__front__text {
     font-size: 12px;
+  }
+
+  .card__front__image {
+    max-height: 5rem;
+    height: auto;
   }
 
   /* Move button below the container instead of inside it */
