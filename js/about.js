@@ -16,6 +16,8 @@ const FLIP_DURATION = 0.5;
 const TILT_MAX_ROTATION = 15;
 const TILT_DURATION = 0.6;
 
+const MODAL_ROTATION_OFFSET = 15; // Adjust this to customize card rotation in modal
+
 const cardBaselines = new Map();
 let flippedCard = null;
 let isAnimatingFlip = false;
@@ -53,6 +55,33 @@ function getSpreadPosition(i) {
 function getComputedRotation(el) {
   const matrix = new DOMMatrix(getComputedStyle(el).transform);
   return Math.atan2(matrix.b, matrix.a) * (180 / Math.PI);
+}
+
+function getViewportCenterOffset(card) {
+  const base = cardBaselines.get(card);
+
+  // Get the card's container position
+  const container = card.parentElement;
+  const containerRect = container.getBoundingClientRect();
+
+  // Calculate where the card's current transform places it on screen
+  // The transform values give us the card's position relative to its container
+  const cardScreenX = containerRect.left + base.x;
+  const cardScreenY = containerRect.top + base.y;
+
+  // Calculate offset to viewport center (move down by adjusting centerY)
+  const viewportCenterX = window.innerWidth / 2;
+  const viewportCenterY = window.innerHeight / 2; // Adjust +100 to move cards down/up
+
+  // We need to add the card's half-width/height since transforms are from top-left
+  const cardRect = card.getBoundingClientRect();
+  const cardWidth = cardRect.width;
+  const cardHeight = cardRect.height;
+
+  const dx = viewportCenterX - (cardScreenX + cardWidth / 2);
+  const dy = viewportCenterY - (cardScreenY + cardHeight / 2);
+
+  return { dx, dy };
 }
 
 function snapshotBaselines() {
@@ -108,6 +137,12 @@ function removeTiltListeners(card) {
     });
 }
 
+function modalClickHandler(e) {
+  if (flippedCard && !flippedCard.contains(e.target)) {
+    closeFlippedCard();
+  }
+}
+
 function openCard(card) {
   if (isAnimatingFlip) return;
   isAnimatingFlip = true;
@@ -116,9 +151,7 @@ function openCard(card) {
   gsap.set(card, { zIndex: 10 });
 
   const base = cardBaselines.get(card);
-  const rad = (base.rotation - 90) * (Math.PI / 180);
-  const dx = Math.cos(rad) * FLIP_LIFT_DISTANCE;
-  const dy = Math.sin(rad) * FLIP_LIFT_DISTANCE;
+  const { dx, dy } = getViewportCenterOffset(card);
 
   gsap
     .timeline({
@@ -128,14 +161,20 @@ function openCard(card) {
         const closeBtn = card.querySelector(".card-close-btn");
         if (closeBtn) closeBtn.classList.add("card-close-btn--visible");
         addTiltListeners(card);
+        document.addEventListener("click", modalClickHandler);
       },
     })
-    .to(card, {
-      x: base.x + dx,
-      y: base.y + dy,
-      duration: FLIP_DURATION,
-      ease: "power2.out",
-    })
+    .to(
+      card,
+      {
+        x: base.x + dx,
+        y: base.y + dy,
+        rotation: MODAL_ROTATION_OFFSET,
+        duration: FLIP_DURATION,
+        ease: "power2.out",
+      },
+      0,
+    )
     .to(
       card.querySelector(".card"),
       {
@@ -143,7 +182,7 @@ function openCard(card) {
         duration: FLIP_DURATION,
         ease: "power2.inOut",
       },
-      "<0.1",
+      0,
     );
 }
 
@@ -158,6 +197,7 @@ function closeFlippedCard(onComplete) {
   if (closeBtn) closeBtn.classList.remove("card-close-btn--visible");
 
   removeTiltListeners(card);
+  document.removeEventListener("click", modalClickHandler);
 
   gsap
     .timeline({
@@ -179,6 +219,7 @@ function closeFlippedCard(onComplete) {
       {
         x: base.x,
         y: base.y,
+        rotation: base.rotation,
         duration: FLIP_DURATION,
         ease: "power2.in",
       },
@@ -197,7 +238,7 @@ function onCardClick(e) {
   }
 
   if (flippedCard) {
-    closeFlippedCard(() => openCard(clicked));
+    closeFlippedCard();
     return;
   }
 
@@ -383,6 +424,7 @@ function resetCards() {
 }
 
 cardDeck.addEventListener("click", () => {
+  if (flippedCard) return;
   if (!isSpread) spreadCards();
 });
 
