@@ -60,26 +60,21 @@ function getComputedRotation(el) {
 function getViewportCenterOffset(card) {
   const base = cardBaselines.get(card);
 
-  // Get the card's container position
   const container = card.parentElement;
   const containerRect = container.getBoundingClientRect();
 
-  // Calculate where the card's current transform places it on screen
-  // The transform values give us the card's position relative to its container
   const cardScreenX = containerRect.left + base.x;
   const cardScreenY = containerRect.top + base.y;
 
-  // Calculate offset to viewport center (move down by adjusting centerY)
   const viewportCenterX = window.innerWidth / 2;
-  const viewportCenterY = window.innerHeight / 2; // Adjust +100 to move cards down/up
+  const viewportCenterY = window.innerHeight / 2;
 
-  // We need to add the card's half-width/height since transforms are from top-left
   const cardRect = card.getBoundingClientRect();
   const cardWidth = cardRect.width;
   const cardHeight = cardRect.height;
 
   const dx = viewportCenterX - (cardScreenX + cardWidth / 2);
-  const dy = viewportCenterY - (cardScreenY + cardHeight / 2);
+  const dy = viewportCenterY - cardScreenY;
 
   return { dx, dy };
 }

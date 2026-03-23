@@ -135,20 +135,19 @@
 .deck-close-btn {
   position: absolute;
   right: 24px;
-  bottom: 60px;
-  width: 40px;
-  height: 40px;
+  bottom: 80px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  border: 2px solid var(--light-primary-400);
-  background: white;
-  color: var(--light-primary-400);
-  font-size: 18px;
-  line-height: 1;
+  border: none;
+  background: var(--light-secondary-500);
+  color: var(--light-text-500);
+  font-size: 28px;
+  font-weight: 600;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   opacity: 0;
   pointer-events: none;
   transition:
@@ -160,7 +159,7 @@
 
 .deck-close-btn:hover {
   background: var(--light-primary-400);
-  color: white;
+  color: var(--dark-text-500);
 }
 
 .deck-close-btn--visible {
@@ -189,7 +188,6 @@
 @media (max-width: 600px) {
   .card-spread-container {
     height: 420px;
-    /* Extra bottom padding to make room for the button below */
     margin-bottom: 60px;
   }
   .card,
@@ -215,11 +213,8 @@
     height: auto;
   }
 
-  /* Move button below the container instead of inside it */
   .deck-close-btn {
     position: absolute;
-    /* Sit just below the container — parent is .card-spread-container
-       so we push it out the bottom with a positive top value */
     bottom: -52px;
     right: 50%;
     transform: translateX(50%);
