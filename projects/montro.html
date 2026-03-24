@@ -165,6 +165,51 @@
             <p class="project-detail__list__description">Figma, Illustrator</p>
           </div>
         </div>
+
+        <div class="project-detail__images">
+          <div class="project-detail__styleguide">
+            <h2 class="project-detail__section-title">Styleguide</h2>
+            <img
+              src="../img/montro/styleguide-dark.png"
+              alt="Montro styleguide"
+              class="project-detail__image-theme"
+            />
+          </div>
+          <div class="project-detail__wireframes">
+            <h2 class="project-detail__section-title">Wireframes</h2>
+            <div
+              class="project-detail__images__twoCol pswp-gallery"
+              id="cube-gallery"
+            >
+              <a
+                class="pswp-gallery__item"
+                href="../img/montro/montro-wireframes-lofi.png"
+                data-pswp-width="5000"
+                data-pswp-height="3333"
+                target="_blank"
+              >
+                <img
+                  src="../img/montro/montro-wireframes-lofi.png"
+                  alt="Home Screen"
+                  class="project-detail__image"
+                />
+              </a>
+              <a
+                class="pswp-gallery__item"
+                href="../img/montro/montro-wireframes-hifi.png"
+                data-pswp-width="5000"
+                data-pswp-height="3333"
+                target="_blank"
+              >
+                <img
+                  src="../img/montro/montro-wireframes-hifi.png"
+                  alt="Home Screen"
+                  class="project-detail__image"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
 
@@ -278,6 +323,7 @@
 
     <script src="../js/main.js"></script>
     <script src="../js/project.js"></script>
+    <script src="../js/montro.js"></script>
 
     <script type="module">
       import PhotoSwipeLightbox from "https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.min.js";
@@ -289,7 +335,7 @@
           pswpModule: () =>
             import("https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.esm.min.js"),
           initialZoomLevel: "fit",
-          secondaryZoomLevel: 1.5,
+          secondaryZoomLevel: 1,
           maxZoomLevel: 3,
         });
         lightbox.init();
