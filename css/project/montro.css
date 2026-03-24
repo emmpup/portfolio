@@ -1,0 +1,52 @@
+.projects__header {
+  background: url(../../img/montro/montro-title-background.png) no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-position: 50% 90%; /* Starting position */
+  background-size: cover;
+  background-attachment: scroll; /* Not fixed */
+  position: relative;
+}
+
+.project-detail__section-title {
+  font-size: 40px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.project-detail__intro__image-container {
+  background: url(../../img/montro/Montro-background.webp) no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.project-detail__image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 5rem;
+}
+
+.project-detail__image-theme {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.project-detail__images__twoCol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.pswp-gallery__item {
+  display: contents;
+}
+
+@media (max-width: 768px) {
+  .project-detail__images__twoCol {
+    grid-template-columns: 1fr;
+  }
+}
