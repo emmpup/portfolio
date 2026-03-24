@@ -17,6 +17,7 @@
     <title>Advertisement Posters</title>
   </head>
   <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <nav class="navbar">
       <a href="../index.html">
         <svg
@@ -34,7 +35,7 @@
       <!-- Desktop Navigation -->
       <div class="navbar__desktop">
         <a href="../projects.html" class="navbar__link">Projects</a>
-        <a href="#" class="navbar__link">About Me</a>
+        <a href="../about.html" class="navbar__link">About Me</a>
         <a href="mailto:emilymisola@gmail.com" class="navbar__link">Contact</a>
 
         <input
@@ -42,6 +43,8 @@
           id="theme-toggle"
           name="toggle-color-scheme"
           class="navbar__checkbox"
+          aria-pressed="false"
+          aria-label="Toggle light and dark theme"
         />
         <label for="theme-toggle" class="navbar__label">
           <img class="navbar__icon" src="../img/navbar/dark.svg" alt=""
@@ -49,19 +52,31 @@
       </div>
 
       <!-- Mobile Hamburger Menu -->
-      <input type="checkbox" id="nav-toggle" class="navbar__menu-checkbox" />
-      <label for="nav-toggle" class="navbar__hamburger">
+      <input
+        type="checkbox"
+        id="nav-toggle"
+        class="navbar__menu-checkbox"
+        aria-expanded="false"
+        aria-controls="navbar-mobile-menu"
+      />
+      <label
+        for="nav-toggle"
+        class="navbar__hamburger"
+        aria-label="Toggle navigation menu"
+      >
         <span class="navbar__hamburger-line"></span>
         <span class="navbar__hamburger-line"></span>
         <span class="navbar__hamburger-line"></span>
       </label>
 
       <!-- Mobile Menu Overlay -->
-      <div class="navbar__mobile-menu">
+      <div class="navbar__mobile-menu" id="navbar-mobile-menu">
         <div class="navbar__mobile-menu-content">
           <a href="../projects.html" class="navbar__mobile-link">Projects</a>
-          <a href="#" class="navbar__mobile-link">About Me</a>
-          <a href="#" class="navbar__mobile-link">Contact</a>
+          <a href="../about.html" class="navbar__mobile-link">About Me</a>
+          <a href="mailto:emilymisola@gmail.com" class="navbar__mobile-link"
+            >Contact</a
+          >
 
           <div class="navbar__mobile-theme">
             <input
@@ -69,6 +84,8 @@
               id="theme-toggle-mobile"
               name="toggle-color-scheme"
               class="navbar__checkbox"
+              aria-pressed="false"
+              aria-label="Toggle light and dark theme"
             />
             <label for="theme-toggle-mobile" class="navbar__label">
               <img
@@ -81,7 +98,7 @@
       </div>
     </nav>
 
-    <main>
+    <main id="main-content">
       <div class="projects__header">
         <div class="projects__rounded-title">
           <h1 class="header__title">Poster Design</h1>
@@ -92,7 +109,7 @@
           <img
             class="project-detail__intro__image"
             src="../img/posters/MagicPosters.webp"
-            alt="All Posters"
+            alt="Series of three promotional magic event posters for Shin Lim, Derren Brown, and David Copperfield"
           />
           <div class="project-detail__intro__content">
             <h2 class="project-detail__intro__title">Advertisement Posters</h2>
@@ -131,22 +148,96 @@
             </p>
           </div>
         </div>
-        <div class="project-detail__carousel">
-          <img
-            class="project-detail__carousel__image"
-            src="../img/posters/ShinLim.webp"
-            alt="Shin Lim"
-          />
-          <img
-            class="project-detail__carousel__image"
-            src="../img/posters/DerrenBrown.webp"
-            alt="Derren Brown"
-          />
-          <img
-            class="project-detail__carousel__image"
-            src="../img/posters/DavidCopperfield.webp"
-            alt="David Copperfield"
-          />
+        <div class="project-detail__carousel-container">
+          <button
+            class="project-detail__carousel__button project-detail__carousel__button--prev"
+            id="carousel-prev"
+            aria-label="Previous poster"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="74"
+              height="74"
+              viewBox="0 0 74 74"
+              fill="none"
+            >
+              <circle
+                cx="37"
+                cy="37"
+                r="37"
+                transform="rotate(-90 37 37)"
+                fill="#65BAAF"
+              />
+              <path
+                d="M57 40C58.6569 40 60 38.6569 60 37C60 35.3431 58.6569 34 57 34L57 37L57 40ZM13.8787 34.8787C12.7071 36.0503 12.7071 37.9498 13.8787 39.1213L32.9706 58.2132C34.1421 59.3848 36.0416 59.3848 37.2132 58.2132C38.3848 57.0416 38.3848 55.1421 37.2132 53.9706L20.2426 37L37.2132 20.0294C38.3848 18.8579 38.3848 16.9584 37.2132 15.7868C36.0416 14.6152 34.1421 14.6152 32.9706 15.7868L13.8787 34.8787ZM57 37L57 34L16 34L16 37L16 40L57 40L57 37Z"
+                fill="#232C33"
+                fill-opacity="0.8"
+              />
+            </svg>
+          </button>
+
+          <div class="project-detail__carousel">
+            <img
+              class="project-detail__carousel__image"
+              src="../img/posters/ShinLim.webp"
+              alt="Shin Lim"
+            />
+            <img
+              class="project-detail__carousel__image"
+              src="../img/posters/DerrenBrown.webp"
+              alt="Derren Brown"
+            />
+            <img
+              class="project-detail__carousel__image"
+              src="../img/posters/DavidCopperfield.webp"
+              alt="David Copperfield"
+            />
+          </div>
+
+          <button
+            class="project-detail__carousel__button project-detail__carousel__button--next"
+            id="carousel-next"
+            aria-label="Next poster"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="74"
+              height="74"
+              viewBox="0 0 74 74"
+              fill="none"
+            >
+              <circle
+                cx="37"
+                cy="37"
+                r="37"
+                transform="rotate(90 37 37)"
+                fill="#65BAAF"
+              />
+              <path
+                d="M17 34C15.3431 34 14 35.3431 14 37C14 38.6569 15.3431 40 17 40L17 37L17 34ZM60.1213 39.1213C61.2929 37.9498 61.2929 36.0503 60.1213 34.8787L41.0294 15.7868C39.8579 14.6152 37.9584 14.6152 36.7868 15.7868C35.6152 16.9584 35.6152 18.8579 36.7868 20.0294L53.7574 37L36.7868 53.9706C35.6152 55.1421 35.6152 57.0416 36.7868 58.2132C37.9584 59.3848 39.8579 59.3848 41.0294 58.2132L60.1213 39.1213ZM17 37L17 40L58 40L58 37L58 34L17 34L17 37Z"
+                fill="#232C33"
+                fill-opacity="0.8"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div class="project-detail__carousel-dots" id="carousel-dots">
+          <button
+            class="project-detail__carousel__dot active"
+            data-index="0"
+            aria-label="Go to slide 1"
+          ></button>
+          <button
+            class="project-detail__carousel__dot"
+            data-index="1"
+            aria-label="Go to slide 2"
+          ></button>
+          <button
+            class="project-detail__carousel__dot"
+            data-index="2"
+            aria-label="Go to slide 3"
+          ></button>
         </div>
         <div class="project-detail__images">
           <div class="project-detail__images__container">
@@ -176,8 +267,9 @@
     </main>
 
     <footer class="footer">
+      <!-- Desktop SVG (1025px+) - Original curves -->
       <svg
-        class="footer-bg"
+        class="footer-bg footer-bg-desktop"
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1440 320"
@@ -196,6 +288,31 @@
         <path
           fill="#6aaae4"
           d="M0,320 L0,180 Q720,80 1440,180 L1440,320 Z"
+          opacity="1"
+        />
+      </svg>
+
+      <!-- Mobile/Tablet SVG (up to 1024px) - Flatter curves -->
+      <svg
+        class="footer-bg footer-bg-mobile"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 320"
+        preserveAspectRatio="none"
+      >
+        <path
+          fill="#6aaae4"
+          d="M0,320 L0,150 Q720,120 1440,150 L1440,320 Z"
+          opacity="0.3"
+        />
+        <path
+          fill="#6aaae4"
+          d="M0,320 L0,160 Q720,140 1440,160 L1440,320 Z"
+          opacity="0.5"
+        />
+        <path
+          fill="#6aaae4"
+          d="M0,320 L0,180 Q720,160 1440,180 L1440,320 Z"
           opacity="1"
         />
       </svg>
@@ -237,9 +354,6 @@
               Applying a developer’s logic and a designer’s empathy to solve
               complex problems
             </h3>
-            <p class="footer__copyright">
-              © 2026 Emily Misola. All rights reserved.
-            </p>
           </div>
           <div class="footer__links">
             <a href="../projects.html" class="footer__link">Projects</a>
@@ -248,10 +362,14 @@
               >Contact</a
             >
           </div>
+          <p class="footer__copyright">
+            © 2026 Emily Misola. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
 
     <script src="../js/index.js"></script>
+    <script src="../js/posters.js"></script>
   </body>
 </html>
