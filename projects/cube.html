@@ -4,13 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
+    </style>
+
     <link rel="stylesheet" href="../css/main.css" />
     <link rel="stylesheet" href="../css/project-detail.css" />
-    <link rel="stylesheet" href="../css/project/musicPlayer.css" />
+    <link rel="stylesheet" href="../css/project/cube.css" />
     <link rel="stylesheet" href="../css/components.css" />
     <link rel="stylesheet" href="../css/responsive.css" />
 
-    <title>Music Player</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.css"
+    />
+
+    <title>Rubik's Cube Tutorial</title>
   </head>
   <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -97,37 +106,38 @@
     <main id="main-content">
       <div class="projects__header">
         <div class="projects__rounded-title">
-          <h1 class="header__title">Music Player</h1>
+          <h1 class="header__title">Interactive Tutorial</h1>
         </div>
       </div>
       <div class="project-detail">
         <div class="project-detail__intro">
-          <div class="project-detail__intro__image-container dark-mode">
+          <div class="project-detail__intro__image-container">
             <img
               class="project-detail__intro__image"
-              src="../img/musicPlayer/mockupDark.webp"
-              alt="Music Player Interface Dark Mode"
+              src="../img/cube/cube-mockup.webp"
+              alt="Rubik's Cube Tutorial"
             />
           </div>
           <div class="project-detail__intro__content">
-            <h2 class="project-detail__intro__title">Music Player</h2>
-            <h3 class="project-detail__intro__role">Front-End Developer</h3>
+            <h2 class="project-detail__intro__title">Rubik's Cube Tutorial</h2>
+            <h3 class="project-detail__intro__role">Designer & Developer</h3>
             <p class="project-detail__intro__description">
-              This music player was built to provide a streamlined,
-              distraction-free listening experience in response to the cluttered
-              and ad-heavy nature of modern streaming platforms. Developed with
-              React, the application leverages the YouTube API to access an
-              expansive library while stripping away the visual noise and
-              pop-ups typical of standard video sites. By prioritizing a
-              minimalist design and intuitive controls, the project transforms a
-              complex data source into a calm environment dedicated solely to
-              the music.
+              This project is an interactive 3D tutorial built with Godot and
+              Blender that guides users through the beginner’s method for
+              solving a 2x2 Rubik’s Cube. Unlike static video tutorials that
+              require tedious scrubbing to find specific information, this tool
+              features a button-driven interface that allows users to jump
+              instantly to any stage of the solving process. By pairing
+              high-fidelity, Blender-animated rotations with an easy-to-navigate
+              UI, the application empowers users to quickly refresh their memory
+              on specific algorithms or master new phases at their own pace
+              without unnecessary repetition.
             </p>
             <div class="project-detail__intro__chips">
               <span class="project-detail__intro__chip"
                 ><a
                   class="project-detail__intro__link"
-                  href="https://comp3170-project-38zw.vercel.app/"
+                  href="https://how-2-solve-a-2x2-rubik-s-cube.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
                   >Live Site</a
@@ -136,7 +146,7 @@
               <span class="project-detail__intro__chip"
                 ><a
                   class="project-detail__intro__link"
-                  href="https://github.com/emmpup/Comp3170_Project"
+                  href="https://github.com/emmpup/how-2-solve-a-2x2-rubik-s-cube"
                   target="_blank"
                   rel="noopener noreferrer"
                   >GitHub</a
@@ -147,107 +157,170 @@
         </div>
         <div class="project-detail__list">
           <div class="project-detail__list__role">
-            <h3 class="project-detail__list__title">Role</h3>
-            <p class="project-detail__list__description">Front-End Developer</p>
+            <h3 class="project-detail__list__title">Roles</h3>
+            <p class="project-detail__list__description">Designer, Developer</p>
           </div>
           <div class="project-detail__list__timeline">
             <h3 class="project-detail__list__title">Timeline</h3>
-            <p class="project-detail__list__description">1 month</p>
+            <p class="project-detail__list__description">3 weeks</p>
           </div>
           <div class="project-detail__list__team">
             <h3 class="project-detail__list__title">Team</h3>
-            <p class="project-detail__list__description">
-              2 Designers, 2 Developers
-            </p>
+            <p class="project-detail__list__description">Myself</p>
           </div>
           <div class="project-detail__list__tools">
             <h3 class="project-detail__list__title">Tools</h3>
             <p class="project-detail__list__description">
-              React, Figma, YouTube API
+              Godot, Blender, Figma
             </p>
           </div>
         </div>
 
         <div class="project-detail__images">
-          <div class="project-detail__images-row">
-            <div class="project-detail__images-row__container">
-              <img
-                class="project-detail__images-row__image"
-                src="../img/musicPlayer/playlistDark.webp"
-                alt="playlist tab full screen dark mode"
-              />
-            </div>
-            <div class="project-detail__images-row__container">
-              <img
-                class="project-detail__images-row__image"
-                src="../img/musicPlayer/editDark.webp"
-                alt="edit playlist tab"
-              />
-            </div>
-            <div class="project-detail__images-row__container">
-              <img
-                class="project-detail__images-row__image"
-                src="../img/musicPlayer/playlistLight.webp"
-                alt="playlist tab light mode"
-              />
-            </div>
-          </div>
-          <div class="project-detail__images-row">
-            <div class="project-detail__images-row__container">
-              <img
-                class="project-detail__images-row__image"
-                src="../img/musicPlayer/searchLight.webp"
-                alt="add music tab light mode"
-              />
-            </div>
-            <div class="project-detail__images-row__container">
-              <img
-                class="project-detail__images-row__image"
-                src="../img/musicPlayer/searchDark.webp"
-                alt="add music tab full screen dark mode"
-              />
-            </div>
-          </div>
-          <img
-            class="project-detail__images__image--large"
-            src="../img/musicPlayer/musicPlayerLight.webp"
-            alt="music player light mode"
-          />
-          <img
-            class="project-detail__images__image--large"
-            src="../img/musicPlayer/musicPlayerDark.webp"
-            alt="music player dark mode"
-          />
-          <div class="project-detail__images-row">
+          <div class="project-detail__images__storyboard">
+            <h2 class="project-detail__section-title">
+              Storyboard and Asset Inventory
+            </h2>
             <div
-              class="project-detail__images-row__container project-detail__intro__image-container dark-mode"
+              class="project-detail__images__fullWidth pswp-gallery"
+              id="cube-gallery"
             >
-              <img
-                class="project-detail__intro__image"
-                src="../img/musicPlayer/mockupDark.webp"
-                alt="Music Player Mockup Dark Mode"
-              />
-            </div>
-            <div
-              class="project-detail__images-row__container project-detail__intro__image-container light-mode"
-            >
-              <img
-                class="project-detail__intro__image"
-                src="../img/musicPlayer/mockupLight.webp"
-                alt="Music Player Mockup Light Mode"
-              />
+              <a
+                class="pswp-gallery__item"
+                href="../img/cube/layout.png"
+                data-pswp-width="16777"
+                data-pswp-height="9096"
+                target="_blank"
+              >
+                <img
+                  src="../img/cube/layout.png"
+                  alt="Storyboard and asset inventory for the cube tutorial"
+                  class="project-detail__image"
+                />
+              </a>
             </div>
           </div>
-          <img
-            class="project-detail__images__image--large"
-            src="../img/musicPlayer/musicPlayerLight.webp"
-            alt="music player light mode"
-          />
-          <img
-            class="project-detail__images__image--large"
-            src="../img/musicPlayer/musicPlayerDark.webp"
-            alt="music player dark mode"
-          />
+          <div class="project-detail__images__assets">
+            <h2 class="project-detail__section-title">Asset Inventory</h2>
+
+            <img
+              src="../img/cube/assets.png"
+              alt="Asset Inventory"
+              class="project-detail__image"
+            />
+          </div>
+          <div class="project-detail__images__screenshots">
+            <h2 class="project-detail__section-title">Screenshots</h2>
+            <div
+              class="project-detail__images__twoCol pswp-gallery"
+              id="cube-gallery"
+            >
+              <a
+                class="pswp-gallery__item"
+                href="../img/cube/screen-home.png"
+                data-pswp-width="1901"
+                data-pswp-height="1062"
+                target="_blank"
+              >
+                <img
+                  src="../img/cube/screen-home.png"
+                  alt="Home Screen"
+                  class="project-detail__image"
+                />
+              </a>
+              <a
+                class="pswp-gallery__item"
+                href="../img/cube/screen-knowCube.png"
+                data-pswp-width="1919"
+                data-pswp-height="1073"
+                target="_blank"
+              >
+                <img
+                  src="../img/cube/screen-knowCube.png"
+                  alt="Learn about the cube"
+                  class="project-detail__image"
+                />
+              </a>
+              <a
+                class="pswp-gallery__item"
+                href="../img/cube/screen-Algs.png"
+                data-pswp-width="1919"
+                data-pswp-height="1077"
+                target="_blank"
+              >
+                <img
+                  src="../img/cube/screen-Algs.png"
+                  alt="Learn about algorithms"
+                  class="project-detail__image"
+                />
+              </a>
+              <a
+                class="pswp-gallery__item"
+                href="../img/cube/screen-whiteAlg.png"
+                data-pswp-width="1919"
+                data-pswp-height="1079"
+                target="_blank"
+              >
+                <img
+                  src="../img/cube/screen-whiteAlg.png"
+                  alt="White layer algorithm"
+                  class="project-detail__image"
+                />
+              </a>
+              <a
+                class="pswp-gallery__item"
+                href="../img/cube/screen-yellowAll.png"
+                data-pswp-width="1916"
+                data-pswp-height="1076"
+                target="_blank"
+              >
+                <img
+                  src="../img/cube/screen-yellowAll.png"
+                  alt="Yellow layer overview"
+                  class="project-detail__image"
+                />
+              </a>
+              <a
+                class="pswp-gallery__item"
+                href="../img/cube/screen-yellowAlg.png"
+                data-pswp-width="1907"
+                data-pswp-height="1078"
+                target="_blank"
+              >
+                <img
+                  src="../img/cube/screen-yellowAlg.png"
+                  alt="Yellow layer algorithm"
+                  class="project-detail__image"
+                />
+              </a>
+              <a
+                class="pswp-gallery__item"
+                href="../img/cube/screen-lastAll.png"
+                data-pswp-width="1919"
+                data-pswp-height="1079"
+                target="_blank"
+              >
+                <img
+                  src="../img/cube/screen-lastAll.png"
+                  alt="Last layer overview"
+                  class="project-detail__image"
+                />
+              </a>
+              <a
+                class="pswp-gallery__item"
+                href="../img/cube/screen-lastAlg.png"
+                data-pswp-width="1884"
+                data-pswp-height="1057"
+                target="_blank"
+              >
+                <img
+                  src="../img/cube/screen-lastAlg.png"
+                  alt="Last layer algorithm"
+                  class="project-detail__image"
+                />
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </main>
@@ -362,5 +435,38 @@
 
     <script src="../js/main.js"></script>
     <script src="../js/project.js"></script>
+
+    <script type="module">
+      import PhotoSwipeLightbox from "https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.min.js";
+
+      document.querySelectorAll(".pswp-gallery").forEach((galleryEl) => {
+        // Check if this gallery contains the layout image
+        const isLayoutGallery = galleryEl.querySelector(
+          'a[href*="layout.png"]',
+        );
+
+        const config = {
+          gallery: galleryEl,
+          children: "a.pswp-gallery__item",
+          pswpModule: () =>
+            import("https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.esm.min.js"),
+        };
+
+        if (isLayoutGallery) {
+          // Much lower zoom for the layout image - show more of it at once
+          config.initialZoomLevel = 0.3;
+          config.secondaryZoomLevel = 0.5;
+          config.maxZoomLevel = 1;
+        } else {
+          // Normal zoom for other images
+          config.initialZoomLevel = "fit";
+          config.secondaryZoomLevel = 1.5;
+          config.maxZoomLevel = 3;
+        }
+
+        const lightbox = new PhotoSwipeLightbox(config);
+        lightbox.init();
+      });
+    </script>
   </body>
 </html>
