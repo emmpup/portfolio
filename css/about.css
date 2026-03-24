@@ -19,7 +19,6 @@
 .main-content__intro {
   display: flex;
   flex-direction: row;
-  /* flex-wrap: wrap; */
   gap: 3rem;
   max-width: 800px;
   margin-bottom: -4rem;
@@ -226,6 +225,12 @@
 }
 
 @media (max-width: 600px) {
+  .main-content__intro {
+    flex-direction: column;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
   .card-spread-container {
     height: 420px;
     margin-bottom: 60px;
