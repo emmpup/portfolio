@@ -1,7 +1,7 @@
 gsap.registerPlugin(MotionPathPlugin);
 
 const cardDeck = document.getElementById("cardDeck");
-const cards = document.querySelectorAll(".card--spread");
+const cards = document.querySelectorAll(".card__item");
 const totalCards = cards.length;
 
 let isSpread = false;
@@ -16,7 +16,7 @@ const FLIP_DURATION = 0.5;
 const TILT_MAX_ROTATION = 15;
 const TILT_DURATION = 0.6;
 
-const MODAL_ROTATION_OFFSET = 15; // Adjust this to customize card rotation in modal
+const MODAL_ROTATION_OFFSET = 15;
 
 const cardBaselines = new Map();
 let flippedCard = null;

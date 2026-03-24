@@ -33,7 +33,7 @@
   cursor: pointer;
 }
 
-.card--spread {
+.card__item {
   position: absolute;
   bottom: 30px;
   left: 30px;
@@ -174,7 +174,7 @@
   }
 
   .card-deck,
-  .card--spread {
+  .card__item {
     transform-origin: bottom left;
   }
 
@@ -185,7 +185,6 @@
   }
 }
 
-/* Mobile — smaller cards, close button drops below the container */
 @media (max-width: 600px) {
   .card-spread-container {
     height: 420px;
