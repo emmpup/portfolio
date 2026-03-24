@@ -1,0 +1,9 @@
+.projects__header {
+  background: url(../../img/cube/screen-home.png) no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-position: 50% 90%; /* Starting position */
+  background-size: cover;
+  background-attachment: scroll; /* Not fixed */
+  position: relative;
+}
