@@ -25,7 +25,6 @@ let isAnimatingFlip = false;
 let activeTiltMove = null;
 let activeTiltLeave = null;
 
-// Track currently touched card for mobile drag
 let currentlyTouchedCard = null;
 
 const deckCloseBtn = document.createElement("button");
@@ -77,9 +76,8 @@ function getViewportCenterOffset(card) {
   const cardHeight = cardRect.height;
 
   const dx = viewportCenterX - (cardScreenX + cardWidth / 2);
-  // Use different centering for mobile vs desktop
   const isMobile = window.innerWidth < 768;
-  const dy = isMobile 
+  const dy = isMobile
     ? viewportCenterY - (cardScreenY + cardHeight / 2)
     : viewportCenterY - cardScreenY;
 
@@ -109,15 +107,15 @@ function addTiltListeners(card) {
   });
 
   activeTiltMove = (e) => {
-    // Prevent scrolling on touch events
     if (e.touches) {
       e.preventDefault();
     }
-    
+
     const rect = card.getBoundingClientRect();
-    // Get clientX/clientY, handling both mouse and touch events
-    const clientX = e.clientX !== undefined ? e.clientX : (e.touches?.[0]?.clientX ?? 0);
-    const clientY = e.clientY !== undefined ? e.clientY : (e.touches?.[0]?.clientY ?? 0);
+    const clientX =
+      e.clientX !== undefined ? e.clientX : (e.touches?.[0]?.clientX ?? 0);
+    const clientY =
+      e.clientY !== undefined ? e.clientY : (e.touches?.[0]?.clientY ?? 0);
     const px = ((clientX - rect.left) / rect.width) * 2 - 1;
     const py = ((clientY - rect.top) / rect.height) * 2 - 1;
     tiltX(-py * TILT_MAX_ROTATION);
@@ -131,7 +129,6 @@ function addTiltListeners(card) {
 
   card.addEventListener("pointermove", activeTiltMove);
   card.addEventListener("pointerleave", activeTiltLeave);
-  // Touch events for mobile (passive: false allows preventDefault)
   card.addEventListener("touchmove", activeTiltMove, { passive: false });
   card.addEventListener("touchend", activeTiltLeave);
 }
@@ -330,32 +327,20 @@ function onCardLeave() {
   });
 }
 
-// ============================================================================
-// TOUCH/DRAG HANDLERS FOR MOBILE
-// ============================================================================
-
-/**
- * Handle touch start - trigger hover on touched card
- */
 function onCardTouchStart(e) {
   if (flippedCard || !isSpread) return;
-  
+
   currentlyTouchedCard = e.currentTarget;
-  // Simulate enter with synthetic event
   onCardEnter({ currentTarget: currentlyTouchedCard });
 }
 
-/**
- * Handle touch move - update hovered card as user drags
- */
 function onCardTouchMove(e) {
   if (flippedCard || !isSpread) return;
-  
+
   const touch = e.touches[0];
   const elementBelow = document.elementFromPoint(touch.clientX, touch.clientY);
   const cardElement = elementBelow?.closest(".card__item");
-  
-  // If we moved to a different card, trigger leave on old and enter on new
+
   if (cardElement && cardElement !== currentlyTouchedCard) {
     if (currentlyTouchedCard) {
       onCardLeave();
@@ -365,24 +350,18 @@ function onCardTouchMove(e) {
   }
 }
 
-/**
- * Handle touch end - open the touched card on mobile
- */
 function onCardTouchEnd(e) {
   if (flippedCard || !currentlyTouchedCard) return;
-  
-  // Open the card that was being touched
+
   openCard(currentlyTouchedCard);
   currentlyTouchedCard = null;
 }
 
 function addHoverListeners() {
   cards.forEach((card) => {
-    // Mouse events for desktop
     card.addEventListener("mouseenter", onCardEnter);
     card.addEventListener("mouseleave", onCardLeave);
-    
-    // Touch events for mobile
+
     card.addEventListener("touchstart", onCardTouchStart);
     card.addEventListener("touchmove", onCardTouchMove, { passive: true });
     card.addEventListener("touchend", onCardTouchEnd);
@@ -391,11 +370,9 @@ function addHoverListeners() {
 
 function removeHoverListeners() {
   cards.forEach((card) => {
-    // Mouse events
     card.removeEventListener("mouseenter", onCardEnter);
     card.removeEventListener("mouseleave", onCardLeave);
-    
-    // Touch events
+
     card.removeEventListener("touchstart", onCardTouchStart);
     card.removeEventListener("touchmove", onCardTouchMove);
     card.removeEventListener("touchend", onCardTouchEnd);
