@@ -43,13 +43,15 @@ deckCloseBtn.addEventListener("click", () => {
 const deckOpenTxt = document.createElement("h3");
 deckOpenTxt.className = "deck-open-text";
 
-// Create "Click Me!" text for top card (last in DOM)
 const topCard = cards[cards.length - 1];
 const topCardBack = topCard.querySelector(".card__back");
 const clickMeText = document.createElement("div");
 clickMeText.className = "card-click-me-text";
-clickMeText.textContent = "Click Me!";
 gsap.set(clickMeText, { opacity: 1 });
+const clickMeTextInner = document.createElement("div");
+clickMeTextInner.className = "card-click-me-text__inner";
+clickMeTextInner.textContent = "Click Me!";
+clickMeText.appendChild(clickMeTextInner);
 topCardBack.appendChild(clickMeText);
 
 function showDeckCloseBtn() {
@@ -157,7 +159,6 @@ function openCard(card) {
   removeHoverListeners();
   gsap.set(card, { zIndex: 10 });
 
-  // Fade out "Click Me!" text
   gsap.to(clickMeText, {
     opacity: 0,
     duration: FLIP_DURATION,
@@ -212,13 +213,6 @@ function closeFlippedCard(onComplete) {
 
   removeTiltListeners(card);
   document.removeEventListener("click", modalClickHandler);
-
-  // Fade in "Click Me!" text
-  gsap.to(clickMeText, {
-    opacity: 1,
-    duration: FLIP_DURATION,
-    ease: "power2.inOut",
-  });
 
   gsap
     .timeline({
@@ -362,7 +356,6 @@ cards.forEach((card) => {
 });
 
 function spreadCards() {
-  // Fade out "Click Me!" text
   gsap.to(clickMeText, {
     opacity: 0,
     duration: FLIP_DURATION,
@@ -402,7 +395,6 @@ function spreadCards() {
 }
 
 function resetCards() {
-  // Fade in "Click Me!" text
   gsap.to(clickMeText, {
     opacity: 1,
     duration: FLIP_DURATION,
