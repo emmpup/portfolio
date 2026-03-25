@@ -25,6 +25,12 @@
   color: light-dark(var(--light-text-500), var(--light-text-500));
 }
 
+.header__filter:hover {
+  background: light-dark(var(--light-secondary-300), var(--dark-secondary-300));
+  color: light-dark(var(--light-text-700), var(--light-text-700));
+  cursor: pointer;
+}
+
 .active {
   background: light-dark(var(--light-primary-500), var(--dark-primary-500));
   color: light-dark(var(--dark-text-500), var(--dark-text-500));
