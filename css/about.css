@@ -16,6 +16,10 @@
   text-align: center;
 }
 
+/* .card-spread-header {
+  margin-top: 10rem;
+} */
+
 .main-content__intro {
   display: flex;
   flex-direction: row;
@@ -170,6 +174,19 @@
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
+}
+
+.card-click-me-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--light-text-500);
+  pointer-events: none;
+  z-index: 1;
 }
 
 .deck-close-btn {
