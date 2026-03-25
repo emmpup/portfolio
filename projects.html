@@ -99,14 +99,18 @@
       <div class="projects__header">
         <h1 class="header__title">Projects</h1>
         <div class="header__filters">
-          <span class="header__filter active">All</span>
-          <span class="header__filter">Development</span>
-          <span class="header__filter">UX/UI Design</span>
-          <span class="header__filter">Other</span>
+          <span class="header__filter active" data-filter="all">All</span>
+          <span class="header__filter" data-filter="development"
+            >Development</span
+          >
+          <span class="header__filter" data-filter="ux-design"
+            >UX/UI Design</span
+          >
+          <span class="header__filter" data-filter="other">Other</span>
         </div>
       </div>
       <div class="projects__list">
-        <div class="project">
+        <div class="project" data-category="development ux-design">
           <div class="project__text">
             <a class="project__link-text" href="projects/safeSpace.html">
               <h3 class="project__name">SafeSpace</h3>
@@ -141,7 +145,7 @@
           </a>
         </div>
 
-        <div class="project">
+        <div class="project" data-category="development">
           <div class="project__text">
             <a class="project__link-text" href="projects/musicPlayer.html">
               <h3 class="project__name">Music Player</h3>
@@ -177,7 +181,7 @@
           </a>
         </div>
 
-        <div class="project">
+        <div class="project" data-category="other">
           <div class="project__text">
             <a class="project__link-text" href="projects/posters.html">
               <h3 class="project__name">Poster Design</h3>
@@ -207,7 +211,7 @@
           </a>
         </div>
 
-        <div class="project">
+        <div class="project" data-category="ux-design">
           <div class="project__text">
             <a class="project__link-text" href="projects/montro.html">
               <h3 class="project__name">Montro</h3>
@@ -242,7 +246,7 @@
           </a>
         </div>
 
-        <div class="project">
+        <div class="project" data-category="other">
           <div class="project__text">
             <a class="project__link-text" href="projects/cube.html">
               <h3 class="project__name">Rubik's Cube Tutorial</h3>
@@ -383,6 +387,7 @@
       </div>
     </footer>
 
-    <script src="../js/index.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/projects.js"></script>
   </body>
 </html>
