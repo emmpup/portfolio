@@ -561,7 +561,7 @@
               </h2>
 
               <div
-                class="project__main__section__sitemap pswp-gallery"
+                class="project__main__section__sitemap pswp-gallery pswp-gallery--wide"
                 id="sitemap-userflow-gallery"
               >
                 <h3 class="project__main__section__sitemap__header">Sitemap</h3>
@@ -581,7 +581,7 @@
               </div>
 
               <div
-                class="project__main__section__userflow pswp-gallery"
+                class="project__main__section__userflow pswp-gallery pswp-gallery--wide"
                 id="sitemap-userflow-gallery"
               >
                 <h3 class="project__main__section__userflow__header">
@@ -1327,22 +1327,5 @@
     <script src="../js/main.js"></script>
     <script src="../js/project.js"></script>
     <script src="../js/safeSpace.js"></script>
-
-    <script type="module">
-      import PhotoSwipeLightbox from "https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.min.js";
-
-      document.querySelectorAll(".pswp-gallery").forEach((galleryEl) => {
-        const lightbox = new PhotoSwipeLightbox({
-          gallery: galleryEl,
-          children: "a.pswp-gallery__item",
-          pswpModule: () =>
-            import("https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.esm.min.js"),
-          initialZoomLevel: "fit",
-          secondaryZoomLevel: 1.5,
-          maxZoomLevel: 3,
-        });
-        lightbox.init();
-      });
-    </script>
   </body>
 </html>
