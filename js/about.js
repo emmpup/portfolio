@@ -25,6 +25,8 @@ let isAnimatingFlip = false;
 let activeTiltMove = null;
 let activeTiltLeave = null;
 
+let currentlyTouchedCard = null;
+
 const deckCloseBtn = document.createElement("button");
 deckCloseBtn.className = "deck-close-btn";
 deckCloseBtn.setAttribute("aria-label", "Collapse cards");
@@ -74,7 +76,10 @@ function getViewportCenterOffset(card) {
   const cardHeight = cardRect.height;
 
   const dx = viewportCenterX - (cardScreenX + cardWidth / 2);
-  const dy = viewportCenterY - cardScreenY;
+  const isMobile = window.innerWidth < 768;
+  const dy = isMobile
+    ? viewportCenterY - (cardScreenY + cardHeight / 2)
+    : viewportCenterY - cardScreenY;
 
   return { dx, dy };
 }
@@ -102,9 +107,17 @@ function addTiltListeners(card) {
   });
 
   activeTiltMove = (e) => {
+    if (e.touches) {
+      e.preventDefault();
+    }
+
     const rect = card.getBoundingClientRect();
-    const px = ((e.clientX - rect.left) / rect.width) * 2 - 1;
-    const py = ((e.clientY - rect.top) / rect.height) * 2 - 1;
+    const clientX =
+      e.clientX !== undefined ? e.clientX : (e.touches?.[0]?.clientX ?? 0);
+    const clientY =
+      e.clientY !== undefined ? e.clientY : (e.touches?.[0]?.clientY ?? 0);
+    const px = ((clientX - rect.left) / rect.width) * 2 - 1;
+    const py = ((clientY - rect.top) / rect.height) * 2 - 1;
     tiltX(-py * TILT_MAX_ROTATION);
     tiltY(180 + px * TILT_MAX_ROTATION);
   };
@@ -116,12 +129,19 @@ function addTiltListeners(card) {
 
   card.addEventListener("pointermove", activeTiltMove);
   card.addEventListener("pointerleave", activeTiltLeave);
+  card.addEventListener("touchmove", activeTiltMove, { passive: false });
+  card.addEventListener("touchend", activeTiltLeave);
 }
 
 function removeTiltListeners(card) {
-  if (activeTiltMove) card.removeEventListener("pointermove", activeTiltMove);
-  if (activeTiltLeave)
+  if (activeTiltMove) {
+    card.removeEventListener("pointermove", activeTiltMove);
+    card.removeEventListener("touchmove", activeTiltMove);
+  }
+  if (activeTiltLeave) {
     card.removeEventListener("pointerleave", activeTiltLeave);
+    card.removeEventListener("touchend", activeTiltLeave);
+  }
   activeTiltMove = null;
   activeTiltLeave = null;
 
@@ -307,10 +327,44 @@ function onCardLeave() {
   });
 }
 
+function onCardTouchStart(e) {
+  if (flippedCard || !isSpread) return;
+
+  currentlyTouchedCard = e.currentTarget;
+  onCardEnter({ currentTarget: currentlyTouchedCard });
+}
+
+function onCardTouchMove(e) {
+  if (flippedCard || !isSpread) return;
+
+  const touch = e.touches[0];
+  const elementBelow = document.elementFromPoint(touch.clientX, touch.clientY);
+  const cardElement = elementBelow?.closest(".card__item");
+
+  if (cardElement && cardElement !== currentlyTouchedCard) {
+    if (currentlyTouchedCard) {
+      onCardLeave();
+    }
+    currentlyTouchedCard = cardElement;
+    onCardEnter({ currentTarget: cardElement });
+  }
+}
+
+function onCardTouchEnd(e) {
+  if (flippedCard || !currentlyTouchedCard) return;
+
+  openCard(currentlyTouchedCard);
+  currentlyTouchedCard = null;
+}
+
 function addHoverListeners() {
   cards.forEach((card) => {
     card.addEventListener("mouseenter", onCardEnter);
     card.addEventListener("mouseleave", onCardLeave);
+
+    card.addEventListener("touchstart", onCardTouchStart);
+    card.addEventListener("touchmove", onCardTouchMove, { passive: true });
+    card.addEventListener("touchend", onCardTouchEnd);
   });
 }
 
@@ -318,6 +372,10 @@ function removeHoverListeners() {
   cards.forEach((card) => {
     card.removeEventListener("mouseenter", onCardEnter);
     card.removeEventListener("mouseleave", onCardLeave);
+
+    card.removeEventListener("touchstart", onCardTouchStart);
+    card.removeEventListener("touchmove", onCardTouchMove);
+    card.removeEventListener("touchend", onCardTouchEnd);
   });
 }
 
