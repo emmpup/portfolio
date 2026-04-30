@@ -185,3 +185,27 @@ document.querySelectorAll(".project__nav__link").forEach((link) => {
     });
   });
 });
+
+// PhotoSwipe Image Gallery Configuration
+import("https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.min.js").then(
+  (module) => {
+    const PhotoSwipeLightbox = module.default;
+
+    document.querySelectorAll(".pswp-gallery").forEach((galleryEl) => {
+      // Check if gallery has the wide-zoom class
+      const hasWideZoom = galleryEl.classList.contains("pswp-gallery--wide");
+
+      const lightbox = new PhotoSwipeLightbox({
+        gallery: galleryEl,
+        children: "a.pswp-gallery__item",
+        pswpModule: () =>
+          import("https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.esm.min.js"),
+        initialZoomLevel: "fit",
+        secondaryZoomLevel: hasWideZoom ? 2.5 : 0.5,
+        maxZoomLevel: hasWideZoom ? 3 : 0.5,
+      });
+
+      lightbox.init();
+    });
+  },
+);
