@@ -1,0 +1,37 @@
+[
+  {
+    "title": "Softball",
+    "description": "I enjoy playing softball and have been since I was 5 years old.",
+    "image": "./img/about/softball.png"
+  },
+  {
+    "title": "Soccer",
+    "description": "I've been playing soccer since kindergarten and love the competition.",
+    "image": "./img/about/soccer.png"
+  },
+  {
+    "title": "Camping",
+    "description": "I love going camping with my family and exploring nature. We usually camp in a trailer.",
+    "image": "./img/about/camper.png"
+  },
+  {
+    "title": "Cardistry",
+    "description": "I enjoy practicing tricks and often find it helpful when I'm trying to think through problems.",
+    "image": "./img/about/cardistry.png"
+  },
+  {
+    "title": "Rubik's Cube",
+    "description": "I can solve a 3x3 Rubik's Cube in under 30 seconds and a 2x2 cube in under 10 seconds.",
+    "image": "./img/about/cube.png"
+  },
+  {
+    "title": "Cat Tricks",
+    "description": "I love teaching my cat, Lily, new tricks and watching her learn.",
+    "image": "./img/about/cat.png"
+  },
+  {
+    "title": "Juggling",
+    "description": "I enjoy juggling and find it helps calm me down.",
+    "image": "./img/about/juggle.png"
+  }
+]
